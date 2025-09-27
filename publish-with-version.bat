@@ -3,7 +3,7 @@ setlocal
 cd /d C:\Users\abram\Documents\GitHub\sm2arta-help
 
 REM --- ensure GitHub Pages helpers exist
-echo admin.smmarta.com> CNAME
+echo guide.smmarta.com> CNAME
 type NUL > .nojekyll
 
 REM --- make a version string like 2025-09-27-153045
@@ -21,7 +21,7 @@ git push origin main
 
 echo.
 echo Deployed build %V%
-echo Open: https://admin.smmarta.com/
+echo Open: https://guide.smmarta.com/
 echo.
 
 :end
