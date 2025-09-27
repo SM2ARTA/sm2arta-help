@@ -1,6 +1,12 @@
 # === CONFIG ===
 $Repo = "C:\Users\abram\OneDrive\DOCUMENTS\GitHub\sm2arta-help"
 $Bat  = Join-Path $Repo "publish-with-version.bat"
+$Log  = Join-Path $Repo "watch-publish.log"
+
+function Log($msg) {
+  $stamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+  Add-Content -Path $Log -Value "[$stamp] $msg"
+}
 
 # Ignore files/paths that the publisher touches, to avoid loops
 function ShouldIgnore($path) {
@@ -19,7 +25,7 @@ $fsw = New-Object IO.FileSystemWatcher $Repo -Property @{
   EnableRaisingEvents   = $true
   Filter                = "*.*"
 }
-$timer = New-Object Timers.Timer 4000
+$timer   = New-Object Timers.Timer 4000
 $timer.AutoReset = $false
 $running = $false
 
@@ -42,15 +48,15 @@ Register-ObjectEvent $timer Elapsed -Action {
   if ($running) { return }
   $script:running = $true
   try {
-    Write-Host "Change detected. Publishing..." -ForegroundColor Cyan
+    Log "Change detected. Publishing…"
     & cmd /c "`"$Bat`""
-    Write-Host "Publish complete." -ForegroundColor Green
+    Log "Publish complete."
   } catch {
-    Write-Host "Publish error: $_" -ForegroundColor Red
+    Log "Publish error: $_"
   } finally {
     $script:running = $false
   }
 } | Out-Null
 
-Write-Host "Watching $Repo for changes. Leave this window open; close to stop."
+Log "Watching $Repo for changes (hidden)."
 while ($true) { Start-Sleep -Seconds 3600 }
