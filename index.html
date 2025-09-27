@@ -2,26 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Redirecting…</title>
-
-  <!-- Instant redirect to your start page -->
-  <meta http-equiv="refresh" content="0; url=SM2ARTA%20Admin%20Guide.html">
-
-  <!-- Ask the browser not to cache this landing page -->
+  <title>Loading…</title>
+  <!-- Optional: advise browsers not to cache this page -->
   <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-
-  <!-- Fallback for some crawlers/tools -->
-  <link rel="canonical" href="SM2ARTA%20Admin%20Guide.html">
-
-  <!-- JS fallback redirect (if meta refresh is blocked) -->
   <script>
-    window.location.replace("SM2ARTA%20Admin%20Guide.html");
+    (async function () {
+      // 1) Read the latest server-side version (unique query busts CDN)
+      let v = '';
+      try {
+        const res = await fetch('/version.json?ts=' + Date.now(), { cache: 'no-store' });
+        const data = await res.json();
+        v = String(data.v || '');
+      } catch (e) {
+        // Fallback: timestamp so we still bust cache on first load
+        v = String(Date.now());
+      }
+
+      // 2) Register / update the Service Worker (append version to force SW update)
+      if ('serviceWorker' in navigator) {
+        try { await navigator.serviceWorker.register('/sw.js?v=' + encodeURIComponent(v)); } catch (e) {}
+      }
+
+      // 3) If current URL lacks ?v=... or has an older one, reload with the latest version
+      const url = new URL(window.location.href);
+      const current = url.searchParams.get('v');
+      if (current !== v) {
+        url.searchParams.set('v', v);
+        // Use replace so history doesn’t get cluttered
+        window.location.replace(url.toString());
+        return; // stop here; browser will navigate
+      }
+
+      // 4) Already at the right versioned URL? Go to your start page (keep the same ?v=...)
+      const target = 'SM2ARTA%20Admin%20Guide.html' + window.location.search + window.location.hash;
+      window.location.replace(target);
+    })();
   </script>
 </head>
 <body>
-  <p>Redirecting to <a href="SM2ARTA%20Admin%20Guide.html">SM2ARTA Admin Guide</a>…</p>
+  <noscript>
+    JavaScript required. Open
+    <a href="SM2ARTA%20Admin%20Guide.html">SM2ARTA Admin Guide</a>.
+  </noscript>
 </body>
 </html>
-
