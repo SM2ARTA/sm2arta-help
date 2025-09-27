@@ -3,48 +3,42 @@
 <head>
   <meta charset="utf-8" />
   <title>Loading…</title>
-  <!-- Optional: advise browsers not to cache this page -->
-  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
   <script>
-    (async function () {
-      // 1) Read the latest server-side version (unique query busts CDN)
-      let v = '';
-      try {
-        const res = await fetch('/version.json?ts=' + Date.now(), { cache: 'no-store' });
+  (async () => {
+    const START = 'SM2ARTA%20Admin%20Guide.html';
+    const here = new URL(location.href);
+    const current = here.searchParams.get('v') || '';  // keep current if any
+
+    // Try to get latest version; if it fails, keep the current one (avoids loop)
+    let latest = current;
+    try {
+      const res = await fetch('version.json?ts=' + Date.now(), { cache: 'no-store' });
+      if (res.ok) {
         const data = await res.json();
-        v = String(data.v || '');
-      } catch (e) {
-        // Fallback: timestamp so we still bust cache on first load
-        v = String(Date.now());
+        if (data && data.v) latest = String(data.v);
       }
+    } catch (e) { /* ignore; latest stays as current */ }
 
-      // 2) Register / update the Service Worker (append version to force SW update)
-      if ('serviceWorker' in navigator) {
-        try { await navigator.serviceWorker.register('/sw.js?v=' + encodeURIComponent(v)); } catch (e) {}
-      }
+    // Optional: service worker to prefer network (keeps refreshes fresh after first visit)
+    if ('serviceWorker' in navigator) {
+      try { await navigator.serviceWorker.register('sw.js?v=' + encodeURIComponent(latest)); } catch (e) {}
+    }
 
-      // 3) If current URL lacks ?v=... or has an older one, reload with the latest version
-      const url = new URL(window.location.href);
-      const current = url.searchParams.get('v');
-      if (current !== v) {
-        url.searchParams.set('v', v);
-        // Use replace so history doesn’t get cluttered
-        window.location.replace(url.toString());
-        return; // stop here; browser will navigate
-      }
+    // If we discovered a different version, rewrite once; otherwise go to start page
+    if (latest && latest !== current) {
+      here.searchParams.set('v', latest);
+      location.replace(here.toString());
+      return;
+    }
 
-      // 4) Already at the right versioned URL? Go to your start page (keep the same ?v=...)
-      const target = 'SM2ARTA%20Admin%20Guide.html' + window.location.search + window.location.hash;
-      window.location.replace(target);
-    })();
+    // Navigate to your start page, preserving query/hash
+    location.replace(START + location.search + location.hash);
+  })();
   </script>
-</head>
-<body>
+
   <noscript>
-    JavaScript required. Open
-    <a href="SM2ARTA%20Admin%20Guide.html">SM2ARTA Admin Guide</a>.
+    <meta http-equiv="refresh" content="0; url=SM2ARTA%20Admin%20Guide.html">
   </noscript>
-</body>
+</head>
+<body></body>
 </html>
