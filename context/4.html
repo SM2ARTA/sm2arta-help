@@ -4,33 +4,6 @@
 
 <head>
 
-<script>
-(function () {
-  // If not authed, hide immediately (no paint) and bounce to /?next=...
-  try {
-    var authed = sessionStorage.getItem('sm_help_authed_session') === '1' ||
-                 localStorage.getItem('sm_help_authed_persist') === '1';
-    if (!authed) {
-      document.documentElement.style.cssText = 'visibility:hidden!important;background:#0b1220!important';
-      var here = location.pathname.replace(/^\//,'') + location.search + location.hash;
-
-      // preserve a valid version param if present
-      var v = new URLSearchParams(location.search).get('v');
-      var u = '/?next=' + encodeURIComponent(here) +
-              (v && /^\d{4}-\d{2}-\d{2}-\d{6}$/.test(v) ? '&v=' + encodeURIComponent(v) : '');
-
-      location.replace(u);
-    }
-  } catch (e) {
-    // If storage is blocked for any reason, still avoid flicker
-    document.documentElement.style.cssText = 'visibility:hidden!important;background:#0b1220!important';
-    var here2 = location.pathname.replace(/^\//,'') + location.search + location.hash;
-    location.replace('/?next=' + encodeURIComponent(here2));
-  }
-})();
-</script>
-
-	<script src="/content-guard.js"></script>
     <title>Redirecting to "New topic"</title>
     <link rel="canonical" href="../Newtopic.html" />
     <meta name="robots" content="noindex">
