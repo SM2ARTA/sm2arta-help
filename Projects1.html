@@ -38,42 +38,39 @@
   <!-- JsTree styles -->
   <link href="vendors/jstree-3.3.10/themes/default/style.min.css" rel="stylesheet"/>
 
-  <!-- Hnd styles -->
-  <link href="css/layout.min.css" rel="stylesheet" />
-  <link href="css/effects.min.css" rel="stylesheet" />
-  <link href="css/theme-light-blue.min.css" rel="stylesheet" />
-  <link href="css/print.min.css" rel="stylesheet" media="print" />
-  <style type="text/css">nav { width: 350px} @media screen and (min-width:769px) { body.md-nav-expanded div#main { margin-left: 350px} body.md-nav-expanded header { padding-left: 364px} }</style>
-  <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
+  <!-- Hnd styles with cache-buster -->
+  <link href="css/layout.min.css?v=20250928122952" rel="stylesheet" />
+  <link href="css/effects.min.css?v=20250928122952" rel="stylesheet" />
+
+  <link href="css/theme-light-blue.min.css?v=20250928122952" rel="stylesheet" />
+
+  <link href="css/print.min.css?v=20250928122952" rel="stylesheet" />
 
   <!-- Content style -->
-  <link href="css/hnd.content.css" rel="stylesheet" />
+  <link href="css/hnd.content.css?v=20250928122952" rel="stylesheet" />
+
 
 <!-- >>> ADDED: Responsive images + modal image styling -->
 <style>
   /* Responsive only; preserves HND alignment/floats */
-  .main-content img,
-  .main-content figure img {
-    max-width: 100% !important;
-    height: auto !important;
-    width: auto !important;
-    /* no display/margins here on purpose */
-  }
+.main-content img,
+.main-content figure img {
+  max-width: 100% !important;
+  height: auto !important;
+  width: auto !important;
+  /* do not set display or margin here */
+}
 
-  /* No mobile margins either (avoid centering on big screens) */
-  @media (max-width: 640px) {
-    /* leave images' margins alone to respect HND alignment */
-  }
+/* zoom cursor if you use it */
+.main-content img[data-zoom]{ cursor: zoom-in; }
 
-  /* Cursor hint for zoomable images */
-  .main-content img[data-zoom] { cursor: zoom-in; }
+/* images inside modal */
+#hndModal .modal-body img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
-  /* Images inside Bootstrap modal */
-  #hndModal .modal-body img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
 </style>
 
 
@@ -222,7 +219,7 @@
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts6">Common actions:</span></p>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside;">
- <li style="list-style-image: url('lib/1.bmp')" class="rvps2 noindent"><a class="rvts15" href="CreatingProjects.html">Creating Projects</a><span class="rvts6"></span></li>
+ <li style="list-style-image: url('lib/2.bmp')" class="rvps2 noindent"><a class="rvts15" href="CreatingProjects.html">Creating Projects</a><span class="rvts6"></span></li>
 </ul>
 
             </div>
