@@ -49,28 +49,35 @@
   <!-- Content style -->
   <link href="css/hnd.content.css" rel="stylesheet" />
 
-  <!-- >>> ADDED: Responsive images + modal image styling -->
-  <style>
-    .main-content img,
-    .main-content figure img {
-      max-width: 100% !important;
-      height: auto !important;
-      width: auto !important;
-      display: block;
-      margin: 1rem auto;
-    }
-    @media (max-width: 640px) {
-      .main-content img { margin: .5rem auto; }
-    }
-    /* cursor hint for zoomable images (set data-zoom on <img>) */
-    .main-content img[data-zoom]{ cursor: zoom-in; }
-    /* images inside Bootstrap modal */
-    #hndModal .modal-body img{
-      width:100%;
-      height:auto;
-      display:block;
-    }
-  </style>
+<!-- >>> ADDED: Responsive images + modal image styling -->
+<style>
+  /* Responsive only; preserves HND alignment/floats */
+  .main-content img,
+  .main-content figure img {
+    max-width: 100% !important;
+    height: auto !important;
+    width: auto !important;
+    /* no display/margins here on purpose */
+  }
+
+  /* No mobile margins either (avoid centering on big screens) */
+  @media (max-width: 640px) {
+    /* leave images' margins alone to respect HND alignment */
+  }
+
+  /* Cursor hint for zoomable images */
+  .main-content img[data-zoom] { cursor: zoom-in; }
+
+  /* Images inside Bootstrap modal */
+  #hndModal .modal-body img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+</style>
+
+
+
   <!-- <<< ADDED -->
 
   
@@ -216,7 +223,7 @@
 <p class="rvps2"><span class="rvts6">Common actions:</span></p>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside;">
  <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside;">
-  <li style="list-style-image: url('lib/40.png')" class="rvps6 noindent"><a class="rvts15" href="CreatingProjects.html">Creating Projects</a><span class="rvts6"></span></li>
+  <li style="list-style-image: url('lib/41.png')" class="rvps6 noindent"><a class="rvts15" href="CreatingProjects.html">Creating Projects</a><span class="rvts6"></span></li>
  </ul>
 </ul>
 
