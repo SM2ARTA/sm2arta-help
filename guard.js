@@ -8,7 +8,7 @@
   // === CONFIG ===
   const PW_HASH = "1abe8f5aca6045c7844a07b0e09fb57039cb2c5923de729dfce9d07f28624971"; // 64-char SHA-256 hex of your password
   const HEARTBEAT_INTERVAL_MS = 3000;       // how often tabs update the heartbeat
-  const HEARTBEAT_TTL_MS      = 10000;      // how long a heartbeat is considered "alive" (10s)
+  const HEARTBEAT_TTL_MS      = 3000;      // how long a heartbeat is considered "alive" (10s)
 
   // === Keys ===
   const AUTH_LOCAL = "sm_help_auth";     // localStorage: "ok:<hash>"
