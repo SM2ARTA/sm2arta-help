@@ -89,6 +89,10 @@ span.rvts16
  font-size: 13pt;
  font-weight: bold;
 }
+span.rvts17
+{
+ font-family: Symbola, 'Lucida Sans Unicode', 'Arial', 'Helvetica', sans-serif;
+}
 /* ========== Para Styles ========== */
 p,ul,ol /* Paragraph Style */
 {
