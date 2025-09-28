@@ -8,49 +8,95 @@ function Log($msg) {
   Add-Content -Path $Log -Value "[$stamp] $msg"
 }
 
-# Ignore files/paths that the publisher touches, to avoid loops
+# Ignore files/paths the publisher touches, to avoid loops
 function ShouldIgnore($path) {
   $p = $path.ToLower()
   if ($p -match "\\.git\\")            { return $true }
+  if ($p -match "\\_logs\\")           { return $true }  # your logs folder
   if ($p -match "version\.json$")      { return $true }
   if ($p -match "\\.nojekyll$")        { return $true }
   if ($p -match "\\bcname$")           { return $true }
-  if ([System.IO.Path]::GetFileName($p) -like "~$*") { return $true } # temp files
+  if ([System.IO.Path]::GetFileName($p) -like "~$*") { return $true } # temp/office
   return $false
 }
 
-# Watcher + debounce timer
-$fsw = New-Object IO.FileSystemWatcher $Repo -Property @{
-  IncludeSubdirectories = $true
-  EnableRaisingEvents   = $true
-  Filter                = "*.*"
+# Signature of current tree (count, sum bytes, newest write) to detect stability
+function Get-Signature($root) {
+  $count = [long]0; $bytes = [long]0; $latestTicks = 0L
+  Get-ChildItem -Path $root -Recurse -File -ErrorAction SilentlyContinue |
+    Where-Object {
+      $p = $_.FullName.ToLower()
+      -not ($p -match "\\.git\\" -or $p -match "\\_logs\\" -or $_.Name -in @("CNAME",".nojekyll","version.json","watch-publish.log","publish.log","inject-guard.log"))
+    } | ForEach-Object {
+      $count++; $bytes += $_.Length
+      $t = $_.LastWriteTimeUtc.Ticks
+      if ($t -gt $latestTicks) { $latestTicks = $t }
+    }
+  [pscustomobject]@{ Count = $count; Bytes = $bytes; Latest = $latestTicks }
 }
-$timer   = New-Object Timers.Timer 4000
-$timer.AutoReset = $false
-$running = $false
 
-# Event handlers (restart timer on meaningful change)
+# Wait until no file count/size/mtimes change for QuietSeconds (max MaxWaitSeconds)
+function Wait-ForQuiet($root, [int]$QuietSeconds = 10, [int]$MaxWaitSeconds = 300) {
+  Log "Waiting for quiet: $QuietSeconds s (max $MaxWaitSeconds s)…"
+  $prev = Get-Signature $root
+  $stable = 0.0
+  while ($stable -lt $QuietSeconds -and $MaxWaitSeconds -gt 0) {
+    Start-Sleep -Milliseconds 500
+    $cur = Get-Signature $root
+    if ($cur.Count -eq $prev.Count -and $cur.Bytes -eq $prev.Bytes -and $cur.Latest -eq $prev.Latest) {
+      $stable += 0.5
+    } else {
+      $stable = 0.0
+      $prev = $cur
+    }
+    $MaxWaitSeconds -= 0.5
+  }
+  if ($stable -ge $QuietSeconds) { Log "Folder is quiet."; return $true }
+  Log "Timed out waiting for quiet; proceeding anyway."
+  return $false
+}
+
+# --- FileSystemWatcher ---
+$fsw = New-Object IO.FileSystemWatcher $Repo
+$fsw.IncludeSubdirectories = $true
+$fsw.Filter                = "*"
+$fsw.NotifyFilter = [IO.NotifyFilters] "FileName, DirectoryName, LastWrite, LastAccess, Size, CreationTime, Attributes, Security"
+$fsw.EnableRaisingEvents   = $true
+
+# Debounce timer for bursts from HelpNDoc/OneDrive
+$DEBOUNCE_MS = 15000   # 15s; adjust if needed
+$timer = New-Object Timers.Timer $DEBOUNCE_MS
+$timer.AutoReset = $false
+
+$script:running = $false
+
 Register-ObjectEvent $fsw Changed -Action {
-  if (-not (ShouldIgnore($Event.SourceEventArgs.FullPath))) { $timer.Stop(); $timer.Start() }
+  $path = $Event.SourceEventArgs.FullPath
+  if (-not (ShouldIgnore $path)) { Log "Changed: $path"; $timer.Stop(); $timer.Start() }
 } | Out-Null
 Register-ObjectEvent $fsw Created -Action {
-  if (-not (ShouldIgnore($Event.SourceEventArgs.FullPath))) { $timer.Stop(); $timer.Start() }
+  $path = $Event.SourceEventArgs.FullPath
+  if (-not (ShouldIgnore $path)) { Log "Created: $path"; $timer.Stop(); $timer.Start() }
 } | Out-Null
 Register-ObjectEvent $fsw Deleted -Action {
-  if (-not (ShouldIgnore($Event.SourceEventArgs.FullPath))) { $timer.Stop(); $timer.Start() }
+  $path = $Event.SourceEventArgs.FullPath
+  if (-not (ShouldIgnore $path)) { Log "Deleted: $path"; $timer.Stop(); $timer.Start() }
 } | Out-Null
 Register-ObjectEvent $fsw Renamed -Action {
-  if (-not (ShouldIgnore($Event.SourceEventArgs.FullPath))) { $timer.Stop(); $timer.Start() }
+  $path = $Event.SourceEventArgs.FullPath
+  if (-not (ShouldIgnore $path)) { Log "Renamed: $path"; $timer.Stop(); $timer.Start() }
 } | Out-Null
 
-# When the timer elapses, run the publisher once
 Register-ObjectEvent $timer Elapsed -Action {
-  if ($running) { return }
+  if ($script:running) { Log "Timer elapsed but publish in progress; skipping."; return }
   $script:running = $true
   try {
-    Log "Change detected. Publishing…"
-    & cmd /c "`"$Bat`""
-    Log "Publish complete."
+    # Wait for the tree to be stable before running injector/publish
+    Wait-ForQuiet -root $Repo -QuietSeconds 10 -MaxWaitSeconds 300 | Out-Null
+
+    Log "Running publisher: $Bat"
+    $p = Start-Process -FilePath "cmd.exe" -ArgumentList "/c `"$Bat`"" -WorkingDirectory $Repo -NoNewWindow -PassThru -Wait
+    Log "Publisher exit code: $($p.ExitCode)"
   } catch {
     Log "Publish error: $_"
   } finally {
