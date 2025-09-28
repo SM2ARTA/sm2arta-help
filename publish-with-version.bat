@@ -5,6 +5,14 @@ rem --- paths
 set REPO=C:\Users\abram\OneDrive\DOCUMENTS\GitHub\sm2arta-help
 set PWSH=%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe
 
+rem --- pick git (system or GitHub Desktop embedded)
+set GIT=git
+%GIT% --version >nul 2>&1 || (
+  for /f "delims=" %%p in ('powershell -NoProfile -Command ^
+    "(Get-ChildItem $env:LOCALAPPDATA\GitHubDesktop -Directory | Sort-Object Name -Descending | Select-Object -First 1).FullName"') do set GHDPATH=%%p
+  if exist "%GHDPATH%\resources\app\git\cmd\git.exe" set GIT="%GHDPATH%\resources\app\git\cmd\git.exe"
+)
+
 cd /d "%REPO%"
 
 rem --- run the injector BEFORE staging files
@@ -15,19 +23,18 @@ echo guide.smmarta.com> CNAME
 type NUL > .nojekyll
 
 rem --- write/update version.json (YYYY-MM-DD-HHMM)
-for /f "tokens=1-2 delims==." %%a in ('wmic os get LocalDateTime /value ^| find "="') do set DTS=%%b
-set V=%DTS:~0,4%-%DTS:~4,2%-%DTS:~6,2%-%DTS:~8,2%%DTS:~10,2%
+for /f %%i in ('powershell -NoProfile -Command "Get-Date -Format yyyy-MM-dd-HHmm"') do set V=%%i
 > version.json echo { "v": "%V%" }
 
 rem --- commit & push
-git add -A
-git diff --cached --quiet && echo No changes to publish.& goto :end
-git commit -m "Publish %V%"
-git push origin main
+%GIT% add -A
+%GIT% diff --cached --quiet && echo No changes to publish.& goto :end
+%GIT% commit -m "Publish %V%"
+%GIT% push origin main
 
-echo.
+echo(
 echo Deployed build %V%  https://guide.smmarta.com/
-echo.
+echo(
 
 :end
 endlocal
