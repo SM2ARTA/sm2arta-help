@@ -1,147 +1,106 @@
-/* guard.js — cross-tab session w/ link auto-login + handshake
-   - Accepts #pw= (plaintext), #ps= (alias), or #pwh= (SHA-256 hex)
-   - Strips secrets from URL after use
-   - Shares login across tabs; new tabs auto-unlock if another authed tab is open
-   - Falls back to password when all tabs are closed (heartbeat expires)
-*/
-(async function () {
-  // === CONFIG ===
-  const PW_HASH = "1abe8f5aca6045c7844a07b0e09fb57039cb2c5923de729dfce9d07f28624971"; // 64-char SHA-256 hex
-  const HEARTBEAT_INTERVAL_MS = 3000;
-  const HEARTBEAT_TTL_MS      = 10000;  // increase to 30000 if you want a longer grace
-  const HANDSHAKE_WAIT_MS     = 900;    // how long a new tab waits for an auth reply
+;(() => {
+  const PW_HASH = "1abe8f5aca6045c7844a07b0e09fb57039cb2c5923de729dfce9d07f28624971"; // <-- set me (64 hex chars)
+  const KEY_SESSION = "sm_help_authed_session";
+  const KEY_PERSIST = "sm_help_authed_persist";
+  const CH_NAME = "sm_help_bc_v1";
 
-  // === Keys / marks ===
-  const AUTH_LOCAL = "sm_help_auth";       // localStorage: global mark
-  const AUTH_SESS  = "sm_help_session";    // sessionStorage: per-tab mark
-  const HB_KEY     = "sm_help_heartbeat";  // last heartbeat timestamp (ms)
-  const MARK       = "ok:" + PW_HASH;
-
-  // Helpers
-  function now() { return Date.now(); }
-  function getHB() { return parseInt(localStorage.getItem(HB_KEY) || "0", 10); }
-  function hbAlive() { return (now() - getHB()) < HEARTBEAT_TTL_MS; }
-  function hasGlobalAuth() { return localStorage.getItem(AUTH_LOCAL) === MARK; }
-  function hasTabAuth() { return sessionStorage.getItem(AUTH_SESS) === MARK; }
-  function isAuthed() { return hasTabAuth() || (hasGlobalAuth() && hbAlive()); }
-
-  let hbTimer = null;
-  function startHeartbeat() {
-    localStorage.setItem(HB_KEY, String(now()));
-    if (hbTimer) clearInterval(hbTimer);
-    hbTimer = setInterval(() => {
-      localStorage.setItem(HB_KEY, String(now()));
-    }, HEARTBEAT_INTERVAL_MS);
+  function isAuthed() {
+    try {
+      return sessionStorage.getItem(KEY_SESSION) === "1" || localStorage.getItem(KEY_PERSIST) === "1";
+    } catch { return false; }
   }
 
-  function setAuthed() {
-    localStorage.setItem(AUTH_LOCAL, MARK);
-    sessionStorage.setItem(AUTH_SESS, MARK);
-    startHeartbeat();
-    announceAuth(); // let other tabs know immediately
+  function setAuthed(persist = true) {
+    try {
+      sessionStorage.setItem(KEY_SESSION, "1");
+      if (persist) localStorage.setItem(KEY_PERSIST, "1");
+    } catch {}
+    // inform other tabs
+    try {
+      bc.postMessage({ t: "authed" });
+    } catch {}
   }
 
-  async function sha256(str) {
-    const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
-    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, "0")).join("");
+  function clearAuthed() {
+    try {
+      sessionStorage.removeItem(KEY_SESSION);
+      localStorage.removeItem(KEY_PERSIST);
+    } catch {}
+    try { bc.postMessage({ t: "logged_out" }); } catch {}
   }
 
-  // --- Link-based auto-login: #pw=, #ps=, #pwh= ---
-  const hashParams = new URLSearchParams(location.hash.slice(1));
-  function getParamCI(name) {
-    const target = String(name).toLowerCase();
-    for (const [k, v] of hashParams.entries()) if (String(k).toLowerCase() === target) return v;
-    return null;
-  }
-  function cleanedHashExcluding(keysLowerArr) {
-    const out = new URLSearchParams();
-    for (const [k, v] of hashParams.entries()) {
-      if (keysLowerArr.includes(String(k).toLowerCase())) continue;
-      out.append(k, v);
-    }
-    const s = out.toString();
-    return s ? ("#" + s) : "";
-  }
-
-  async function attemptLinkAuth() {
-    const pw  = getParamCI("pw") || getParamCI("ps"); // plaintext or alias
-    const pwh = getParamCI("pwh");                    // precomputed hash
-    let ok = false;
-    if (pwh && pwh.toLowerCase() === PW_HASH) ok = true;
-    else if (pw) { try { ok = (await sha256(pw)) === PW_HASH; } catch {} }
-    if (ok) {
-      setAuthed();
-      const newHash = cleanedHashExcluding(["pw", "ps", "pwh"]);
-      history.replaceState(null, "", location.pathname + location.search + newHash);
-    }
-    return ok;
-  }
-
-  // --- Cross-tab handshake (BroadcastChannel with localStorage fallback) ---
-  const CH_NAME = "sm_help_channel";
+  // BroadcastChannel handshake so one authed tab can unlock another without retyping
   let bc = null;
-  try { bc = new BroadcastChannel(CH_NAME); } catch {}
-  const LS_CH_KEY = "sm_help_signal"; // fallback key
+  try {
+    bc = new BroadcastChannel(CH_NAME);
+    bc.onmessage = (ev) => {
+      const msg = ev.data || {};
+      if (msg.t === "whois" && isAuthed()) {
+        bc.postMessage({ t: "iam", ok: true });
+      } else if (msg.t === "iam" && msg.ok && !isAuthed()) {
+        // Another tab confirmed auth; mirror it
+        setAuthed(true);
+      }
+    };
+    // Ask if anyone is authed
+    bc.postMessage({ t: "whois" });
+  } catch {}
 
-  function announceAuth() {
-    const msg = { t: "auth", ts: now() };
-    if (bc) bc.postMessage(msg);
-    try { localStorage.setItem(LS_CH_KEY, JSON.stringify(msg)); } catch {}
-  }
-
-  function askForAuth() {
-    const msg = { t: "ping", ts: now() };
-    if (bc) bc.postMessage(msg);
-    try { localStorage.setItem(LS_CH_KEY, JSON.stringify(msg)); } catch {}
-  }
-
-  function onMessage(msg) {
-    if (!msg || typeof msg !== "object") return;
-    if (msg.t === "ping" && isAuthed()) {
-      // Another tab is asking; reply with auth
-      announceAuth();
-    } else if (msg.t === "auth" && !hasTabAuth()) {
-      // Another tab confirmed auth; adopt it
-      sessionStorage.setItem(AUTH_SESS, MARK);
-      startHeartbeat();
+  // Optional link-auth: accept ?pw=<sha256-of-password> and immediately auth then clean URL
+  (function linkAuth() {
+    const u = new URL(location.href);
+    const pw = u.searchParams.get("pw");
+    if (pw && typeof pw === "string" && pw.length === 64) {
+      if (pw.toLowerCase() === PW_HASH.toLowerCase()) {
+        setAuthed(true);
+      }
+      // Clean the URL (preserve everything else, including ?v=)
+      u.searchParams.delete("pw");
+      const clean = u.pathname + (u.search ? u.search : "") + u.hash;
+      if (clean !== (location.pathname + location.search + location.hash)) {
+        history.replaceState(null, "", clean);
+      }
     }
-  }
+  })();
 
-  if (bc) {
-    bc.onmessage = (e) => onMessage(e.data);
-  }
-  window.addEventListener("storage", (e) => {
-    if (e.key === LS_CH_KEY && e.newValue) {
-      try { onMessage(JSON.parse(e.newValue)); } catch {}
+  // If we’re on a non-index HTML page and not authed, bounce to index with next=<this>
+  (function gateContentPages() {
+    const path = location.pathname.toLowerCase();
+    const isIndex = path === "/" || path.endsWith("/index.html");
+    const isHtml = path.endsWith(".html") || path.endsWith(".htm");
+    if (!isIndex && isHtml && !isAuthed()) {
+      const here = location.pathname + location.search + location.hash;
+      const u = new URL("/", location.origin);
+      const search = new URLSearchParams();
+      search.set("next", here.replace(/^\//, "")); // relative
+      // preserve v if present
+      const v = new URL(location.href).searchParams.get("v");
+      if (v) search.set("v", v);
+      u.search = search.toString();
+      location.replace(u.pathname + "?" + u.searchParams.toString());
     }
-    if (e.key === HB_KEY && hasGlobalAuth() && !hasTabAuth()) {
-      // If heartbeat updates and we share global auth, adopt it
-      sessionStorage.setItem(AUTH_SESS, MARK);
-      startHeartbeat();
+  })();
+
+  // Deduplicate multiple ?v= on any page (safety)
+  (function normalizeV() {
+    const u = new URL(location.href);
+    const vs = u.searchParams.getAll("v");
+    if (vs.length > 1) {
+      const last = vs[vs.length - 1];
+      u.searchParams.delete("v");
+      if (last) u.searchParams.set("v", last);
+      const normalized = u.pathname + (u.search ? u.search : "") + u.hash;
+      if (normalized !== (location.pathname + location.search + location.hash)) {
+        location.replace(normalized);
+      }
     }
-  });
+  })();
 
-  // If another authed tab is alive, adopt immediately
-  if (!hasTabAuth() && hasGlobalAuth() && hbAlive()) {
-    sessionStorage.setItem(AUTH_SESS, MARK);
-    startHeartbeat();
-  }
-
-  // Run link-auth first; if still not authed, handshake & wait briefly
-  await attemptLinkAuth();
-  if (!isAuthed()) {
-    askForAuth();
-    await new Promise(r => setTimeout(r, HANDSHAKE_WAIT_MS)); // give the other tab time to answer
-  }
-
-  // Expose minimal API
-  window.SM_HELP = { PW_HASH, isAuthed, setAuthed, startHeartbeat };
-
-  // Guard deep links (non-root pages)
-  const path = location.pathname.replace(/\/+$/, "");
-  const isGate = (path === "" || path === "/" || path.endsWith("/index.html"));
-  if (!isGate && !isAuthed()) {
-    const next = location.pathname + location.search + location.hash;
-    location.replace("/?next=" + encodeURIComponent(next));
-  }
+  // Expose API
+  window.SM_HELP = {
+    PW_HASH,
+    isAuthed,
+    setAuthed,
+    clearAuthed
+  };
 })();

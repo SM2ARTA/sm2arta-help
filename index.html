@@ -4,12 +4,11 @@
   <meta charset="utf-8" />
   <title>Protected guide</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Strong cache busting on the HTML itself -->
   <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-
-  <!-- Load guard first so handshake/link-auth can run before our logic -->
-  <script src="/guard.js"></script>
 
   <style>
     body { font-family: system-ui, Arial, sans-serif; background:#0b1220; color:#e8eefc; margin:0; min-height:100vh; display:grid; place-items:center; }
@@ -21,6 +20,28 @@
     .err { color:#ff7a7a; min-height:1.2em; margin-top:8px; font-size:.9rem; }
     .hint { opacity:.7; font-size:.85rem; margin-top:10px; }
   </style>
+
+  <script>
+    // Config
+    const START_PAGE = "SM2ARTA%20Admin%20Guide.html";
+    const HANDSHAKE_GRACE_MS = 1800; // wait for another authed tab to reply
+
+    // Fetch build version first, then load guard.js with that same version (prevents stale guard)
+    window.BUILD_V = ""; // will be filled before anything else runs
+    (async function loadGuardVersioned() {
+      try {
+        const r = await fetch("version.json?ts=" + Date.now(), { cache: "no-store" });
+        if (r.ok) {
+          const d = await r.json();
+          window.BUILD_V = String(d.v || "");
+        }
+      } catch (_) {}
+
+      const s = document.createElement("script");
+      s.src = "/guard.js" + (window.BUILD_V ? ("?v=" + encodeURIComponent(window.BUILD_V)) : ("?ts=" + Date.now()));
+      document.head.appendChild(s);
+    })();
+  </script>
 </head>
 <body>
   <div class="card" id="gate" hidden>
@@ -35,37 +56,39 @@
   </div>
 
   <script>
-    const START_PAGE = "SM2ARTA%20Admin%20Guide.html";
-    const HANDSHAKE_GRACE_MS = 1200; // wait briefly so another authed tab can reply
-
     async function sha256(str) {
       const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
       return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,"0")).join("");
     }
 
     async function proceed() {
-      // 1) fetch current version (never cached)
-      let v = "";
-      try {
-        const r = await fetch("version.json?ts=" + Date.now(), { cache: "no-store" });
-        if (r.ok) { const d = await r.json(); v = String(d.v || ""); }
-      } catch (_) {}
-
-      // 2) register SW (optional, keeps refreshes fresh)
-      if ("serviceWorker" in navigator) {
-        try { await navigator.serviceWorker.register("sw.js?v=" + encodeURIComponent(v)); } catch {}
+      // Register SW (no-op caching, but keeps pages on the same update cadence)
+      if ("serviceWorker" in navigator && window.BUILD_V) {
+        try { await navigator.serviceWorker.register("sw.js?v=" + encodeURIComponent(window.BUILD_V)); } catch {}
       }
 
-      // 3) go to target (preserve ?next= if present)
+      // Decide target (respect ?next= if present)
       const params = new URLSearchParams(location.search);
       const next = params.get("next");
-      let target = next ? next : START_PAGE;
-      if (v) target += (target.includes("?") ? "&" : "?") + "v=" + encodeURIComponent(v);
-      location.replace(target);
+      const base = next ? next : START_PAGE;
+
+      // Normalize URL: ensure exactly one ?v=, never re-add
+      const u = new URL(base, location.origin);
+      // If a ?v= is already present (or multiple), collapse to one
+      const existingV = u.searchParams.getAll("v");
+      u.searchParams.delete("v");
+      const v = window.BUILD_V || (existingV.length ? existingV[existingV.length - 1] : "");
+      if (v) u.searchParams.set("v", v);
+
+      const target = u.pathname + (u.search ? u.search : "") + u.hash;
+      const here = location.pathname + location.search + location.hash;
+      if (here !== target) location.replace(target);
     }
 
     function showGate() {
-      document.getElementById("gate").hidden = false;
+      const gate = document.getElementById("gate");
+      gate.hidden = false;
+
       const form = document.getElementById("form");
       const input = document.getElementById("pw");
       const err   = document.getElementById("err");
@@ -78,7 +101,7 @@
         try {
           const hash = await sha256(input.value);
           if (window.SM_HELP && hash === window.SM_HELP.PW_HASH) {
-            window.SM_HELP.setAuthed(); // sets local+session auth and starts heartbeat
+            window.SM_HELP.setAuthed();
             proceed();
           } else {
             err.textContent = "Incorrect password.";
@@ -90,14 +113,14 @@
       });
     }
 
-    // Wait a short grace period so guard.js can complete handshake/link-auth
+    // Wait briefly for guard.js to load, complete handshake or link-auth
     (async () => {
-      const start = Date.now();
-      while (Date.now() - start < HANDSHAKE_GRACE_MS) {
+      const t0 = Date.now();
+      // Poll both guard load and auth state
+      while (Date.now() - t0 < HANDSHAKE_GRACE_MS) {
         if (window.SM_HELP && window.SM_HELP.isAuthed()) { proceed(); return; }
-        await new Promise(r => setTimeout(r, 100));
+        await new Promise(r => setTimeout(r, 120));
       }
-      // After grace, decide
       if (window.SM_HELP && window.SM_HELP.isAuthed()) {
         proceed();
       } else {
