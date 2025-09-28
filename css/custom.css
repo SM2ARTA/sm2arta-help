@@ -1,0 +1,14 @@
+/* Make all in-topic images responsive */
+.hnd-content img,
+.topic-content img,
+.content img,
+figure img {
+  max-width: 100% !important;
+  height: auto !important;
+  width: auto !important;
+  display: block;
+}
+
+/* Optional: nicer cue for zoomable images */
+img.hnd-zoomable,
+.hnd-zoomable img { cursor: zoom-in; }

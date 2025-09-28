@@ -77,6 +77,30 @@
   <!-- Content style -->
   <link href="css/hnd.content.css" rel="stylesheet" />
 
+  <!-- >>> ADDED: Responsive images + modal image styling -->
+  <style>
+    .main-content img,
+    .main-content figure img {
+      max-width: 100% !important;
+      height: auto !important;
+      width: auto !important;
+      display: block;
+      margin: 1rem auto;
+    }
+    @media (max-width: 640px) {
+      .main-content img { margin: .5rem auto; }
+    }
+    /* cursor hint for zoomable images (set data-zoom on <img>) */
+    .main-content img[data-zoom]{ cursor: zoom-in; }
+    /* images inside Bootstrap modal */
+    #hndModal .modal-body img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+  </style>
+  <!-- <<< ADDED -->
+
   
 
 
@@ -277,6 +301,33 @@
   <script src="js/hndsd.min.js"></script>
   <script src="js/hndse.min.js"></script>
   <script src="js/app.min.js"></script>
+
+  <!-- >>> ADDED: Simple click-to-zoom via existing Bootstrap modal.
+       Usage: add data-zoom to any <img>. Optional data-full="bigger-file.png". -->
+  <script>
+  (function () {
+    document.addEventListener('click', function (ev) {
+      var img = ev.target.closest('.main-content img[data-zoom]');
+      if (!img) return;
+
+      ev.preventDefault();
+
+      var fullSrc = img.getAttribute('data-full') || img.currentSrc || img.src;
+      var alt = img.getAttribute('alt') || 'Image';
+      var modalEl = document.getElementById('hndModal');
+
+      // fill modal
+      modalEl.querySelector('#hndModalLabel').textContent = alt;
+      modalEl.querySelector('.modal-body').innerHTML =
+        '<img src="' + fullSrc.replace(/"/g, '&quot;') + '" alt="' + alt.replace(/"/g, '&quot;') + '">';
+
+      // show modal (Bootstrap 5)
+      var bsModal = bootstrap.Modal.getOrCreateInstance(modalEl);
+      bsModal.show();
+    });
+  })();
+  </script>
+  <!-- <<< ADDED -->
 
   <!-- Init script -->
   <script src="_topic_init.js"></script>
