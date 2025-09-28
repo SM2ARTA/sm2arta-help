@@ -2,43 +2,110 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Loading…</title>
+  <title>Protected guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <!-- Load guard first so handshake/link-auth can run before our logic -->
+  <script src="/guard.js"></script>
+
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; background:#0b1220; color:#e8eefc; margin:0; min-height:100vh; display:grid; place-items:center; }
+    .card { width:min(420px, 92vw); background:#131c2b; padding:24px 22px; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,.25); }
+    h1 { font-size:1.1rem; margin:0 0 14px; }
+    label { display:block; font-size:.9rem; opacity:.9; margin:10px 0 6px; }
+    input[type=password]{ width:100%; padding:12px 10px; border-radius:10px; border:1px solid #2a3a57; background:#0e1726; color:#e8eefc; }
+    button { margin-top:12px; width:100%; padding:12px 10px; border:0; border-radius:10px; background:#3a7afe; color:#fff; font-weight:600; cursor:pointer; }
+    .err { color:#ff7a7a; min-height:1.2em; margin-top:8px; font-size:.9rem; }
+    .hint { opacity:.7; font-size:.85rem; margin-top:10px; }
+  </style>
+</head>
+<body>
+  <div class="card" id="gate" hidden>
+    <h1>Enter password to view the guide</h1>
+    <form id="form" autocomplete="off">
+      <label for="pw">Password</label>
+      <input id="pw" type="password" autofocus />
+      <div class="err" id="err"></div>
+      <button type="submit">Unlock</button>
+      <div class="hint">You’ll stay signed in until all tabs are closed.</div>
+    </form>
+  </div>
+
   <script>
-  (async () => {
-    const START = 'SM2ARTA%20Admin%20Guide.html';
-    const here = new URL(location.href);
-    const current = here.searchParams.get('v') || '';  // keep current if any
+    const START_PAGE = "SM2ARTA%20Admin%20Guide.html";
+    const HANDSHAKE_GRACE_MS = 1200; // wait briefly so another authed tab can reply
 
-    // Try to get latest version; if it fails, keep the current one (avoids loop)
-    let latest = current;
-    try {
-      const res = await fetch('version.json?ts=' + Date.now(), { cache: 'no-store' });
-      if (res.ok) {
-        const data = await res.json();
-        if (data && data.v) latest = String(data.v);
+    async function sha256(str) {
+      const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
+      return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,"0")).join("");
+    }
+
+    async function proceed() {
+      // 1) fetch current version (never cached)
+      let v = "";
+      try {
+        const r = await fetch("version.json?ts=" + Date.now(), { cache: "no-store" });
+        if (r.ok) { const d = await r.json(); v = String(d.v || ""); }
+      } catch (_) {}
+
+      // 2) register SW (optional, keeps refreshes fresh)
+      if ("serviceWorker" in navigator) {
+        try { await navigator.serviceWorker.register("sw.js?v=" + encodeURIComponent(v)); } catch {}
       }
-    } catch (e) { /* ignore; latest stays as current */ }
 
-    // Optional: service worker to prefer network (keeps refreshes fresh after first visit)
-    if ('serviceWorker' in navigator) {
-      try { await navigator.serviceWorker.register('sw.js?v=' + encodeURIComponent(latest)); } catch (e) {}
+      // 3) go to target (preserve ?next= if present)
+      const params = new URLSearchParams(location.search);
+      const next = params.get("next");
+      let target = next ? next : START_PAGE;
+      if (v) target += (target.includes("?") ? "&" : "?") + "v=" + encodeURIComponent(v);
+      location.replace(target);
     }
 
-    // If we discovered a different version, rewrite once; otherwise go to start page
-    if (latest && latest !== current) {
-      here.searchParams.set('v', latest);
-      location.replace(here.toString());
-      return;
+    function showGate() {
+      document.getElementById("gate").hidden = false;
+      const form = document.getElementById("form");
+      const input = document.getElementById("pw");
+      const err   = document.getElementById("err");
+      let submitting = false;
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        if (submitting) return;
+        submitting = true;
+        try {
+          const hash = await sha256(input.value);
+          if (window.SM_HELP && hash === window.SM_HELP.PW_HASH) {
+            window.SM_HELP.setAuthed(); // sets local+session auth and starts heartbeat
+            proceed();
+          } else {
+            err.textContent = "Incorrect password.";
+            input.value = ""; input.focus();
+          }
+        } finally {
+          submitting = false;
+        }
+      });
     }
 
-    // Navigate to your start page, preserving query/hash
-    location.replace(START + location.search + location.hash);
-  })();
+    // Wait a short grace period so guard.js can complete handshake/link-auth
+    (async () => {
+      const start = Date.now();
+      while (Date.now() - start < HANDSHAKE_GRACE_MS) {
+        if (window.SM_HELP && window.SM_HELP.isAuthed()) { proceed(); return; }
+        await new Promise(r => setTimeout(r, 100));
+      }
+      // After grace, decide
+      if (window.SM_HELP && window.SM_HELP.isAuthed()) {
+        proceed();
+      } else {
+        showGate();
+      }
+    })();
   </script>
 
-  <noscript>
-    <meta http-equiv="refresh" content="0; url=SM2ARTA%20Admin%20Guide.html">
-  </noscript>
-</head>
-<body></body>
+  <noscript><p>JavaScript required. Open <a href="SM2ARTA%20Admin%20Guide.html">the guide</a>.</p></noscript>
+</body>
 </html>
