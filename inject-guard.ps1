@@ -1,37 +1,46 @@
-# Robustly ensure every page (except index.html) includes <script src="/guard.js"></script> in <head>
+# Robustly ensure every page (except root index.html) includes <script src="/guard.js"></script> in <head>
+$ErrorActionPreference = 'Stop'
+
+# === CONFIG ===
 $Out = "C:\Users\abram\OneDrive\DOCUMENTS\GitHub\sm2arta-help"
 $tag = '<script src="/guard.js"></script>'
 
-# Find .html/.htm files (case-insensitive), skip index.html at root
-$files = Get-ChildItem -Path $Out -Recurse -File -Include *.html, *.htm |
-  Where-Object {
-    # Skip the root index.html (adjust if your gate has a different name)
-    -not ($_.FullName -ieq (Join-Path $Out "index.html"))
-  }
+# Skip the root index.html (your gate)
+$rootIndex = Join-Path $Out 'index.html'
 
+# Find .html/.htm files reliably (avoid -Include quirks)
+$files = Get-ChildItem -Path $Out -Recurse -File |
+  Where-Object { $_.Extension -match '^\.(html|htm)$' -and $_.FullName -ine $rootIndex }
+
+$injected = 0
 foreach ($f in $files) {
   $p = $f.FullName
   $html = Get-Content -LiteralPath $p -Raw
 
-  # Skip if the tag already exists in any variant (/guard.js or guard.js)
-  if ($html -match '<script\s+src="/?guard\.js"\s*>\s*</script>' ) { continue }
+  # Skip if already present (either /guard.js or guard.js)
+  if ($html -match '<script\s+src="/?guard\.js"\s*>\s*</script>') { continue }
 
-  $new = $null
+  $new = $html
+
   # 1) Insert before </head> if present
-  if ($html -match '</head>' -or $html -match '</HEAD>') {
-    $new = [regex]::Replace($html, '</head>', "$tag`r`n</head>", 'IgnoreCase', [TimeSpan]::FromSeconds(1))
+  if ($new -match '</head>') {
+    $new = [regex]::Replace($new, '</head>', "$tag`r`n</head>", 'IgnoreCase')
   }
-  # 2) Else insert after <head ...> if present
-  if (-not $new -or $new -eq $html) {
-    $new = [regex]::Replace($html, '<head(\b[^>]*)?>', { param($m) "$($m.Value)`r`n$tag" }, 'IgnoreCase', [TimeSpan]::FromSeconds(1))
+  # 2) Else insert after <head...> if present
+  elseif ($new -match '<head(\b[^>]*)?>') {
+    $new = [regex]::Replace($new, '<head(\b[^>]*)?>', { param($m) "$($m.Value)`r`n$tag" }, 'IgnoreCase')
   }
-  # 3) Else as last resort, prepend at top of file (still works, executed early)
-  if (-not $new -or $new -eq $html) {
-    $new = "$tag`r`n$html"
+  # 3) Else prepend (last resort)
+  else {
+    $new = "$tag`r`n$new"
   }
 
   if ($new -ne $html) {
     Set-Content -LiteralPath $p -Value $new -Encoding UTF8
-    Write-Host "Injected guard into: $p"
+    Write-Output "Injected guard into: $p"
+    $injected++
   }
 }
+
+Write-Output "Injected into $injected file(s)."
+exit 0
