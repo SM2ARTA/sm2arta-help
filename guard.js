@@ -132,10 +132,18 @@
   const path = location.pathname.replace(/\/+$/, "");
   const isGate = (path === "" || path === "/" || path.endsWith("/index.html"));
 
-  if (isGate) {
-    // Gate can show immediately (its own script controls navigation)
+if (isGate) { reveal(); return; }
+
+if (isAuthed()) {
+  reveal();
+} else {
+  // brief retry so adoption/handshake can land before we bounce
+  await new Promise(r => setTimeout(r, 150));
+  if (isAuthed()) {
     reveal();
-    return;
+  } else {
+    const next = location.pathname + location.search + location.hash;
+    location.replace("/?next=" + encodeURIComponent(next));
   }
 
   if (isAuthed()) {

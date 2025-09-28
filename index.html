@@ -97,25 +97,27 @@
     }
 
     async function proceed() {
-      // 1) fetch current version (never cached)
-      let v = "";
-      try {
-        const r = await fetch("version.json?ts=" + Date.now(), { cache: "no-store" });
-        if (r.ok) { const d = await r.json(); v = String(d.v || ""); }
-      } catch (_) {}
+    // 1) fetch current version (never cached)
+    let v = "";
+    try {
+      const r = await fetch("version.json?ts=" + Date.now(), { cache: "no-store" });
+      if (r.ok) { const d = await r.json(); v = String(d.v || ""); }
+    } catch (_) {}
 
-      // 2) register SW (optional; keeps refreshes fresh)
-      if ("serviceWorker" in navigator) {
-        try { await navigator.serviceWorker.register("sw.js?v=" + encodeURIComponent(v)); } catch {}
-      }
-
-      // 3) redirect to next target or start page, carrying ?v=
-      const params = new URLSearchParams(location.search);
-      const next = params.get("next");
-      let target = next ? next : START_PAGE;
-      if (v) target += (target.includes("?") ? "&" : "?") + "v=" + encodeURIComponent(v);
-      location.replace(target);
+    // 2) register SW (optional; keeps refreshes fresh)
+    if ("serviceWorker" in navigator) {
+      try { await navigator.serviceWorker.register("sw.js?v=" + encodeURIComponent(v)); } catch {}
     }
+
+    // 3) build target URL safely and add v only if missing
+    const params = new URLSearchParams(location.search);
+    const nextStr = params.get("next") || "SM2ARTA%20Admin%20Guide.html";
+    const url = new URL(nextStr, location.origin);   // handles "/path?...", "path?...",
+    if (v && !url.searchParams.has("v")) {           // add v only once
+      url.searchParams.set("v", v);
+    }
+    location.replace(url.pathname + url.search + url.hash);
+  }
 
     function showGate() {
       document.getElementById("gate").hidden = false;
