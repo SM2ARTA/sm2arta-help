@@ -38,16 +38,20 @@
   <!-- JsTree styles -->
   <link href="vendors/jstree-3.3.10/themes/default/style.min.css" rel="stylesheet"/>
 
-  <!-- Hnd styles with cache-buster -->
-  <link href="css/layout.min.css?v=20250928122952" rel="stylesheet" />
-  <link href="css/effects.min.css?v=20250928122952" rel="stylesheet" />
+  
+  
+    <!-- Hnd styles (no cache-buster here, to keep nav working) -->
+  <link href="css/layout.min.css" rel="stylesheet" />
+  <link href="css/effects.min.css" rel="stylesheet" />
+  <link href="css/theme-light-blue.min.css" rel="stylesheet" />
+  <link href="css/print.min.css" rel="stylesheet" media="print" />
+  <style type="text/css">nav { width: 350px} @media screen and (min-width:769px) { body.md-nav-expanded div#main { margin-left: 350px} body.md-nav-expanded header { padding-left: 364px} }</style>
+  <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
 
-  <link href="css/theme-light-blue.min.css?v=20250928122952" rel="stylesheet" />
+  <!-- Content style (cache-busted so your changes always apply) -->
+  <link href="css/hnd.content.css?v=20250928124008" rel="stylesheet" />
 
-  <link href="css/print.min.css?v=20250928122952" rel="stylesheet" />
 
-  <!-- Content style -->
-  <link href="css/hnd.content.css?v=20250928122952" rel="stylesheet" />
 
 
 <!-- >>> ADDED: Responsive images + modal image styling -->
