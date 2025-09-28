@@ -4,6 +4,33 @@
 <html lang="en">
 
 <head>
+
+<script>
+(function () {
+  // If not authed, hide immediately (no paint) and bounce to /?next=...
+  try {
+    var authed = sessionStorage.getItem('sm_help_authed_session') === '1' ||
+                 localStorage.getItem('sm_help_authed_persist') === '1';
+    if (!authed) {
+      document.documentElement.style.cssText = 'visibility:hidden!important;background:#0b1220!important';
+      var here = location.pathname.replace(/^\//,'') + location.search + location.hash;
+
+      // preserve a valid version param if present
+      var v = new URLSearchParams(location.search).get('v');
+      var u = '/?next=' + encodeURIComponent(here) +
+              (v && /^\d{4}-\d{2}-\d{2}-\d{6}$/.test(v) ? '&v=' + encodeURIComponent(v) : '');
+
+      location.replace(u);
+    }
+  } catch (e) {
+    // If storage is blocked for any reason, still avoid flicker
+    document.documentElement.style.cssText = 'visibility:hidden!important;background:#0b1220!important';
+    var here2 = location.pathname.replace(/^\//,'') + location.search + location.hash;
+    location.replace('/?next=' + encodeURIComponent(here2));
+  }
+})();
+</script>
+
   <!-- VERY FIRST TAG inside <head>, no async/defer -->
   <script src="/content-guard.js"></script>
   <meta charset="utf-8" />
@@ -193,7 +220,7 @@
 <p class="rvps2"><span class="rvts6">Common actions:</span></p>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside;">
  <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside;">
-  <li style="list-style-image: url('lib/35.png')" class="rvps6 noindent"><a class="rvts15" href="CreatingProjects.html">Creating Projects</a><span class="rvts6"></span></li>
+  <li style="list-style-image: url('lib/36.png')" class="rvps6 noindent"><a class="rvts15" href="CreatingProjects.html">Creating Projects</a><span class="rvts6"></span></li>
  </ul>
 </ul>
 
