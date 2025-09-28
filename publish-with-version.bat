@@ -13,10 +13,6 @@ set GIT=git
   if exist "%GHDPATH%\resources\app\git\cmd\git.exe" set GIT="%GHDPATH%\resources\app\git\cmd\git.exe"
 )
 
-cd /d "%REPO%"
-
-rem --- run the injector BEFORE staging files
-"%PWSH%" -NoProfile -ExecutionPolicy Bypass -File "%REPO%\inject-guard.ps1"
 
 rem --- keep GitHub Pages helpers (in case export overwrote them)
 echo guide.smmarta.com> CNAME
