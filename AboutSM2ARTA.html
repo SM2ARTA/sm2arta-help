@@ -1,0 +1,414 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="generator" content="HelpNDoc Professional Edition 10.0.0.105">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="favicon.ico"/>
+
+  <title>About SM2ARTA</title>
+  <meta name="description" content="" /> 
+  <meta name="keywords" content="">
+
+
+
+  
+  
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="About SM2ARTA">
+  <meta name="twitter:description" content="">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="About SM2ARTA" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="SM2ARTA Admin Guide" /> 
+
+  <!-- Bootstrap CSS -->
+  <link href="vendors/bootstrap-5.3.7/bootstrap.min.css" rel="stylesheet"/>
+  <link href="vendors/bootstrap-icons-1.13.1/bootstrap-icons.min.css" rel="stylesheet"/>
+
+  <!-- JsTree styles -->
+  <link href="vendors/jstree-3.3.10/themes/default/style.min.css" rel="stylesheet"/>
+
+  
+  
+    <!-- Hnd styles (no cache-buster here, to keep nav working) -->
+  <link href="css/layout.min.css" rel="stylesheet" />
+  <link href="css/effects.min.css" rel="stylesheet" />
+  <link href="css/theme-light-blue.min.css" rel="stylesheet" />
+  <link href="css/print.min.css" rel="stylesheet" media="print" />
+  <style type="text/css">nav { width: 350px} @media screen and (min-width:769px) { body.md-nav-expanded div#main { margin-left: 350px} body.md-nav-expanded header { padding-left: 364px} }</style>
+  <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
+
+  <!-- Content style (cache-busted so your changes always apply) -->
+  <link href="css/hnd.content.css?v=20251004193534" rel="stylesheet" />
+
+
+
+
+<!-- >>> ADDED: Responsive images + modal image styling -->
+<style>
+  /* Responsive only; preserves HND alignment/floats */
+.main-content img,
+.main-content figure img {
+  max-width: 100% !important;
+  height: auto !important;
+  width: auto !important;
+  /* do not set display or margin here */
+}
+
+/* zoom cursor if you use it */
+.main-content img[data-zoom]{ cursor: zoom-in; }
+
+/* images inside modal */
+#hndModal .modal-body img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+</style>
+
+
+
+  <!-- <<< ADDED -->
+
+  
+
+
+
+<script src="/guard.js"></script>
+</head>
+
+<body class="md-nav-expanded">
+
+
+
+  
+
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible">Skip to main content</a>
+  </div>
+
+  <header class="headroom">
+    <button class="hnd-toggle btn btn-default">
+      <span class="visually-hidden">Toggle navigation</span>
+      <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>        
+    </button>
+    <h1>SM2ARTA Admin Guide</h1>
+    
+  </header>
+
+  <nav id="panel-left" class="md-nav-expanded">
+    <!-- Nav tabs -->
+    <ul class="tab-tabs nav nav-tabs" role="tablist">
+      <li id="nav-close" role="presentation"> 
+        <button class="hnd-toggle btn btn-default" aria-label="close">
+          <span class="bi bi-x" aria-hidden="true"></span>
+        </button>
+      </li>
+      
+	  
+        <li role="presentation" class="nav-item tab">
+            <a href="#contents" id="tab-contents" class="nav-link active" role="tab" data-bs-toggle="tab" data-bs-target="#contents" aria-controls="contents" aria-selected="true">
+                <i class="bi bi-list-ul"></i>
+                Contents
+            </a>
+        </li>
+      
+        <li role="presentation" class="nav-item tab">
+            <a href="#index" id="tab-index" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#index" aria-controls="index" aria-selected="false">
+                <i class="bi bi-asterisk"></i>
+                Index
+            </a>
+        </li>
+      
+        <li role="presentation" class="nav-item tab">
+            <a href="#search" id="tab-search" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#search" aria-controls="search" aria-selected="false">
+                <i class="bi bi-search"></i>
+                Search
+            </a>
+        </li>
+      
+    </ul>  <!-- /Nav tabs -->
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+	  
+      <div role="tabpanel" class="tab-pane active" id="contents">
+        <div id="toc" class="tree-container unselectable"
+            data-url="_toc.json"
+            data-openlvl="2"
+        >
+            
+        </div>
+      </div>  <!-- /contents-->
+      
+      <div role="tabpanel" class="tab-pane" id="index">
+        <div id="keywords" class="tree-container unselectable"
+            data-url="_keywords.json"
+            data-openlvl="1"
+        >
+            
+        </div>
+      </div>  <!-- /index-->
+      
+      <div role="tabpanel" class="tab-pane" id="search">
+        <div class="search-content">
+          <div class="search-input">
+            <form id="search-form">
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="input-search" name="input-search" placeholder="Search..." aria-label="Search..." />
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit" aria-label="Search...">
+                      <span class="bi bi-search" aria-hidden="true"></span>
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </form>
+          </div>  <!-- /search-input -->
+          <div class="search-result">
+            <div id="search-info"></div>
+            <div class="tree-container unselectable" id="search-tree"></div>
+          </div>  <!-- /search-result -->
+        </div>  <!-- /search-content -->
+      </div>  <!-- /search-->
+      
+    </div>  <!-- /Tab panes -->
+
+  </nav>
+
+  <div id="main">
+
+    <article>
+        <div id="topic-content" class="container-fluid" 
+		  data-hnd-id="AboutSM2ARTA"
+		  data-hnd-context="19"
+		  data-hnd-title="About SM2ARTA"
+		>
+            
+                <div class="navigation">
+                    <ol class="breadcrumb">
+                        <li><a href="Introduction.html">Introduction</a></li>
+                    </ol>
+                    <div class="nav-arrows">
+                        <div class="btn-group btn-group" role="group"><a class="btn btn-default" href="Introduction.html" title="Introduction" role="button"><span class="bi bi-chevron-up" aria-hidden="true"></span></a><a class="btn btn-default" href="AboutThisGuide.html" title="About This Guide" role="button"><span class="bi bi-chevron-left" aria-hidden="true"></span></a><a class="btn btn-default" href="ReleaseNotes.html" title="Release Notes" role="button"><span class="bi bi-chevron-right" aria-hidden="true"></span></a></div>
+                    </div>
+                </div> 
+            
+
+            <a id="main-content"></a>
+
+            
+
+            <div class="main-content">
+                
+<h1 class="rvps8"><span class="rvts0"><span class="rvts15">About the System</span></span></h1>
+<h3 class="rvps9"><span class="rvts0"><span class="rvts16">System Overview</span></span></h3>
+<p class="rvps2"><span class="rvts11"><br/></span></p>
+<p class="rvps2"><span class="rvts17">SM2ARTA (System for Materials Management and Asset Tracking)</span><span class="rvts6"> is a cloud-based platform developed to support </span><span class="rvts17">material planning, asset tracking, and logistics coordination</span><span class="rvts6"> for large-scale events.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">The system allows users to:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">Consolidate material requirements across multiple venues and functional areas</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Plan, monitor, and optimize procurement, storage, and dissolution workflows</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Track materials and assets throughout their lifecycle</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Generate real-time dashboards and operational reports for decision-making</span></li>
+ <li class="rvps2 noindent"><span class="rvts17">Easily manage continuous changes in material requirements</span><span class="rvts6">, ensuring that all updates are instantly reflected across relevant planning, reporting, and logistics modules</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps9"><span class="rvts0"><span class="rvts16">System Architecture and Technology Stack</span></span></h3>
+<p class="rvps2"><span class="rvts17"><br/></span></p>
+<p class="rvps2"><span class="rvts6">SM2ARTA uses modern, open-source technologies designed for high performance, reliability, and security:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts17">Back-end Framework:</span><span class="rvts6"> PHP (Laravel)</span></li>
+ <li class="rvps2 noindent"><span class="rvts17">Database Engine:</span><span class="rvts6"> PostgreSQL</span></li>
+ <li class="rvps2 noindent"><span class="rvts17">Operating System:</span><span class="rvts6"> Linux (Ubuntu)</span></li>
+ <li class="rvps2 noindent"><span class="rvts17">Containerization:</span><span class="rvts6"> Docker-based micro-service infrastructure</span></li>
+ <li class="rvps2 noindent"><span class="rvts17">Web Server:</span><span class="rvts6"> NGINX within Docker containers</span></li>
+ <li class="rvps2 noindent"><span class="rvts17">Email Relay:</span><span class="rvts6"> SendGrid — used exclusively for sending </span><span class="rvts17">password reset links</span></li>
+</ul>
+<p class="rvps2"><span class="rvts17"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Each service runs within its own Docker container, allowing isolation, scalability, and simplified updates during development and production deployment.</span></p>
+<p class="rvps2"><span class="rvts17"><br/></span></p>
+<h3 class="rvps9"><span class="rvts0"><span class="rvts16">Hosting and Infrastructure</span></span></h3>
+<p class="rvps2"><span class="rvts11"><br/></span></p>
+<p class="rvps2"><span class="rvts6">SM2ARTA is hosted on </span><span class="rvts17">OVH Cloud Virtual Private Servers (VPS)</span><span class="rvts6"> located in the </span><span class="rvts17">OVH Frankfurt (Germany)</span><span class="rvts6"> data center.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">The hosting environment offers:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">ISO/IEC 27001–certified and </span><span class="rvts17">GDPR-compliant</span><span class="rvts6"> infrastructure</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Encrypted SSD storage with automated backups</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">OVH Edge Network Firewall for inbound traffic filtering</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Continuous uptime and performance monitoring</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Secure access through encrypted SSH and VPN connections</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">The German hosting location ensures data residency within the </span><span class="rvts17">European Union</span><span class="rvts6">, compliant with EU data protection regulations.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps9"><span class="rvts0"><span class="rvts16">Web Application Firewall (WAF)</span></span></h3>
+<p class="rvps2"><span class="rvts11"><br/></span></p>
+<p class="rvps2"><span class="rvts6">All inbound traffic to SM2ARTA is routed through the </span><span class="rvts17">Cloudflare Web Application Firewall (WAF)</span><span class="rvts6">, which acts as a secure global proxy between users and the application.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Cloudflare provides:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">Protection against web vulnerabilities (SQLi, XSS, CSRF, etc.)</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">DDoS and bot mitigation</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">IP masking of backend servers (origin IPs remain hidden)</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Enforced HTTPS and TLS 1.3 encryption</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Only verified and filtered traffic from Cloudflare’s global edge network can reach the SM2ARTA servers, ensuring security and high availability.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps9"><span class="rvts0"><span class="rvts16">User Access and Authentication</span></span></h3>
+<p class="rvps2"><span class="rvts11"><br/></span></p>
+<p class="rvps2"><span class="rvts6">SM2ARTA uses a </span><span class="rvts17">role-based access control model</span><span class="rvts6"> to manage user privileges effectively:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts17">Material Planner:</span><span class="rvts6"> System administrator with full access.</span></li>
+ <li class="rvps2 noindent"><span class="rvts17">Functional Material Planner:</span><span class="rvts6"> Functional area representative with permissions to manage materials within their scope.</span></li>
+ <li class="rvps2 noindent"><span class="rvts17">Venue Logistics Manager:</span><span class="rvts6"> Advanced user with limited access to Material Planning and Asset Tracking modules.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Additional safeguards include:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts17">Two-Factor Authentication (2FA)</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Encrypted credentials and secure password storage</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Pre-activation workflow (users are configured before activation)</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps9"><span class="rvts0"><span class="rvts16">Data Security and Protection</span></span></h3>
+<p class="rvps2"><span class="rvts11"><br/></span></p>
+<p class="rvps2"><span class="rvts6">All personal and operational data are encrypted </span><span class="rvts17">in transit</span><span class="rvts6"> (via HTTPS/TLS) and </span><span class="rvts17">at rest</span><span class="rvts6"> (AES-256).</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">SM2ARTA complies with </span><span class="rvts17">GDPR</span><span class="rvts6"> data protection principles and enforces strict access control policies.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Personal data (such as names, emails, and contact numbers) is pseudonymized or encrypted using secure key vaults to protect user privacy.</span></p>
+<p class="rvps2"><span class="rvts11"><br/></span></p>
+<h3 class="rvps9"><span class="rvts0"><span class="rvts16">Data Residency and Compliance</span></span></h3>
+<p class="rvps2"><span class="rvts17"><br/></span></p>
+<p class="rvps2"><span class="rvts6">All system data is stored exclusively in the </span><span class="rvts17">OVH Frankfurt (Germany)</span><span class="rvts6"> data center, ensuring compliance with </span><span class="rvts17">European Union (EU)</span><span class="rvts6"> data protection laws.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Cross-border access from the </span><span class="rvts17">United States</span><span class="rvts6"> and other regions occurs securely through encrypted HTTPS sessions routed via Cloudflare’s edge network.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">SM2ARTA adheres to international standards of </span><span class="rvts17">confidentiality</span><span class="rvts6">, </span><span class="rvts17">integrity</span><span class="rvts6">, and </span><span class="rvts17">lawful processing</span><span class="rvts6"> of data in line with </span><span class="rvts17">GDPR requirements</span><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts11"><br/></span></p>
+<h3 class="rvps9"><span class="rvts0"><span class="rvts16">System Maintenance and Monitoring</span></span></h3>
+<p class="rvps2"><span class="rvts17"><br/></span></p>
+<p class="rvps2"><span class="rvts6">The SM2ARTA technical team continuously monitors system health, performance, and security.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Routine maintenance includes:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">Regular OS and software updates</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Docker container patch management</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Scheduled vulnerability scans and penetration tests</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Encrypted off-site backups</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Comprehensive audit trails and performance monitoring</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">In addition, </span><span class="rvts17">automated vulnerability scans</span><span class="rvts6"> are periodically performed to identify potential security risks in the application.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">These authorized tests are conducted using approved third-party tools such as </span><span class="rvts17">HostedScan.io</span><span class="rvts6"> and </span><span class="rvts17">OWASP ZAP</span><span class="rvts6">, under controlled conditions and with restricted test accounts.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">All vulnerability testing is carried out in a </span><span class="rvts17">dedicated test environment</span><span class="rvts6">, separate from production servers, to ensure that live operations are never affected.</span><span class="rvts6"></span></p>
+
+            </div>
+            
+            
+        </div>  <!-- /#topic-content -->
+    </article>
+
+    <footer></footer>
+
+  </div>  <!-- /#main -->
+
+  <div class="mask" data-bs-toggle="sm-nav-expanded"></div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="hndModal" tabindex="-1" role="dialog" aria-labelledby="hndModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="hndModalLabel"></h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary modal-btn-close" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Splitter -->
+  <div id="hnd-splitter" style="left: 350px"></div>  
+
+  <!-- Scripts -->
+  <script src="vendors/jquery-3.7.1/jquery.min.js"></script>
+  <script src="vendors/bootstrap-5.3.7/bootstrap.bundle.min.js"></script>
+  <script src="vendors/markjs-8.11.1/jquery.mark.min.js"></script>
+  <script src="vendors/uri-1.19.11/uri.min.js"></script>
+  <script src="vendors/imageMapResizer-1.0.10/imageMapResizer.min.js"></script>
+  <script src="vendors/headroom-0.11.0/headroom.min.js"></script>
+  <script src="vendors/jstree-3.3.10/jstree.min.js"></script>  
+  <script src="vendors/interactjs-1.9.22/interact.min.js"></script>  
+
+  <!-- HelpNDoc scripts -->
+  <script src="_translations.js"></script>
+  <script src="js/hndsd.min.js"></script>
+  <script src="js/hndse.min.js"></script>
+  <script src="js/app.min.js"></script>
+
+  <!-- >>> ADDED: Simple click-to-zoom via existing Bootstrap modal.
+       Usage: add data-zoom to any <img>. Optional data-full="bigger-file.png". -->
+  <script>
+  (function () {
+    document.addEventListener('click', function (ev) {
+      var img = ev.target.closest('.main-content img[data-zoom]');
+      if (!img) return;
+
+      ev.preventDefault();
+
+      var fullSrc = img.getAttribute('data-full') || img.currentSrc || img.src;
+      var alt = img.getAttribute('alt') || 'Image';
+      var modalEl = document.getElementById('hndModal');
+
+      // fill modal
+      modalEl.querySelector('#hndModalLabel').textContent = alt;
+      modalEl.querySelector('.modal-body').innerHTML =
+        '<img src="' + fullSrc.replace(/"/g, '&quot;') + '" alt="' + alt.replace(/"/g, '&quot;') + '">';
+
+      // show modal (Bootstrap 5)
+      var bsModal = bootstrap.Modal.getOrCreateInstance(modalEl);
+      bsModal.show();
+    });
+  })();
+  </script>
+  <!-- <<< ADDED -->
+
+  <!-- Init script -->
+  <script src="_topic_init.js"></script>
+
+
+
+</body>
+
+</html>
+
