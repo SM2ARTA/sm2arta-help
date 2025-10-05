@@ -123,12 +123,12 @@ span.rvts23
 }
 span.rvts24
 {
- font-size: 11pt;
- font-weight: bold;
+ font-style: italic;
 }
 span.rvts25
 {
- font-style: italic;
+ font-size: 11pt;
+ font-weight: bold;
 }
 a.rvts26, span.rvts26
 {
@@ -211,6 +211,4 @@ p,ul,ol /* Paragraph Style */
 .list1 {text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: circle;}
 .list2 {text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: square;}
 .list3 {text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: disc;}
-.list4 {text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside;}
-.list5 {text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside;}
 li.noindent { margin-left: 0; padding-left: 0; }
