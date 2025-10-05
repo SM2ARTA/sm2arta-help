@@ -136,6 +136,15 @@ a.rvts26, span.rvts26
  color: #0000ff;
  text-decoration: underline;
 }
+span.rvts27
+{
+ background-color: #ffff00;
+}
+span.rvts28
+{
+ font-weight: bold;
+ background-color: #ffff00;
+}
 /* ========== Para Styles ========== */
 p,ul,ol /* Paragraph Style */
 {
@@ -205,6 +214,13 @@ p,ul,ol /* Paragraph Style */
 .rvps11
 {
  margin: 0px 0px 0px 24px;
+}
+.rvps12
+{
+ text-align: justify;
+ text-justify: inter-word;
+ text-align-last: auto;
+ line-height: 1.80;
 }
 /* ========== Lists ========== */
 .list0 {text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;}
