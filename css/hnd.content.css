@@ -133,20 +133,31 @@ span.rvts25
  font-size: 11pt;
  font-weight: bold;
 }
-a.rvts26, span.rvts26
+span.rvts26
+{
+ font-size: 7pt;
+ vertical-align: super;
+}
+a.rvts27, span.rvts27
 {
  font-style: italic;
  color: #0000ff;
  text-decoration: underline;
 }
-span.rvts27
+span.rvts28
 {
  background-color: #ffff00;
 }
-span.rvts28
+span.rvts29
 {
  font-weight: bold;
  background-color: #ffff00;
+}
+a.rvts30, span.rvts30
+{
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
 }
 /* ========== Para Styles ========== */
 p,ul,ol /* Paragraph Style */
@@ -228,6 +239,9 @@ p,ul,ol /* Paragraph Style */
  margin: 0px 0px 0px 24px;
 }
 .rvps13
+{
+}
+.rvps14
 {
  text-align: justify;
  text-justify: inter-word;
