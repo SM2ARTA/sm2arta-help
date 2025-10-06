@@ -94,68 +94,80 @@ span.rvts17
 }
 span.rvts18
 {
- font-size: 16pt;
- font-weight: bold;
+ background-color: #ffff00;
 }
 span.rvts19
 {
+ font-size: 13pt;
  font-weight: bold;
+ background-color: #ffff00;
 }
 span.rvts20
 {
  font-size: 13pt;
  font-weight: bold;
 }
-a.rvts21, span.rvts21
+span.rvts21
+{
+ font-weight: bold;
+}
+span.rvts22
+{
+ font-size: 16pt;
+ font-weight: bold;
+}
+a.rvts23, span.rvts23
 {
  font-size: 13pt;
  font-weight: bold;
  color: #0000ff;
  text-decoration: underline;
 }
-a.rvts22, span.rvts22
+a.rvts24, span.rvts24
 {
  font-size: 12pt;
  color: #0000ff;
  text-decoration: underline;
 }
-span.rvts23
+a.rvts25, span.rvts25
 {
- font-size: 11pt;
- font-weight: bold;
+ font-size: 9pt;
+ color: #0000ff;
+ text-decoration: underline;
 }
-span.rvts24
+span.rvts26
 {
  font-style: italic;
 }
-span.rvts25
+span.rvts27
+{
+ font-weight: bold;
+ background-color: #ffff00;
+}
+a.rvts28, span.rvts28
+{
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts29
 {
  font-size: 11pt;
  font-weight: bold;
 }
-span.rvts26
+span.rvts30
+{
+ font-size: 11pt;
+ font-weight: bold;
+}
+span.rvts31
 {
  font-size: 7pt;
  vertical-align: super;
 }
-a.rvts27, span.rvts27
+a.rvts32, span.rvts32
 {
  font-style: italic;
- color: #0000ff;
- text-decoration: underline;
-}
-span.rvts28
-{
- background-color: #ffff00;
-}
-span.rvts29
-{
- font-weight: bold;
- background-color: #ffff00;
-}
-a.rvts30, span.rvts30
-{
- font-weight: bold;
  color: #0000ff;
  text-decoration: underline;
 }
@@ -228,11 +240,10 @@ p,ul,ol /* Paragraph Style */
 }
 .rvps11
 {
- text-align: left;
- text-indent: 0px;
- break-after: avoid;
- padding: 0px 0px 0px 0px;
- margin: 16px 0px 4px 0px;
+ text-align: justify;
+ text-justify: inter-word;
+ text-align-last: auto;
+ line-height: 1.80;
 }
 .rvps12
 {
@@ -240,13 +251,14 @@ p,ul,ol /* Paragraph Style */
 }
 .rvps13
 {
+ text-align: left;
+ text-indent: 0px;
+ break-after: avoid;
+ padding: 0px 0px 0px 0px;
+ margin: 16px 0px 4px 0px;
 }
 .rvps14
 {
- text-align: justify;
- text-justify: inter-word;
- text-align-last: auto;
- line-height: 1.80;
 }
 /* ========== Lists ========== */
 .list0 {text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;}
@@ -254,4 +266,6 @@ p,ul,ol /* Paragraph Style */
 .list2 {text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: square;}
 .list3 {text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: disc;}
 .list4 {text-indent: 0px; padding: 0; margin: 0 0 0 40px; list-style-position: outside; list-style-type: disc;}
+.list5 {text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside;}
+.list6 {text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside;}
 li.noindent { margin-left: 0; padding-left: 0; }
