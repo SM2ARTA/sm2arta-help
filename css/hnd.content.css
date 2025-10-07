@@ -129,24 +129,24 @@ a.rvts24, span.rvts24
  color: #0000ff;
  text-decoration: underline;
 }
-a.rvts25, span.rvts25
-{
- font-size: 9pt;
- color: #0000ff;
- text-decoration: underline;
-}
-span.rvts26
+span.rvts25
 {
  font-style: italic;
 }
-span.rvts27
+span.rvts26
 {
  font-weight: bold;
  background-color: #ffff00;
 }
-a.rvts28, span.rvts28
+a.rvts27, span.rvts27
 {
  font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
+}
+a.rvts28, span.rvts28
+{
+ font-size: 9pt;
  color: #0000ff;
  text-decoration: underline;
 }
