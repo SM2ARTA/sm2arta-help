@@ -144,11 +144,10 @@ a.rvts27, span.rvts27
  color: #0000ff;
  text-decoration: underline;
 }
-a.rvts28, span.rvts28
+span.rvts28
 {
- font-size: 9pt;
- color: #0000ff;
- text-decoration: underline;
+ font-style: italic;
+ background-color: #ffff00;
 }
 span.rvts29
 {
@@ -256,9 +255,6 @@ p,ul,ol /* Paragraph Style */
  break-after: avoid;
  padding: 0px 0px 0px 0px;
  margin: 16px 0px 4px 0px;
-}
-.rvps14
-{
 }
 /* ========== Lists ========== */
 .list0 {text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;}
