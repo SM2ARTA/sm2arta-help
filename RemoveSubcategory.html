@@ -49,7 +49,7 @@
   <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
 
   <!-- Content style (cache-busted so your changes always apply) -->
-  <link href="css/hnd.content.css?v=20251008084852" rel="stylesheet" />
+  <link href="css/hnd.content.css?v=20251008194541" rel="stylesheet" />
 
 
 
@@ -202,7 +202,7 @@
                         <li><a href="SettingUpSM2ARTA.html">Setting Up SM2ARTA</a></li><li><a href="Directory.html">Directory</a></li><li><a href="Spaces.html">Spaces</a></li><li><a href="LogicalSpaces.html">Logical Spaces</a></li><li><a href="Subcategories.html">Subcategories</a></li>
                     </ol>
                     <div class="nav-arrows">
-                        <div class="btn-group btn-group" role="group"><a class="btn btn-default" href="Subcategories.html" title="Subcategories" role="button"><span class="bi bi-chevron-up" aria-hidden="true"></span></a><a class="btn btn-default" href="CreateSubcategory.html" title="Create Subcategory" role="button"><span class="bi bi-chevron-left" aria-hidden="true"></span></a><a class="btn btn-default" href="ViewLogicalSpaces.html" title="View Logical Spaces" role="button"><span class="bi bi-chevron-right" aria-hidden="true"></span></a></div>
+                        <div class="btn-group btn-group" role="group"><a class="btn btn-default" href="Subcategories.html" title="Subcategories" role="button"><span class="bi bi-chevron-up" aria-hidden="true"></span></a><a class="btn btn-default" href="EditSubcategory.html" title="Edit Subcategory" role="button"><span class="bi bi-chevron-left" aria-hidden="true"></span></a><a class="btn btn-default" href="ViewLogicalSpaces.html" title="View Logical Spaces" role="button"><span class="bi bi-chevron-right" aria-hidden="true"></span></a></div>
                     </div>
                 </div> 
             
@@ -213,25 +213,31 @@
 
             <div class="main-content">
                 
-<h3 class="rvps9"><span class="rvts0"><span class="rvts20">Remove Type</span></span></h3>
+<h3 class="rvps9"><span class="rvts0"><span class="rvts20">Remove Subcategory</span></span></h3>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<p class="rvps2"><span class="rvts6">You can only remove </span><span class="rvts21">Types</span><span class="rvts6"> that are not assigned to any </span><span class="rvts21">Venues.</span></p>
+<p class="rvps2"><span class="rvts6">You can only remove a </span><span class="rvts21">Subcategory</span><span class="rvts6"> if no </span><span class="rvts21">Logical Spaces</span><span class="rvts6"> have been created using it. If any exist, the </span><span class="rvts21">Delete</span><span class="rvts6"> icon will be inactive — you must first delete all </span><span class="rvts21">Logical Spaces</span><span class="rvts6"> linked to this </span><span class="rvts21">Subcategory</span><span class="rvts6">.</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<p class="rvps2"><span class="rvts6">If a </span><span class="rvts21">Type</span><span class="rvts6"> is linked to </span><span class="rvts21">Venues</span><span class="rvts6">, the </span><span class="rvts21">Delete</span><span class="rvts6"> icon will be inactive to prevent data loss and maintain system integrity.</span></p>
+<p class="rvps2"><span class="rvts6">This restriction is implemented for </span><span class="rvts11">data integrity</span><span class="rvts6"> to ensure that no </span><span class="rvts11">Logical Spaces</span><span class="rvts6"> are accidentally removed when managing </span><span class="rvts21">Subcategories.</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<p class="rvps2"><span class="rvts6">1. Go to </span><span class="rvts21">Venues - Types</span><span class="rvts6"> in the</span><span class="rvts21"> Navigation Panel.</span></p>
+<p class="rvps2"><span class="rvts6">1. Go to</span><span class="rvts21"> Spaces - Logical spaces - Categories</span><span class="rvts6"> in the </span><span class="rvts21">Navigation Panel.</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<p class="rvps2"><img alt="" style="width : 1693px; height : 613px; padding : 1px;" src="lib/Types%20-%20Go%20To.png"></p>
+<p class="rvps2"><img alt="" style="width : 1703px; height : 594px; padding : 1px;" src="lib/Categories%20-%20Go%20To.png"></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<p class="rvps2"><span class="rvts6">2. Click the </span><span class="rvts15">active</span><span class="rvts11"> Delete</span><span class="rvts15"> icon in the </span><span class="rvts11">Action Column</span><span class="rvts6"> next to the</span><span class="rvts21"> Type</span><span class="rvts6"> you want to remove.</span></p>
+<p class="rvps2"><span class="rvts6">2. Click on the </span><span class="rvts21">Category</span><span class="rvts6"> in which the </span><span class="rvts21">Subcategory</span><span class="rvts6"> you want to remove is located.</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<p class="rvps2"><span class="rvts6">If the icon is inactive, it means the </span><span class="rvts21">Type</span><span class="rvts6"> is linked to </span><span class="rvts21">Venues</span><span class="rvts6">.</span></p>
+<p class="rvps2"><img alt="" style="width : 1698px; height : 636px; padding : 1px;" src="lib/Categories%20-%20Overview%20-%20Interface.png"></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<p class="rvps2"><img alt="" style="width : 1420px; height : 457px; padding : 1px;" src="lib/Types%20-%20Delete%20-%20Overview.png"></p>
+<p class="rvps2"><span class="rvts6">3. Click the </span><span class="rvts15">active</span><span class="rvts11"> Delete</span><span class="rvts15"> icon in the </span><span class="rvts11">Action Column</span><span class="rvts6"> next to the</span><span class="rvts21"> Subcategory</span><span class="rvts6"> you want to remove.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">If the </span><span class="rvts21">Delete</span><span class="rvts6"> icon is inactive, it means the </span><span class="rvts21">Subcategory</span><span class="rvts6"> is not empty and there is at least one </span><span class="rvts21">Logical Space</span><span class="rvts6"> created inside it.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">In this case, you must first delete all </span><span class="rvts21">Logical Spaces</span><span class="rvts6"> before the </span><span class="rvts21">Subcategory</span><span class="rvts6"> can be removed.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="width : 1450px; height : 491px; padding : 1px;" src="lib/Subcategories%20-%20Delete%20-%20Overview.png"></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts6">3. Confirm deletion.</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<p class="rvps2"><img alt="" style="width : 490px; height : 150px; padding : 1px;" src="lib/Types%20-%20Delete%20-%20Confirmation.png"><span class="rvts6"></span></p>
+<p class="rvps2"><img alt="" style="width : 442px; height : 132px; padding : 1px;" src="lib/Subcategories%20-%20Delete%20-%20Confirmation.png"><span class="rvts6"></span></p>
 
             </div>
             
