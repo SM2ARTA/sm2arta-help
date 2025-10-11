@@ -49,7 +49,7 @@
   <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
 
   <!-- Content style (cache-busted so your changes always apply) -->
-  <link href="css/hnd.content.css?v=20251011134033" rel="stylesheet" />
+  <link href="css/hnd.content.css?v=20251011134351" rel="stylesheet" />
 
 
 
@@ -95,8 +95,15 @@
     const style = `
       /* hide navigation pane */
       .hnd-toc, #toc, .sidebar, .splitter { display:none !important; }
-      /* hide header & breadcrumbs */
+
+      /* hide header, breadcrumbs, and footer */
       .hnd-header, .hnd-breadcrumb, .breadcrumb, header, nav, .hnd-footer { display:none !important; }
+
+      /* hide topic navigation buttons (up/prev/next) */
+      .hnd-topicnavigation, .topicnavigation, .hnd-navbuttons, .navigation, .next-topic, .prev-topic {
+        display:none !important;
+      }
+
       /* stretch content full width */
       .hnd-content, #content, .topic-container, main {
         width:100% !important; margin:0 !important; padding:2rem !important;
@@ -108,6 +115,7 @@
   }
 })();
 </script>
+
 
 
 
@@ -310,7 +318,7 @@
 <p class="rvps11"><a class="rvts12" href="ManageUserAccess.html">7. Manage User Access</a></p>
 <p class="rvps11"><a class="rvts12" href="ExportVenuesList.html">8. Export Venues List</a></p>
 <p class="rvps2"><span class="rvts15"><br/></span></p>
-<p class="rvps11"><img alt="" style="width : 1701px; height : 592px; padding : 1px;" src="lib/Venues%20-%20Overview%20-%20Map.png" usemap="#7EED2A013C67423080028C5697A70089"><map name="7EED2A013C67423080028C5697A70089"><area shape="rect" coords="11,325,92,345" alt="1" title="1" href="Types.html"><area shape="rect" coords="16,357,95,378" alt="2" title="2" href="Clusters.html"><area shape="rect" coords="21,292,103,313" alt="3" title="3" href="ViewVenues.html"><area shape="rect" coords="296,122,363,187" alt="4" title="4" href="CreateVenue.html"><area shape="rect" coords="1570,368,1587,424" alt="5" title="5" href="EditVenue.html"><area shape="rect" coords="1600,368,1620,422" alt="6" title="6" href="RemoveVenue.html"><area shape="rect" coords="1629,367,1652,426" alt="7" title="7" href="ManageUserAccess.html"><area shape="rect" coords="371,122,402,185" alt="8" title="8" href="ExportVenuesList.html"></map><span class="rvts6"></span></p>
+<p class="rvps11"><img alt="" style="width : 1701px; height : 592px; padding : 1px;" src="lib/Venues%20-%20Overview%20-%20Map.png" usemap="#1EF49FA085E9476687CC6076E4732196"><map name="1EF49FA085E9476687CC6076E4732196"><area shape="rect" coords="11,325,92,345" alt="1" title="1" href="Types.html"><area shape="rect" coords="16,357,95,378" alt="2" title="2" href="Clusters.html"><area shape="rect" coords="21,292,103,313" alt="3" title="3" href="ViewVenues.html"><area shape="rect" coords="296,122,363,187" alt="4" title="4" href="CreateVenue.html"><area shape="rect" coords="1570,368,1587,424" alt="5" title="5" href="EditVenue.html"><area shape="rect" coords="1600,368,1620,422" alt="6" title="6" href="RemoveVenue.html"><area shape="rect" coords="1629,367,1652,426" alt="7" title="7" href="ManageUserAccess.html"><area shape="rect" coords="371,122,402,185" alt="8" title="8" href="ExportVenuesList.html"></map><span class="rvts6"></span></p>
 
             </div>
             

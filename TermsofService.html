@@ -49,7 +49,7 @@
   <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
 
   <!-- Content style (cache-busted so your changes always apply) -->
-  <link href="css/hnd.content.css?v=20251011134033" rel="stylesheet" />
+  <link href="css/hnd.content.css?v=20251011134351" rel="stylesheet" />
 
 
 
@@ -95,8 +95,15 @@
     const style = `
       /* hide navigation pane */
       .hnd-toc, #toc, .sidebar, .splitter { display:none !important; }
-      /* hide header & breadcrumbs */
+
+      /* hide header, breadcrumbs, and footer */
       .hnd-header, .hnd-breadcrumb, .breadcrumb, header, nav, .hnd-footer { display:none !important; }
+
+      /* hide topic navigation buttons (up/prev/next) */
+      .hnd-topicnavigation, .topicnavigation, .hnd-navbuttons, .navigation, .next-topic, .prev-topic {
+        display:none !important;
+      }
+
       /* stretch content full width */
       .hnd-content, #content, .topic-container, main {
         width:100% !important; margin:0 !important; padding:2rem !important;
@@ -108,6 +115,7 @@
   }
 })();
 </script>
+
 
 
 
@@ -239,6 +247,7 @@
 
             <div class="main-content">
                 
+<h1 class="rvps8"><span class="rvts0"><span class="rvts22">Terms of Service</span></span><span class="rvts0"><span class="rvts22"></span></span></h1>
 
             </div>
             

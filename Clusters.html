@@ -49,7 +49,7 @@
   <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
 
   <!-- Content style (cache-busted so your changes always apply) -->
-  <link href="css/hnd.content.css?v=20251011134033" rel="stylesheet" />
+  <link href="css/hnd.content.css?v=20251011134351" rel="stylesheet" />
 
 
 
@@ -95,8 +95,15 @@
     const style = `
       /* hide navigation pane */
       .hnd-toc, #toc, .sidebar, .splitter { display:none !important; }
-      /* hide header & breadcrumbs */
+
+      /* hide header, breadcrumbs, and footer */
       .hnd-header, .hnd-breadcrumb, .breadcrumb, header, nav, .hnd-footer { display:none !important; }
+
+      /* hide topic navigation buttons (up/prev/next) */
+      .hnd-topicnavigation, .topicnavigation, .hnd-navbuttons, .navigation, .next-topic, .prev-topic {
+        display:none !important;
+      }
+
       /* stretch content full width */
       .hnd-content, #content, .topic-container, main {
         width:100% !important; margin:0 !important; padding:2rem !important;
@@ -108,6 +115,7 @@
   }
 })();
 </script>
+
 
 
 
@@ -257,7 +265,7 @@
 <p class="rvps6"><a class="rvts12" href="EditCluster.html">3. Edit Cluster</a></p>
 <p class="rvps6"><a class="rvts12" href="RemoveCluster.html">4. Remove Cluster</a></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<p class="rvps6"><img alt="" style="width : 1699px; height : 643px; padding : 1px;" src="lib/Clusters%20-%20Overview%20-%20Map.png" usemap="#53E65E336E064D829121395E1E142880"><map name="53E65E336E064D829121395E1E142880"><area shape="rect" coords="12,349,107,381" alt="1" title="1" href="ViewClusters.html"><area shape="rect" coords="276,117,379,195" alt="2" title="2" href="CreateCluster.html"><area shape="rect" coords="1601,345,1623,402" alt="3" title="3" href="EditCluster.html"><area shape="rect" coords="1636,345,1656,399" alt="4" title="4" href="RemoveCluster.html"></map><span class="rvts6"></span></p>
+<p class="rvps6"><img alt="" style="width : 1699px; height : 643px; padding : 1px;" src="lib/Clusters%20-%20Overview%20-%20Map.png" usemap="#D0F4FD414035439BA890D6BA1D9E1855"><map name="D0F4FD414035439BA890D6BA1D9E1855"><area shape="rect" coords="12,349,107,381" alt="1" title="1" href="ViewClusters.html"><area shape="rect" coords="276,117,379,195" alt="2" title="2" href="CreateCluster.html"><area shape="rect" coords="1601,345,1623,402" alt="3" title="3" href="EditCluster.html"><area shape="rect" coords="1636,345,1656,399" alt="4" title="4" href="RemoveCluster.html"></map><span class="rvts6"></span></p>
 
             </div>
             

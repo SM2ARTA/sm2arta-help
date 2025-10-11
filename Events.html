@@ -49,7 +49,7 @@
   <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
 
   <!-- Content style (cache-busted so your changes always apply) -->
-  <link href="css/hnd.content.css?v=20251011134033" rel="stylesheet" />
+  <link href="css/hnd.content.css?v=20251011134351" rel="stylesheet" />
 
 
 
@@ -95,8 +95,15 @@
     const style = `
       /* hide navigation pane */
       .hnd-toc, #toc, .sidebar, .splitter { display:none !important; }
-      /* hide header & breadcrumbs */
+
+      /* hide header, breadcrumbs, and footer */
       .hnd-header, .hnd-breadcrumb, .breadcrumb, header, nav, .hnd-footer { display:none !important; }
+
+      /* hide topic navigation buttons (up/prev/next) */
+      .hnd-topicnavigation, .topicnavigation, .hnd-navbuttons, .navigation, .next-topic, .prev-topic {
+        display:none !important;
+      }
+
       /* stretch content full width */
       .hnd-content, #content, .topic-container, main {
         width:100% !important; margin:0 !important; padding:2rem !important;
@@ -108,6 +115,7 @@
   }
 })();
 </script>
+
 
 
 
@@ -259,7 +267,7 @@
 <p class="rvps11"><a class="rvts12" href="ConfigureEvent.html">6. Configure Event</a></p>
 <p class="rvps11"><a class="rvts12" href="ManageUserAccess.html">7. Managing User Access</a></p>
 <p class="rvps2"><span class="rvts15"><br/></span></p>
-<p class="rvps11"><img alt="" style="width : 1708px; height : 610px; padding : 1px;" src="lib/Events%20-%20Overview%20-%20Map.png" usemap="#FD8DE9D74D2A4B10BDDF15DE9C568933"><map name="FD8DE9D74D2A4B10BDDF15DE9C568933"><area shape="rect" coords="6,250,113,281" alt="1" title="1" href="ViewEvents.html"><area shape="rect" coords="283,120,376,188" alt="2" title="2" href="CreateEvent.html"><area shape="rect" coords="1536,340,1560,400" alt="5" title="5" href="ArchiveEvent.html"><area shape="rect" coords="602,363,773,456" alt="6" title="6" href="ConfigureEvent.html"><area shape="rect" coords="27,287,143,341" alt="6" title="6" href="ConfigureEvent.html"><area shape="rect" coords="1569,343,1591,398" alt="3" title="3" href="EditEvent.html"><area shape="rect" coords="1605,342,1623,396" alt="4" title="4" href="RemoveEvent.html"><area shape="rect" coords="1636,343,1657,398" alt="7" title="7" href="ManageUserAccess.html"></map><span class="rvts6"></span></p>
+<p class="rvps11"><img alt="" style="width : 1708px; height : 610px; padding : 1px;" src="lib/Events%20-%20Overview%20-%20Map.png" usemap="#4B5F9197834B40C78DCBE5B2D6DAE48C"><map name="4B5F9197834B40C78DCBE5B2D6DAE48C"><area shape="rect" coords="6,250,113,281" alt="1" title="1" href="ViewEvents.html"><area shape="rect" coords="283,120,376,188" alt="2" title="2" href="CreateEvent.html"><area shape="rect" coords="1536,340,1560,400" alt="5" title="5" href="ArchiveEvent.html"><area shape="rect" coords="602,363,773,456" alt="6" title="6" href="ConfigureEvent.html"><area shape="rect" coords="27,287,143,341" alt="6" title="6" href="ConfigureEvent.html"><area shape="rect" coords="1569,343,1591,398" alt="3" title="3" href="EditEvent.html"><area shape="rect" coords="1605,342,1623,396" alt="4" title="4" href="RemoveEvent.html"><area shape="rect" coords="1636,343,1657,398" alt="7" title="7" href="ManageUserAccess.html"></map><span class="rvts6"></span></p>
 
             </div>
             
