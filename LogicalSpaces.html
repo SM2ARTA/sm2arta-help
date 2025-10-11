@@ -49,7 +49,7 @@
   <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
 
   <!-- Content style (cache-busted so your changes always apply) -->
-  <link href="css/hnd.content.css?v=20251011130750" rel="stylesheet" />
+  <link href="css/hnd.content.css?v=20251011134033" rel="stylesheet" />
 
 
 
@@ -86,6 +86,32 @@
 
 
 <script src="/guard.js"></script>
+
+
+<script>
+(function () {
+  const params = new URLSearchParams(location.search);
+  if (params.get('nav') === '0') {
+    const style = `
+      /* hide navigation pane */
+      .hnd-toc, #toc, .sidebar, .splitter { display:none !important; }
+      /* hide header & breadcrumbs */
+      .hnd-header, .hnd-breadcrumb, .breadcrumb, header, nav, .hnd-footer { display:none !important; }
+      /* stretch content full width */
+      .hnd-content, #content, .topic-container, main {
+        width:100% !important; margin:0 !important; padding:2rem !important;
+      }
+    `;
+    const s = document.createElement('style');
+    s.textContent = style;
+    document.head.appendChild(s);
+  }
+})();
+</script>
+
+
+
+
 </head>
 
 <body class="md-nav-expanded">
@@ -227,11 +253,11 @@
 <p class="rvps2"><span class="rvts6">Logical spaces follow a fixed three-layer structure in SM2ARTA:</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside;">
- <li style="list-style-image: url('lib/23.bmp')" class="rvps2 noindent"><span class="rvts6">Logical Space Category</span></li>
+ <li style="list-style-image: url('lib/26.bmp')" class="rvps2 noindent"><span class="rvts6">Logical Space Category</span></li>
  <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside;">
-  <li style="list-style-image: url('lib/24.bmp')" class="rvps2 noindent"><span class="rvts6">Logical Space Subcategory</span></li>
+  <li style="list-style-image: url('lib/27.bmp')" class="rvps2 noindent"><span class="rvts6">Logical Space Subcategory</span></li>
   <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside;">
-   <li style="list-style-image: url('lib/25.bmp')" class="rvps2 noindent"><span class="rvts6">Logical Space</span></li>
+   <li style="list-style-image: url('lib/28.bmp')" class="rvps2 noindent"><span class="rvts6">Logical Space</span></li>
   </ul>
  </ul>
 </ul>
@@ -266,7 +292,7 @@
 <p class="rvps6"><a class="rvts12" href="ManageUserAccess.html">6. Manage User Access</a></p>
 <p class="rvps6"><a class="rvts12" href="ExportLogicalSpacesList.html">7. Export Logical Spaces List</a></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<p class="rvps6"><img alt="" style="width : 1701px; height : 671px; padding : 1px;" src="lib/Logical%20Spaces%20-%20Overview%20-%20Map.png" usemap="#4F8FA6D965F4494D9E4D12A16D47EA51"><map name="4F8FA6D965F4494D9E4D12A16D47EA51"><area shape="rect" coords="26,387,135,412" alt="1" title="1" href="Categories.html"><area shape="rect" coords="24,352,135,378" alt="2" title="2" href="ViewLogicalSpaces.html"><area shape="rect" coords="282,118,367,187" alt="3" title="3" href="CreateLogicalSpace.html"><area shape="rect" coords="1564,344,1586,399" alt="4" title="4" href="EditLogicalSpace.html"><area shape="rect" coords="1597,347,1619,402" alt="5" title="5" href="RemoveLogicalSpace.html"><area shape="rect" coords="1633,344,1652,401" alt="6" title="6" href="ManageUserAccess.html"><area shape="rect" coords="375,121,397,185" alt="7" title="7" href="ExportLogicalSpacesList.html"></map><span class="rvts6"></span></p>
+<p class="rvps6"><img alt="" style="width : 1701px; height : 671px; padding : 1px;" src="lib/Logical%20Spaces%20-%20Overview%20-%20Map.png" usemap="#3007D97F96C34CC3990CA7337A6ED8B6"><map name="3007D97F96C34CC3990CA7337A6ED8B6"><area shape="rect" coords="26,387,135,412" alt="1" title="1" href="Categories.html"><area shape="rect" coords="24,352,135,378" alt="2" title="2" href="ViewLogicalSpaces.html"><area shape="rect" coords="282,118,367,187" alt="3" title="3" href="CreateLogicalSpace.html"><area shape="rect" coords="1564,344,1586,399" alt="4" title="4" href="EditLogicalSpace.html"><area shape="rect" coords="1597,347,1619,402" alt="5" title="5" href="RemoveLogicalSpace.html"><area shape="rect" coords="1633,344,1652,401" alt="6" title="6" href="ManageUserAccess.html"><area shape="rect" coords="375,121,397,185" alt="7" title="7" href="ExportLogicalSpacesList.html"></map><span class="rvts6"></span></p>
 
             </div>
             

@@ -49,7 +49,7 @@
   <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
 
   <!-- Content style (cache-busted so your changes always apply) -->
-  <link href="css/hnd.content.css?v=20251011130749" rel="stylesheet" />
+  <link href="css/hnd.content.css?v=20251011134033" rel="stylesheet" />
 
 
 
@@ -86,6 +86,32 @@
 
 
 <script src="/guard.js"></script>
+
+
+<script>
+(function () {
+  const params = new URLSearchParams(location.search);
+  if (params.get('nav') === '0') {
+    const style = `
+      /* hide navigation pane */
+      .hnd-toc, #toc, .sidebar, .splitter { display:none !important; }
+      /* hide header & breadcrumbs */
+      .hnd-header, .hnd-breadcrumb, .breadcrumb, header, nav, .hnd-footer { display:none !important; }
+      /* stretch content full width */
+      .hnd-content, #content, .topic-container, main {
+        width:100% !important; margin:0 !important; padding:2rem !important;
+      }
+    `;
+    const s = document.createElement('style');
+    s.textContent = style;
+    document.head.appendChild(s);
+  }
+})();
+</script>
+
+
+
+
 </head>
 
 <body class="md-nav-expanded">
@@ -199,10 +225,10 @@
             
                 <div class="navigation">
                     <ol class="breadcrumb">
-                        <li><a href="SettingUpSM2ARTA.html">Setting Up SM2ARTA</a></li>
+                        <li><a href="SettingUpSM2ARTA.html">Setting Up SM2ARTA</a></li><li><a href="Directory.html">Directory</a></li>
                     </ol>
                     <div class="nav-arrows">
-                        <div class="btn-group btn-group" role="group"><a class="btn btn-default" href="SettingUpSM2ARTA.html" title="Setting Up SM2ARTA" role="button"><span class="bi bi-chevron-up" aria-hidden="true"></span></a><a class="btn btn-default" href="SettingUpSM2ARTA.html" title="Setting Up SM2ARTA" role="button"><span class="bi bi-chevron-left" aria-hidden="true"></span></a><a class="btn btn-default" href="Directory.html" title="Directory" role="button"><span class="bi bi-chevron-right" aria-hidden="true"></span></a></div>
+                        <div class="btn-group btn-group" role="group"><a class="btn btn-default" href="Directory.html" title="Directory" role="button"><span class="bi bi-chevron-up" aria-hidden="true"></span></a><a class="btn btn-default" href="Directory.html" title="Directory" role="button"><span class="bi bi-chevron-left" aria-hidden="true"></span></a><a class="btn btn-default" href="Events.html" title="Events" role="button"><span class="bi bi-chevron-right" aria-hidden="true"></span></a></div>
                     </div>
                 </div> 
             
@@ -213,14 +239,28 @@
 
             <div class="main-content">
                 
-<p class="rvps2"><span class="rvts6">Materials</span></p>
-<p class="rvps2"><span class="rvts6">Overview</span></p>
+<h1 class="rvps8"><span class="rvts0"><span class="rvts22">Materials</span></span></h1>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<p class="rvps2"><span class="rvts6">Materials represent all FF&amp;E (Furniture, Fixtures &amp; Equipment) assets managed within SM2ARTA.</span></p>
-<p class="rvps2"><span class="rvts6">They serve as abstract planning groups, similar to Logical Spaces, and define what type of item is required rather than a specific product or model.</span></p>
+<h3 class="rvps9"><span class="rvts0"><span class="rvts20">Overview</span></span></h3>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts21">Materials</span><span class="rvts6"> represent all FF&amp;E (Furniture, Fixtures &amp; Equipment) assets managed within SM2ARTA.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">They serve as abstract planning entities, similar to </span><span class="rvts21">Logical Spaces</span><span class="rvts6">, and define what type of item is required rather than a specific product or model.</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts6">For example, a Folding Chair material entry may represent any folding chair, regardless of color or design, unless a particular specification is required for an event.</span></p>
 <p class="rvps2"><span class="rvts6">This approach enables flexible and scalable planning, allowing requirements to be captured even before procurement details are finalized.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Although materials are abstract planning entities, each material record includes detailed specifications such as a description, dimensions, and reference photos.</span></p>
+<p class="rvps2"><span class="rvts6">These details help Functional Material Planners choose the most appropriate item for their needs and ensure a consistent understanding of requirements across all venues and functional areas.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Each material entry in SM2ARTA also stores metadata used across different planning and analytical activities.</span></p>
+<p class="rvps2"><span class="rvts6">For example:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Packing information helps estimate transport volume and predict the number of pallets required.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Cost details support budgeting, cost control, and financial forecasting.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Category, Source, and UoM fields enable structured reporting and data-driven decision-making.</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts6">At later stages, Materials are linked to Nomenclatures, which represent exact assets with defined make, model, and supplier details.</span></p>
 <p class="rvps2"><span class="rvts6">Nomenclatures are primarily used within the Asset Tracking module to identify and trace physical assets across storage, transport, and venues.</span></p>

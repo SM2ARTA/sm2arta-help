@@ -49,7 +49,7 @@
   <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
 
   <!-- Content style (cache-busted so your changes always apply) -->
-  <link href="css/hnd.content.css?v=20251011130749" rel="stylesheet" />
+  <link href="css/hnd.content.css?v=20251011134033" rel="stylesheet" />
 
 
 
@@ -86,6 +86,32 @@
 
 
 <script src="/guard.js"></script>
+
+
+<script>
+(function () {
+  const params = new URLSearchParams(location.search);
+  if (params.get('nav') === '0') {
+    const style = `
+      /* hide navigation pane */
+      .hnd-toc, #toc, .sidebar, .splitter { display:none !important; }
+      /* hide header & breadcrumbs */
+      .hnd-header, .hnd-breadcrumb, .breadcrumb, header, nav, .hnd-footer { display:none !important; }
+      /* stretch content full width */
+      .hnd-content, #content, .topic-container, main {
+        width:100% !important; margin:0 !important; padding:2rem !important;
+      }
+    `;
+    const s = document.createElement('style');
+    s.textContent = style;
+    document.head.appendChild(s);
+  }
+})();
+</script>
+
+
+
+
 </head>
 
 <body class="md-nav-expanded">
@@ -217,7 +243,7 @@
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <h3 class="rvps9"><span class="rvts0"><span class="rvts20">Home Page</span></span></h3>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<p class="rvps2"><img alt="" style="width : 1698px; height : 1296px; padding : 1px;" src="lib/Home%20Page%20-%20Overview.png" usemap="#498E737CC7E448E298E4C1AC8D77C5C6"><map name="498E737CC7E448E298E4C1AC8D77C5C6"><area shape="rect" coords="3,46,154,304" alt="Navigation Panel" title="Navigation Panel" href=""></map><span class="rvts6"></span></p>
+<p class="rvps2"><img alt="" style="width : 1698px; height : 1296px; padding : 1px;" src="lib/Home%20Page%20-%20Overview.png" usemap="#2E7905D249D241A1831E5027A7C3F93A"><map name="2E7905D249D241A1831E5027A7C3F93A"><area shape="rect" coords="3,46,154,304" alt="Navigation Panel" title="Navigation Panel" href=""></map><span class="rvts6"></span></p>
 
             </div>
             

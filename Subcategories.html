@@ -49,7 +49,7 @@
   <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
 
   <!-- Content style (cache-busted so your changes always apply) -->
-  <link href="css/hnd.content.css?v=20251011130750" rel="stylesheet" />
+  <link href="css/hnd.content.css?v=20251011134034" rel="stylesheet" />
 
 
 
@@ -86,6 +86,32 @@
 
 
 <script src="/guard.js"></script>
+
+
+<script>
+(function () {
+  const params = new URLSearchParams(location.search);
+  if (params.get('nav') === '0') {
+    const style = `
+      /* hide navigation pane */
+      .hnd-toc, #toc, .sidebar, .splitter { display:none !important; }
+      /* hide header & breadcrumbs */
+      .hnd-header, .hnd-breadcrumb, .breadcrumb, header, nav, .hnd-footer { display:none !important; }
+      /* stretch content full width */
+      .hnd-content, #content, .topic-container, main {
+        width:100% !important; margin:0 !important; padding:2rem !important;
+      }
+    `;
+    const s = document.createElement('style');
+    s.textContent = style;
+    document.head.appendChild(s);
+  }
+})();
+</script>
+
+
+
+
 </head>
 
 <body class="md-nav-expanded">
@@ -250,7 +276,7 @@
 <p class="rvps6"><a class="rvts12" href="RemoveSubcategory.html">4. Remove Subcategory</a></p>
 <p class="rvps6"><a class="rvts12" href="ManageUserAccess.html">5. Manage User Access</a></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<p class="rvps6"><img alt="" style="width : 1705px; height : 727px; padding : 1px;" src="lib/Subcategories%20-%20Overview%20-%20Map.png" usemap="#E741D7A246084574A6877031D6431663"><map name="E741D7A246084574A6877031D6431663"><area shape="rect" coords="490,391,723,549" alt="1" title="1" href="ViewSubcategories.html"><area shape="rect" coords="278,144,377,218" alt="2" title="2" href="CreateSubcategory.html"><area shape="rect" coords="1571,370,1591,428" alt="3" title="3" href="EditSubcategory.html"><area shape="rect" coords="1603,371,1624,429" alt="4" title="4" href="RemoveSubcategory.html"><area shape="rect" coords="1636,372,1655,431" alt="5" title="5" href="ManageUserAccess.html"></map><span class="rvts6"></span></p>
+<p class="rvps6"><img alt="" style="width : 1705px; height : 727px; padding : 1px;" src="lib/Subcategories%20-%20Overview%20-%20Map.png" usemap="#4B456A48112041CDBAF16FF4FD21DA17"><map name="4B456A48112041CDBAF16FF4FD21DA17"><area shape="rect" coords="490,391,723,549" alt="1" title="1" href="ViewSubcategories.html"><area shape="rect" coords="278,144,377,218" alt="2" title="2" href="CreateSubcategory.html"><area shape="rect" coords="1571,370,1591,428" alt="3" title="3" href="EditSubcategory.html"><area shape="rect" coords="1603,371,1624,429" alt="4" title="4" href="RemoveSubcategory.html"><area shape="rect" coords="1636,372,1655,431" alt="5" title="5" href="ManageUserAccess.html"></map><span class="rvts6"></span></p>
 
             </div>
             
