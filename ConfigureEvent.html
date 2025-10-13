@@ -13,7 +13,7 @@
 
   <title>Configure Event</title>
   <meta name="description" content="" /> 
-  <meta name="keywords" content="">
+  <meta name="keywords" content="Event Configuration">
 
 
 
@@ -29,7 +29,7 @@
   <meta property="og:title" content="Configure Event" />
   <meta property="og:type" content="article" />
   <meta property="og:description" content="" />
-  <meta property="og:site_name" content="SM2ARTA Admin Guide" /> 
+  <meta property="og:site_name" content="SM2ARTA Materials Manager Guide" /> 
 
   <!-- Bootstrap CSS -->
   <link href="vendors/bootstrap-5.3.7/bootstrap.min.css" rel="stylesheet"/>
@@ -49,7 +49,7 @@
   <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
 
   <!-- Content style (cache-busted so your changes always apply) -->
-  <link href="css/hnd.content.css?v=20251012204257" rel="stylesheet" />
+  <link href="css/hnd.content.css?v=20251013183748" rel="stylesheet" />
 
 
 
@@ -137,7 +137,7 @@
       <span class="visually-hidden">Toggle navigation</span>
       <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>        
     </button>
-    <h1>SM2ARTA Admin Guide</h1>
+    <h1>SM2ARTA Materials Manager Guide</h1>
     
   </header>
 
@@ -236,7 +236,7 @@
                         
                     </ol>
                     <div class="nav-arrows">
-                        <div class="btn-group btn-group" role="group"><a class="btn btn-default" href="ExportUsersList.html" title="Export Users List" role="button"><span class="bi bi-chevron-left" aria-hidden="true"></span></a><a class="btn btn-default" href="ManageUserAccess.html" title="Manage User Access" role="button"><span class="bi bi-chevron-right" aria-hidden="true"></span></a></div>
+                        <div class="btn-group btn-group" role="group"><a class="btn btn-default" href="MainPage.html" title="Main Page" role="button"><span class="bi bi-chevron-left" aria-hidden="true"></span></a><a class="btn btn-default" href="ManageUserAccess.html" title="Manage User Access" role="button"><span class="bi bi-chevron-right" aria-hidden="true"></span></a></div>
                     </div>
                 </div> 
             
@@ -247,6 +247,78 @@
 
             <div class="main-content">
                 
+<h1 class="rvps8"><span class="rvts0"><span class="rvts22">Configure Event</span></span></h1>
+<h3 class="rvps9"><span class="rvts0"><span class="rvts20">Overview</span></span></h3>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Each </span><span class="rvts21">Event</span><span class="rvts6"> in SM2ARTA represents a distinct project configuration that may include its own set of </span><span class="rvts21">Event</span><span class="rvts6"> </span><span class="rvts21">Components</span><span class="rvts6">: </span><a class="rvts28" href="Venues.html">Venues</a><span class="rvts6">, </span><a class="rvts28" href="Spaces.html">Spaces</a><span class="rvts6">, and </span><a class="rvts28" href="Materials.html">Materials</a><span class="rvts21">.</span></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts21">Events</span><span class="rvts6"> can vary in type and scale — for example, they can be test events, main tournaments, ceremonies, or training events — each requiring different components and user access.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">SM2ARTA allows every </span><span class="rvts21">Event</span><span class="rvts6"> to be configured individually, ensuring full flexibility in managing multiple </span><span class="rvts21">Events</span><span class="rvts6"> within the same environment.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">For each </span><span class="rvts21">Event</span><span class="rvts6">, you can:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">Add and remove </span><span class="rvts21">Catalogues</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Add and remove </span><span class="rvts21">Venues</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Add and remove </span><span class="rvts21">Logical</span><span class="rvts6"> </span><span class="rvts21">spaces</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Whatever you add to an </span><span class="rvts21">Event</span><span class="rvts6"> becomes available for </span><span class="rvts21">Functional</span><span class="rvts6"> </span><span class="rvts21">Material</span><span class="rvts6"> </span><span class="rvts21">Planners</span><span class="rvts6"> for selection and use within the </span><span class="rvts21">Material</span><span class="rvts6"> </span><span class="rvts21">Planning</span><span class="rvts6"> section in line with configured </span><span class="rvts21">User</span><span class="rvts6"> </span><span class="rvts21">Accesses</span><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">This approach helps </span><span class="rvts21">Material</span><span class="rvts6"> </span><span class="rvts21">Planning</span><span class="rvts6"> </span><span class="rvts21">Managers</span><span class="rvts6"> maintain clear separation between </span><span class="rvts21">Events</span><span class="rvts6"> while allowing shared resources, such as </span><span class="rvts21">Venues</span><span class="rvts6"> or </span><span class="rvts21">Catalogues</span><span class="rvts6">, to be reused when needed.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps9"><span class="rvts0"><span class="rvts20">Actions &amp; Interface</span></span></h3>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">1. Go to</span><span class="rvts21"> Events - Overview </span><span class="rvts6">in the</span><span class="rvts21"> Navigation Panel.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="width : 1698px; height : 621px; padding : 1px;" src="lib/Events%20-%20Go%20To.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">2. You will see the full list of </span><span class="rvts21">Events</span><span class="rvts6"> created in the system.&nbsp;</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="width : 1703px; height : 589px; padding : 1px;" src="lib/Events%20-%20Overview%20-%20Interface.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">3. Click on the </span><span class="rvts21">Event</span><span class="rvts6"> you want to view the configuration for.&nbsp;</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="width : 1420px; height : 457px; padding : 1px;" src="lib/Configure%20Event%20-%20Overview%20-%20Interface.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">4. Alternatively, you can click on the </span><span class="rvts11">Event</span><span class="rvts6"> you want to </span><span class="rvts15">view the configuration</span><span class="rvts6"> for directly from the </span><span class="rvts11">Navigation Panel</span><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="width : 1685px; height : 578px; padding : 1px;" src="lib/Configure%20Event%20-%20Overview%20-%20Go%20To.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">5. By default, you will be redirected to the </span><span class="rvts21">Event</span><span class="rvts6"> </span><span class="rvts21">Catalogues</span><span class="rvts6"> interface for the selected </span><span class="rvts21">Event</span><span class="rvts6"> and see all </span><span class="rvts21">Catalogues</span><span class="rvts6"> added to the selected </span><span class="rvts21">Event</span><span class="rvts6">.&nbsp;</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Use tabs at </span><span class="rvts21">Tabs</span><span class="rvts6"> </span><span class="rvts21">Bar</span><span class="rvts6"> to navigate to between other </span><span class="rvts21">Event</span><span class="rvts6"> </span><span class="rvts21">Components</span><span class="rvts6"> interfaces.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="width : 1420px; height : 516px; padding : 1px;" src="lib/Configure%20Event%20-%20Overview%20-%20Tabs.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">6. At each tab you can </span><span class="rvts21">Add</span><span class="rvts6"> or </span><span class="rvts21">Remove</span><span class="rvts6"> selected </span><span class="rvts21">Event</span><span class="rvts6"> </span><span class="rvts21">Components</span><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="width : 1420px; height : 516px; padding : 1px;" src="lib/Configure%20Event%20-%20Component%20-%20Overview.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">7. To </span><span class="rvts21">Remove</span><span class="rvts6"> a </span><span class="rvts21">Component</span><span class="rvts6">, use the checkboxes in the </span><span class="rvts21">Selection</span><span class="rvts6"> </span><span class="rvts21">Bar</span><span class="rvts6"> to select the items you want to </span><span class="rvts21">Remove</span><span class="rvts6">.. You can use the </span><span class="rvts21">Search</span><span class="rvts6"> and </span><span class="rvts21">Filters</span><span class="rvts6"> to narrow down your selection. Once finished, click </span><span class="rvts21">Remove component</span><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Note that selections are not saved between pages — if you navigate to another page, your previous selections will be cleared.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">To avoid losing selections, finalize your actions on the current page before moving to the next one, or use </span><span class="rvts21">Show All Entries</span><span class="rvts6"> to display all records on a single page.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="width : 1420px; height : 516px; padding : 1px;" src="lib/Configure%20Event%20-%20Component%20-%20Remove%20-%20Overvi.png"></p>
+<p class="rvps2"><span class="rvts21"><br/></span></p>
+<p class="rvps2"><span class="rvts6">4. To add new </span><span class="rvts21">Component</span><span class="rvts6">, click </span><span class="rvts21">Add component</span><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="width : 1420px; height : 470px; padding : 1px;" src="lib/Configure%20Event%20-%20Component%20-%20Add%20-%20Overview.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">5. You will see a list of </span><span class="rvts21">Components</span><span class="rvts6"> that have not yet been added to selected </span><span class="rvts21">Event</span><span class="rvts6">. </span><span class="rvts21">Components</span><span class="rvts6"> that are already included in a selected </span><span class="rvts21">Event</span><span class="rvts6"> will not appear in this interface.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Use the checkboxes in</span><span class="rvts21"> </span><span class="rvts6">the</span><span class="rvts21"> Selection Bar</span><span class="rvts6"> to select the </span><span class="rvts21">Component</span><span class="rvts6"> you want to add. You can use the </span><span class="rvts21">Search</span><span class="rvts6"> and </span><span class="rvts21">Filters</span><span class="rvts6"> to narrow down your selection. Once finished, click </span><span class="rvts21">Add component</span><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Note that selections are not saved between pages — if you navigate to another page, your previous selections will be cleared.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">To avoid losing selections, finalize your actions on the current page before moving to the next one, or use </span><span class="rvts21">Show All Entries</span><span class="rvts6"> to display all records on a single page.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Once finished, use the </span><span class="rvts21">Breadcrumb Navigation</span><span class="rvts6"> at the top of the page to return to the previous interface.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="width : 1425px; height : 574px; padding : 1px;" src="lib/Configure%20Event%20-%20Component%20-%20Add%20-%20Interface.png"><span class="rvts6"></span></p>
 
             </div>
             
