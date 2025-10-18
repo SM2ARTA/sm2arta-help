@@ -1,0 +1,391 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="generator" content="HelpNDoc Professional Edition 10.0.0.105">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <title>Inventory Control of Assets at Warehouse</title>
+  <meta name="description" content="" /> 
+  <meta name="keywords" content="Asset Tracking">
+
+
+
+  
+  
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Inventory Control of Assets at Warehouse">
+  <meta name="twitter:description" content="">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Inventory Control of Assets at Warehouse" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="SM2ARTA Material Planning Manager Guide" /> 
+
+  <!-- Bootstrap CSS -->
+  <link href="vendors/bootstrap-5.3.7/bootstrap.min.css" rel="stylesheet"/>
+  <link href="vendors/bootstrap-icons-1.13.1/bootstrap-icons.min.css" rel="stylesheet"/>
+
+  <!-- JsTree styles -->
+  <link href="vendors/jstree-3.3.10/themes/default/style.min.css" rel="stylesheet"/>
+
+  
+  
+    <!-- Hnd styles (no cache-buster here, to keep nav working) -->
+  <link href="css/layout.min.css" rel="stylesheet" />
+  <link href="css/effects.min.css" rel="stylesheet" />
+  <link href="css/theme-light-blue.min.css" rel="stylesheet" />
+  <link href="css/print.min.css" rel="stylesheet" media="print" />
+  <style type="text/css">nav { width: 350px} @media screen and (min-width:769px) { body.md-nav-expanded div#main { margin-left: 350px} body.md-nav-expanded header { padding-left: 364px} }</style>
+  <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
+
+  <!-- Content style (cache-busted so your changes always apply) -->
+  <link href="css/hnd.content.css?v=20251018153538" rel="stylesheet" />
+
+
+
+
+<!-- >>> ADDED: Responsive images + modal image styling -->
+<style>
+  /* Responsive only; preserves HND alignment/floats */
+.main-content img,
+.main-content figure img {
+  max-width: 100% !important;
+  height: auto !important;
+  width: auto !important;
+  /* do not set display or margin here */
+}
+
+/* zoom cursor if you use it */
+.main-content img[data-zoom]{ cursor: zoom-in; }
+
+/* images inside modal */
+#hndModal .modal-body img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+</style>
+
+
+
+  <!-- <<< ADDED -->
+
+  
+
+
+
+<script src="/guard.js"></script>
+
+
+<script>
+(function () {
+  const params = new URLSearchParams(location.search);
+  if (params.get('nav') === '0') {
+    const style = `
+      /* hide navigation pane */
+      .hnd-toc, #toc, .sidebar, .splitter { display:none !important; }
+
+      /* hide header, breadcrumbs, and footer */
+      .hnd-header, .hnd-breadcrumb, .breadcrumb, header, nav, .hnd-footer { display:none !important; }
+
+      /* hide topic navigation buttons (up/prev/next) */
+      .hnd-topicnavigation, .topicnavigation, .hnd-navbuttons, .navigation, .next-topic, .prev-topic {
+        display:none !important;
+      }
+
+      /* stretch content full width */
+      .hnd-content, #content, .topic-container, main {
+        width:100% !important; margin:0 !important; padding:2rem !important;
+      }
+    `;
+    const s = document.createElement('style');
+    s.textContent = style;
+    document.head.appendChild(s);
+  }
+})();
+</script>
+
+
+
+
+
+</head>
+
+<body class="md-nav-expanded">
+
+
+
+  
+
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible">Skip to main content</a>
+  </div>
+
+  <header class="headroom">
+    <button class="hnd-toggle btn btn-default">
+      <span class="visually-hidden">Toggle navigation</span>
+      <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>        
+    </button>
+    <h1>SM2ARTA Material Planning Manager Guide</h1>
+    
+  </header>
+
+  <nav id="panel-left" class="md-nav-expanded">
+    <!-- Nav tabs -->
+    <ul class="tab-tabs nav nav-tabs" role="tablist">
+      <li id="nav-close" role="presentation"> 
+        <button class="hnd-toggle btn btn-default" aria-label="close">
+          <span class="bi bi-x" aria-hidden="true"></span>
+        </button>
+      </li>
+      
+	  
+        <li role="presentation" class="nav-item tab">
+            <a href="#contents" id="tab-contents" class="nav-link active" role="tab" data-bs-toggle="tab" data-bs-target="#contents" aria-controls="contents" aria-selected="true">
+                <i class="bi bi-list-ul"></i>
+                Contents
+            </a>
+        </li>
+      
+        <li role="presentation" class="nav-item tab">
+            <a href="#index" id="tab-index" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#index" aria-controls="index" aria-selected="false">
+                <i class="bi bi-asterisk"></i>
+                Index
+            </a>
+        </li>
+      
+        <li role="presentation" class="nav-item tab">
+            <a href="#search" id="tab-search" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#search" aria-controls="search" aria-selected="false">
+                <i class="bi bi-search"></i>
+                Search
+            </a>
+        </li>
+      
+    </ul>  <!-- /Nav tabs -->
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+	  
+      <div role="tabpanel" class="tab-pane active" id="contents">
+        <div id="toc" class="tree-container unselectable"
+            data-url="_toc.json"
+            data-openlvl="2"
+        >
+            
+        </div>
+      </div>  <!-- /contents-->
+      
+      <div role="tabpanel" class="tab-pane" id="index">
+        <div id="keywords" class="tree-container unselectable"
+            data-url="_keywords.json"
+            data-openlvl="1"
+        >
+            
+        </div>
+      </div>  <!-- /index-->
+      
+      <div role="tabpanel" class="tab-pane" id="search">
+        <div class="search-content">
+          <div class="search-input">
+            <form id="search-form">
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="input-search" name="input-search" placeholder="Search..." aria-label="Search..." />
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit" aria-label="Search...">
+                      <span class="bi bi-search" aria-hidden="true"></span>
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </form>
+          </div>  <!-- /search-input -->
+          <div class="search-result">
+            <div id="search-info"></div>
+            <div class="tree-container unselectable" id="search-tree"></div>
+          </div>  <!-- /search-result -->
+        </div>  <!-- /search-content -->
+      </div>  <!-- /search-->
+      
+    </div>  <!-- /Tab panes -->
+
+  </nav>
+
+  <div id="main">
+
+    <article>
+        <div id="topic-content" class="container-fluid" 
+		  data-hnd-id="InventoryControlofAssetsatWareho"
+		  data-hnd-context="127"
+		  data-hnd-title="Inventory Control of Assets at Warehouse"
+		>
+            
+                <div class="navigation">
+                    <ol class="breadcrumb">
+                        <li><a href="AssetTracking.html">Asset Tracking</a></li>
+                    </ol>
+                    <div class="nav-arrows">
+                        <div class="btn-group btn-group" role="group"><a class="btn btn-default" href="AssetTracking.html" title="Asset Tracking" role="button"><span class="bi bi-chevron-up" aria-hidden="true"></span></a><a class="btn btn-default" href="ReceivingAssetsatWarehouse.html" title="Receiving Assets at Warehouse" role="button"><span class="bi bi-chevron-left" aria-hidden="true"></span></a><a class="btn btn-default" href="DispatchingAssetsfromWarehouse.html" title="Dispatching Assets from Warehouse" role="button"><span class="bi bi-chevron-right" aria-hidden="true"></span></a></div>
+                    </div>
+                </div> 
+            
+
+            <a id="main-content"></a>
+
+            
+
+            <div class="main-content">
+                
+<h1 class="rvps8"><span class="rvts0"><span class="rvts22">Inventory Control of Assets at Warehouse</span></span></h1>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps9"><span class="rvts0"><span class="rvts20">Objective</span></span></h3>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">To maintain accurate and synchronized inventory data between the Warehouse Management System (WMS) and SM2ARTA, ensuring both systems reflect identical stock information at all times.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">This procedure defines the process for daily stock verification, discrepancy handling, and corrections to maintain alignment between physical and system inventories.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps9"><span class="rvts0"><span class="rvts20">Procedure</span></span></h3>
+<h6 class="rvps10"><span class="rvts0"><span class="rvts23">Daily Inventory Reporting</span></span></h6>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">Warehouse Personnel must generate a Daily Stock Report from WMS and send it to the registered distribution list every day.</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">The purpose of this report is to cross-check and validate stock records between WMS and SM2ARTA.</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">The report must include, at a minimum:</span></li>
+ <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: circle;">
+  <li class="rvps2 noindent"><span class="rvts6">Stock quantity per item (by Nomenclature Code / SKU);</span></li>
+  <li class="rvps2 noindent"><span class="rvts6">Storage location (if applicable).</span></li>
+ </ul>
+ <li class="rvps2 noindent"><span class="rvts6">The Material Planning Manager (MPM) cross-checks WMS stock against SM2ARTA daily.</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">If discrepancies are detected, the MPM must request a spot inventory for affected items to verify physical stock.</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">All spot inventory findings must be reported back the same day using the same Inventory Report template.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h6 class="rvps10"><span class="rvts0"><span class="rvts23">Rolling Inventory Verification</span></span></h6>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">A rolling physical inventory must be conducted daily for a minimum of five (5) selected nomenclatures (SKUs).</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">For each nomenclature (SKU) selected:</span></li>
+ <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: circle;">
+  <li class="rvps2 noindent"><span class="rvts6">Count actual stock physically;</span></li>
+  <li class="rvps2 noindent"><span class="rvts6">Record WMS quantity and physical count side-by-side;</span></li>
+  <li class="rvps2 noindent"><span class="rvts6">Note any differences and analyze the cause (data entry error, unrecorded movement, misplacement, etc.);</span></li>
+  <li class="rvps2 noindent"><span class="rvts6">Document findings and corrective actions in the “Remarks” field of the Inventory Report.</span></li>
+ </ul>
+ <li class="rvps2 noindent"><span class="rvts6">The completed report must be distributed daily to the same email list for transparency.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h6 class="rvps10"><span class="rvts0"><span class="rvts23">Discrepancy Management and Stock Correction</span></span></h6>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">Material Planning Manager monitors the Daily Inventory Report daily.</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Any stock discrepancy identified must first be analyzed internally before adjustments are made.</span></li>
+ <li class="rvps2 noindent"><span class="rvts21">No stock correction is to be performed in WMS without the approval of the Material Planning Manager.</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Once approval is granted:</span></li>
+ <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: circle;">
+  <li class="rvps2 noindent"><span class="rvts6">The Warehouse Personnel perform the correction in WMS.</span></li>
+  <li class="rvps2 noindent"><span class="rvts6">Upon completion, an email notification must be sent to the registered distribution list confirming that the WMS correction has been applied.</span></li>
+ </ul>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h6 class="rvps10"><span class="rvts0"><span class="rvts23">SM2ARTA Confirmation</span></span></h6>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">Based on the confirmed WMS correction, the Material Planning Manager performs the corresponding stock correction in SM2ARTA to ensure constant alignment between both inventories.</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">After corrections are applied, the next Daily Stock Report must confirm that both WMS and SM2ARTA values are identical for all corrected items.</span><span class="rvts6"></span></li>
+</ul>
+
+            </div>
+            
+            
+        </div>  <!-- /#topic-content -->
+    </article>
+
+    <footer></footer>
+
+  </div>  <!-- /#main -->
+
+  <div class="mask" data-bs-toggle="sm-nav-expanded"></div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="hndModal" tabindex="-1" role="dialog" aria-labelledby="hndModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="hndModalLabel"></h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary modal-btn-close" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Splitter -->
+  <div id="hnd-splitter" style="left: 350px"></div>  
+
+  <!-- Scripts -->
+  <script src="vendors/jquery-3.7.1/jquery.min.js"></script>
+  <script src="vendors/bootstrap-5.3.7/bootstrap.bundle.min.js"></script>
+  <script src="vendors/markjs-8.11.1/jquery.mark.min.js"></script>
+  <script src="vendors/uri-1.19.11/uri.min.js"></script>
+  <script src="vendors/imageMapResizer-1.0.10/imageMapResizer.min.js"></script>
+  <script src="vendors/headroom-0.11.0/headroom.min.js"></script>
+  <script src="vendors/jstree-3.3.10/jstree.min.js"></script>  
+  <script src="vendors/interactjs-1.9.22/interact.min.js"></script>  
+
+  <!-- HelpNDoc scripts -->
+  <script src="_translations.js"></script>
+  <script src="js/hndsd.min.js"></script>
+  <script src="js/hndse.min.js"></script>
+  <script src="js/app.min.js"></script>
+
+  <!-- >>> ADDED: Simple click-to-zoom via existing Bootstrap modal.
+       Usage: add data-zoom to any <img>. Optional data-full="bigger-file.png". -->
+  <script>
+  (function () {
+    document.addEventListener('click', function (ev) {
+      var img = ev.target.closest('.main-content img[data-zoom]');
+      if (!img) return;
+
+      ev.preventDefault();
+
+      var fullSrc = img.getAttribute('data-full') || img.currentSrc || img.src;
+      var alt = img.getAttribute('alt') || 'Image';
+      var modalEl = document.getElementById('hndModal');
+
+      // fill modal
+      modalEl.querySelector('#hndModalLabel').textContent = alt;
+      modalEl.querySelector('.modal-body').innerHTML =
+        '<img src="' + fullSrc.replace(/"/g, '&quot;') + '" alt="' + alt.replace(/"/g, '&quot;') + '">';
+
+      // show modal (Bootstrap 5)
+      var bsModal = bootstrap.Modal.getOrCreateInstance(modalEl);
+      bsModal.show();
+    });
+  })();
+  </script>
+  <!-- <<< ADDED -->
+
+  <!-- Init script -->
+  <script src="_topic_init.js"></script>
+
+
+
+</body>
+
+</html>
+

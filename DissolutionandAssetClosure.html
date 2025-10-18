@@ -1,0 +1,394 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="generator" content="HelpNDoc Professional Edition 10.0.0.105">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <title>Dissolution and Asset Closure</title>
+  <meta name="description" content="" /> 
+  <meta name="keywords" content="Asset Tracking">
+
+
+
+  
+  
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Dissolution and Asset Closure">
+  <meta name="twitter:description" content="">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Dissolution and Asset Closure" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="SM2ARTA Material Planning Manager Guide" /> 
+
+  <!-- Bootstrap CSS -->
+  <link href="vendors/bootstrap-5.3.7/bootstrap.min.css" rel="stylesheet"/>
+  <link href="vendors/bootstrap-icons-1.13.1/bootstrap-icons.min.css" rel="stylesheet"/>
+
+  <!-- JsTree styles -->
+  <link href="vendors/jstree-3.3.10/themes/default/style.min.css" rel="stylesheet"/>
+
+  
+  
+    <!-- Hnd styles (no cache-buster here, to keep nav working) -->
+  <link href="css/layout.min.css" rel="stylesheet" />
+  <link href="css/effects.min.css" rel="stylesheet" />
+  <link href="css/theme-light-blue.min.css" rel="stylesheet" />
+  <link href="css/print.min.css" rel="stylesheet" media="print" />
+  <style type="text/css">nav { width: 350px} @media screen and (min-width:769px) { body.md-nav-expanded div#main { margin-left: 350px} body.md-nav-expanded header { padding-left: 364px} }</style>
+  <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
+
+  <!-- Content style (cache-busted so your changes always apply) -->
+  <link href="css/hnd.content.css?v=20251018153538" rel="stylesheet" />
+
+
+
+
+<!-- >>> ADDED: Responsive images + modal image styling -->
+<style>
+  /* Responsive only; preserves HND alignment/floats */
+.main-content img,
+.main-content figure img {
+  max-width: 100% !important;
+  height: auto !important;
+  width: auto !important;
+  /* do not set display or margin here */
+}
+
+/* zoom cursor if you use it */
+.main-content img[data-zoom]{ cursor: zoom-in; }
+
+/* images inside modal */
+#hndModal .modal-body img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+</style>
+
+
+
+  <!-- <<< ADDED -->
+
+  
+
+
+
+<script src="/guard.js"></script>
+
+
+<script>
+(function () {
+  const params = new URLSearchParams(location.search);
+  if (params.get('nav') === '0') {
+    const style = `
+      /* hide navigation pane */
+      .hnd-toc, #toc, .sidebar, .splitter { display:none !important; }
+
+      /* hide header, breadcrumbs, and footer */
+      .hnd-header, .hnd-breadcrumb, .breadcrumb, header, nav, .hnd-footer { display:none !important; }
+
+      /* hide topic navigation buttons (up/prev/next) */
+      .hnd-topicnavigation, .topicnavigation, .hnd-navbuttons, .navigation, .next-topic, .prev-topic {
+        display:none !important;
+      }
+
+      /* stretch content full width */
+      .hnd-content, #content, .topic-container, main {
+        width:100% !important; margin:0 !important; padding:2rem !important;
+      }
+    `;
+    const s = document.createElement('style');
+    s.textContent = style;
+    document.head.appendChild(s);
+  }
+})();
+</script>
+
+
+
+
+
+</head>
+
+<body class="md-nav-expanded">
+
+
+
+  
+
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible">Skip to main content</a>
+  </div>
+
+  <header class="headroom">
+    <button class="hnd-toggle btn btn-default">
+      <span class="visually-hidden">Toggle navigation</span>
+      <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>        
+    </button>
+    <h1>SM2ARTA Material Planning Manager Guide</h1>
+    
+  </header>
+
+  <nav id="panel-left" class="md-nav-expanded">
+    <!-- Nav tabs -->
+    <ul class="tab-tabs nav nav-tabs" role="tablist">
+      <li id="nav-close" role="presentation"> 
+        <button class="hnd-toggle btn btn-default" aria-label="close">
+          <span class="bi bi-x" aria-hidden="true"></span>
+        </button>
+      </li>
+      
+	  
+        <li role="presentation" class="nav-item tab">
+            <a href="#contents" id="tab-contents" class="nav-link active" role="tab" data-bs-toggle="tab" data-bs-target="#contents" aria-controls="contents" aria-selected="true">
+                <i class="bi bi-list-ul"></i>
+                Contents
+            </a>
+        </li>
+      
+        <li role="presentation" class="nav-item tab">
+            <a href="#index" id="tab-index" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#index" aria-controls="index" aria-selected="false">
+                <i class="bi bi-asterisk"></i>
+                Index
+            </a>
+        </li>
+      
+        <li role="presentation" class="nav-item tab">
+            <a href="#search" id="tab-search" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#search" aria-controls="search" aria-selected="false">
+                <i class="bi bi-search"></i>
+                Search
+            </a>
+        </li>
+      
+    </ul>  <!-- /Nav tabs -->
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+	  
+      <div role="tabpanel" class="tab-pane active" id="contents">
+        <div id="toc" class="tree-container unselectable"
+            data-url="_toc.json"
+            data-openlvl="2"
+        >
+            
+        </div>
+      </div>  <!-- /contents-->
+      
+      <div role="tabpanel" class="tab-pane" id="index">
+        <div id="keywords" class="tree-container unselectable"
+            data-url="_keywords.json"
+            data-openlvl="1"
+        >
+            
+        </div>
+      </div>  <!-- /index-->
+      
+      <div role="tabpanel" class="tab-pane" id="search">
+        <div class="search-content">
+          <div class="search-input">
+            <form id="search-form">
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="input-search" name="input-search" placeholder="Search..." aria-label="Search..." />
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit" aria-label="Search...">
+                      <span class="bi bi-search" aria-hidden="true"></span>
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </form>
+          </div>  <!-- /search-input -->
+          <div class="search-result">
+            <div id="search-info"></div>
+            <div class="tree-container unselectable" id="search-tree"></div>
+          </div>  <!-- /search-result -->
+        </div>  <!-- /search-content -->
+      </div>  <!-- /search-->
+      
+    </div>  <!-- /Tab panes -->
+
+  </nav>
+
+  <div id="main">
+
+    <article>
+        <div id="topic-content" class="container-fluid" 
+		  data-hnd-id="DissolutionandAssetClosure"
+		  data-hnd-context="133"
+		  data-hnd-title="Dissolution and Asset Closure"
+		>
+            
+                <div class="navigation">
+                    <ol class="breadcrumb">
+                        <li><a href="AssetTracking.html">Asset Tracking</a></li>
+                    </ol>
+                    <div class="nav-arrows">
+                        <div class="btn-group btn-group" role="group"><a class="btn btn-default" href="AssetTracking.html" title="Asset Tracking" role="button"><span class="bi bi-chevron-up" aria-hidden="true"></span></a><a class="btn btn-default" href="DamageReporting.html" title="Damage Reporting" role="button"><span class="bi bi-chevron-left" aria-hidden="true"></span></a></div>
+                    </div>
+                </div> 
+            
+
+            <a id="main-content"></a>
+
+            
+
+            <div class="main-content">
+                
+<h1 class="rvps8"><span class="rvts0"><span class="rvts22">Dissolution and Asset Closure</span></span></h1>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps9"><span class="rvts0"><span class="rvts20">Objective</span></span></h3>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">To ensure that all assets identified for dissolution — including damaged, obsolete, or surplus items — are processed in a controlled and auditable manner.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">All dissolution actions must be reviewed, approved, and executed in accordance with the company-wide Dissolution Policy and properly reflected in SM2ARTA to maintain accurate inventory records.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps9"><span class="rvts0"><span class="rvts20">Procedure</span></span></h3>
+<h3 class="rvps9"><span class="rvts0"><span class="rvts20">Initiation of Dissolution</span></span></h3>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">Any proposal to dissolve an asset from active use must be submitted to the Material Planning Manager (MPM) for review and approval by asset owner.</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">The Material Planning Manager must review each request in alignment with the company Dissolution Policy and determine the appropriate course of action: reuse, redistribution, recycling, donation, or disposal.</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">No asset may be dissolved without prior written approval from the Material Planning Manager.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h6 class="rvps10"><span class="rvts0"><span class="rvts23">Documentation Requirements</span></span></h6>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">All dissolution actions must be supported by proper documentation in accordance with the company Dissolution Policy.</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">The responsible Asset Owner must complete such document which may include:</span></li>
+ <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: circle;">
+  <li class="rvps2 noindent"><span class="rvts6">Current disposition of assets</span></li>
+  <li class="rvps2 noindent"><span class="rvts6">Nomenclature Code (SKU), Description, Quantity, and Condition</span></li>
+  <li class="rvps2 noindent"><span class="rvts6">Justification for dissolution (e.g., damaged, obsolete, excess stock, not reusable)</span></li>
+  <li class="rvps2 noindent"><span class="rvts6">Recommended dissolution method (reuse, recycle, donate, dispose)</span></li>
+  <li class="rvps2 noindent"><span class="rvts6">Approval signatures if required by company Dissolution Policy</span></li>
+ </ul>
+ <li class="rvps2 noindent"><span class="rvts6">Supporting documentation such as photos, Damage Reports (if applicable)</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">All approved dissolution documents must be stored in the event repository or relevant venue/warehouse folder for audit purposes.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h6 class="rvps10"><span class="rvts0"><span class="rvts23">Asset Preparation for Dissolution</span></span></h6>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">Once dissolution is approved, the Asset Owner, Venue Logistics Manager or Warehouse Personnel must ensure the item is thoroughly prepared for the selected dissolution method.</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Assets approved for redistribution, donation, or storage must be:</span></li>
+ <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: circle;">
+  <li class="rvps2 noindent"><span class="rvts6">Picked, palletized, and packed in accordance with existing packaging and safety standards.</span></li>
+  <li class="rvps2 noindent"><span class="rvts6">Labeled clearly with “For Dissolution” or the relevant category (e.g., Recycle, Donate, Scrap).</span></li>
+ </ul>
+ <li class="rvps2 noindent"><span class="rvts6">Assets approved for recycling or disposal must be segregated from operational inventory and kept in a designated area pending collection by the authorized vendor.</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Photographic evidence of the prepared assets must be taken and archived with the dissolution documentation.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h6 class="rvps10"><span class="rvts0"><span class="rvts23">SM2ARTA Confirmation</span></span></h6>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">Once physical dissolution is confirmed, a Stock Correction Transaction must be created in SM2ARTA by the Material Planning Manager to formally reflect the asset closure and adjust inventory balances.</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">The transaction must include:</span></li>
+ <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: circle;">
+  <li class="rvps2 noindent"><span class="rvts6">Venue or Warehouse name</span></li>
+  <li class="rvps2 noindent"><span class="rvts6">Nomenclature Code (SKU) and Quantity removed</span></li>
+  <li class="rvps2 noindent"><span class="rvts6">Dissolution reason and method (Recycle / Donate / Scrap / Transfer)</span></li>
+  <li class="rvps2 noindent"><span class="rvts18">Uploaded documentation including approved forms and photos</span></li>
+ </ul>
+ <li class="rvps2 noindent"><span class="rvts6">The transaction status should be marked as “Completed” once the adjustment is completed and verified.</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">SM2ARTA will automatically update the overall stock count, ensuring complete alignment between physical inventory and system records.</span><span class="rvts6"></span></li>
+</ul>
+
+            </div>
+            
+            
+        </div>  <!-- /#topic-content -->
+    </article>
+
+    <footer></footer>
+
+  </div>  <!-- /#main -->
+
+  <div class="mask" data-bs-toggle="sm-nav-expanded"></div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="hndModal" tabindex="-1" role="dialog" aria-labelledby="hndModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="hndModalLabel"></h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary modal-btn-close" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Splitter -->
+  <div id="hnd-splitter" style="left: 350px"></div>  
+
+  <!-- Scripts -->
+  <script src="vendors/jquery-3.7.1/jquery.min.js"></script>
+  <script src="vendors/bootstrap-5.3.7/bootstrap.bundle.min.js"></script>
+  <script src="vendors/markjs-8.11.1/jquery.mark.min.js"></script>
+  <script src="vendors/uri-1.19.11/uri.min.js"></script>
+  <script src="vendors/imageMapResizer-1.0.10/imageMapResizer.min.js"></script>
+  <script src="vendors/headroom-0.11.0/headroom.min.js"></script>
+  <script src="vendors/jstree-3.3.10/jstree.min.js"></script>  
+  <script src="vendors/interactjs-1.9.22/interact.min.js"></script>  
+
+  <!-- HelpNDoc scripts -->
+  <script src="_translations.js"></script>
+  <script src="js/hndsd.min.js"></script>
+  <script src="js/hndse.min.js"></script>
+  <script src="js/app.min.js"></script>
+
+  <!-- >>> ADDED: Simple click-to-zoom via existing Bootstrap modal.
+       Usage: add data-zoom to any <img>. Optional data-full="bigger-file.png". -->
+  <script>
+  (function () {
+    document.addEventListener('click', function (ev) {
+      var img = ev.target.closest('.main-content img[data-zoom]');
+      if (!img) return;
+
+      ev.preventDefault();
+
+      var fullSrc = img.getAttribute('data-full') || img.currentSrc || img.src;
+      var alt = img.getAttribute('alt') || 'Image';
+      var modalEl = document.getElementById('hndModal');
+
+      // fill modal
+      modalEl.querySelector('#hndModalLabel').textContent = alt;
+      modalEl.querySelector('.modal-body').innerHTML =
+        '<img src="' + fullSrc.replace(/"/g, '&quot;') + '" alt="' + alt.replace(/"/g, '&quot;') + '">';
+
+      // show modal (Bootstrap 5)
+      var bsModal = bootstrap.Modal.getOrCreateInstance(modalEl);
+      bsModal.show();
+    });
+  })();
+  </script>
+  <!-- <<< ADDED -->
+
+  <!-- Init script -->
+  <script src="_topic_init.js"></script>
+
+
+
+</body>
+
+</html>
+

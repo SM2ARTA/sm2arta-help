@@ -1,0 +1,421 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="generator" content="HelpNDoc Professional Edition 10.0.0.105">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <title>Moving Assets Between Venues</title>
+  <meta name="description" content="" /> 
+  <meta name="keywords" content="Asset Tracking">
+
+
+
+  
+  
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Moving Assets Between Venues">
+  <meta name="twitter:description" content="">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Moving Assets Between Venues" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="SM2ARTA Material Planning Manager Guide" /> 
+
+  <!-- Bootstrap CSS -->
+  <link href="vendors/bootstrap-5.3.7/bootstrap.min.css" rel="stylesheet"/>
+  <link href="vendors/bootstrap-icons-1.13.1/bootstrap-icons.min.css" rel="stylesheet"/>
+
+  <!-- JsTree styles -->
+  <link href="vendors/jstree-3.3.10/themes/default/style.min.css" rel="stylesheet"/>
+
+  
+  
+    <!-- Hnd styles (no cache-buster here, to keep nav working) -->
+  <link href="css/layout.min.css" rel="stylesheet" />
+  <link href="css/effects.min.css" rel="stylesheet" />
+  <link href="css/theme-light-blue.min.css" rel="stylesheet" />
+  <link href="css/print.min.css" rel="stylesheet" media="print" />
+  <style type="text/css">nav { width: 350px} @media screen and (min-width:769px) { body.md-nav-expanded div#main { margin-left: 350px} body.md-nav-expanded header { padding-left: 364px} }</style>
+  <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
+
+  <!-- Content style (cache-busted so your changes always apply) -->
+  <link href="css/hnd.content.css?v=20251018153538" rel="stylesheet" />
+
+
+
+
+<!-- >>> ADDED: Responsive images + modal image styling -->
+<style>
+  /* Responsive only; preserves HND alignment/floats */
+.main-content img,
+.main-content figure img {
+  max-width: 100% !important;
+  height: auto !important;
+  width: auto !important;
+  /* do not set display or margin here */
+}
+
+/* zoom cursor if you use it */
+.main-content img[data-zoom]{ cursor: zoom-in; }
+
+/* images inside modal */
+#hndModal .modal-body img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+</style>
+
+
+
+  <!-- <<< ADDED -->
+
+  
+
+
+
+<script src="/guard.js"></script>
+
+
+<script>
+(function () {
+  const params = new URLSearchParams(location.search);
+  if (params.get('nav') === '0') {
+    const style = `
+      /* hide navigation pane */
+      .hnd-toc, #toc, .sidebar, .splitter { display:none !important; }
+
+      /* hide header, breadcrumbs, and footer */
+      .hnd-header, .hnd-breadcrumb, .breadcrumb, header, nav, .hnd-footer { display:none !important; }
+
+      /* hide topic navigation buttons (up/prev/next) */
+      .hnd-topicnavigation, .topicnavigation, .hnd-navbuttons, .navigation, .next-topic, .prev-topic {
+        display:none !important;
+      }
+
+      /* stretch content full width */
+      .hnd-content, #content, .topic-container, main {
+        width:100% !important; margin:0 !important; padding:2rem !important;
+      }
+    `;
+    const s = document.createElement('style');
+    s.textContent = style;
+    document.head.appendChild(s);
+  }
+})();
+</script>
+
+
+
+
+
+</head>
+
+<body class="md-nav-expanded">
+
+
+
+  
+
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible">Skip to main content</a>
+  </div>
+
+  <header class="headroom">
+    <button class="hnd-toggle btn btn-default">
+      <span class="visually-hidden">Toggle navigation</span>
+      <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>        
+    </button>
+    <h1>SM2ARTA Material Planning Manager Guide</h1>
+    
+  </header>
+
+  <nav id="panel-left" class="md-nav-expanded">
+    <!-- Nav tabs -->
+    <ul class="tab-tabs nav nav-tabs" role="tablist">
+      <li id="nav-close" role="presentation"> 
+        <button class="hnd-toggle btn btn-default" aria-label="close">
+          <span class="bi bi-x" aria-hidden="true"></span>
+        </button>
+      </li>
+      
+	  
+        <li role="presentation" class="nav-item tab">
+            <a href="#contents" id="tab-contents" class="nav-link active" role="tab" data-bs-toggle="tab" data-bs-target="#contents" aria-controls="contents" aria-selected="true">
+                <i class="bi bi-list-ul"></i>
+                Contents
+            </a>
+        </li>
+      
+        <li role="presentation" class="nav-item tab">
+            <a href="#index" id="tab-index" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#index" aria-controls="index" aria-selected="false">
+                <i class="bi bi-asterisk"></i>
+                Index
+            </a>
+        </li>
+      
+        <li role="presentation" class="nav-item tab">
+            <a href="#search" id="tab-search" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#search" aria-controls="search" aria-selected="false">
+                <i class="bi bi-search"></i>
+                Search
+            </a>
+        </li>
+      
+    </ul>  <!-- /Nav tabs -->
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+	  
+      <div role="tabpanel" class="tab-pane active" id="contents">
+        <div id="toc" class="tree-container unselectable"
+            data-url="_toc.json"
+            data-openlvl="2"
+        >
+            
+        </div>
+      </div>  <!-- /contents-->
+      
+      <div role="tabpanel" class="tab-pane" id="index">
+        <div id="keywords" class="tree-container unselectable"
+            data-url="_keywords.json"
+            data-openlvl="1"
+        >
+            
+        </div>
+      </div>  <!-- /index-->
+      
+      <div role="tabpanel" class="tab-pane" id="search">
+        <div class="search-content">
+          <div class="search-input">
+            <form id="search-form">
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="input-search" name="input-search" placeholder="Search..." aria-label="Search..." />
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit" aria-label="Search...">
+                      <span class="bi bi-search" aria-hidden="true"></span>
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </form>
+          </div>  <!-- /search-input -->
+          <div class="search-result">
+            <div id="search-info"></div>
+            <div class="tree-container unselectable" id="search-tree"></div>
+          </div>  <!-- /search-result -->
+        </div>  <!-- /search-content -->
+      </div>  <!-- /search-->
+      
+    </div>  <!-- /Tab panes -->
+
+  </nav>
+
+  <div id="main">
+
+    <article>
+        <div id="topic-content" class="container-fluid" 
+		  data-hnd-id="MovingAssetsBetweenVenues"
+		  data-hnd-context="130"
+		  data-hnd-title="Moving Assets Between Venues"
+		>
+            
+                <div class="navigation">
+                    <ol class="breadcrumb">
+                        <li><a href="AssetTracking.html">Asset Tracking</a></li>
+                    </ol>
+                    <div class="nav-arrows">
+                        <div class="btn-group btn-group" role="group"><a class="btn btn-default" href="AssetTracking.html" title="Asset Tracking" role="button"><span class="bi bi-chevron-up" aria-hidden="true"></span></a><a class="btn btn-default" href="Hand-overandhand-backofAssetsatV.html" title="Hand-over and hand-back of Assets at Venues" role="button"><span class="bi bi-chevron-left" aria-hidden="true"></span></a><a class="btn btn-default" href="ReturningAssetstoWarehouse.html" title="Returning Assets to Warehouse" role="button"><span class="bi bi-chevron-right" aria-hidden="true"></span></a></div>
+                    </div>
+                </div> 
+            
+
+            <a id="main-content"></a>
+
+            
+
+            <div class="main-content">
+                
+<h1 class="rvps8"><span class="rvts0"><span class="rvts22">Moving Assets Between Venues</span></span></h1>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps9"><span class="rvts0"><span class="rvts20">Objective</span></span></h3>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">To ensure that all assets moved between venues are properly authorized, documented, and traceable using the Asset Inter-Venue Transfer Form (AITF).</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">This procedure ensures that all inter-venue transfers are carried out in a controlled manner, maintaining full visibility in SM2ARTA and ensuring accurate updates to venue inventories.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">This procedure applies to venues with a Venue Logistics Manager (VLM) on site and venues without a VLM. Where no VLM is present, the designated sender at origin and receiver at destination must perform all steps and submit the full documentation packet by email to the registered distribution list, as they do not have access to SM2ARTA.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps9"><span class="rvts0"><span class="rvts20">Procedure</span></span></h3>
+<h6 class="rvps10"><span class="rvts0"><span class="rvts23">Pre-Transfer – Approval and Preparation</span></span></h6>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">When an asset needs to be transferred from one venue to another, the requesting venue must fill out the Asset Inter-Venue Transfer Form (AITF).</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">AITF must include:</span></li>
+ <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: circle;">
+  <li class="rvps2 noindent"><span class="rvts6">Origin and destination venues;</span></li>
+  <li class="rvps2 noindent"><span class="rvts6">Expected transfer date;</span></li>
+  <li class="rvps2 noindent"><span class="rvts6">List of assets (Nomenclature Codes, Descriptions, Quantities, UoMs);</span></li>
+  <li class="rvps2 noindent"><span class="rvts6">Vehicle and transport details (carrier, vehicle number, seal number if applicable).</span></li>
+ </ul>
+ <li class="rvps2 noindent"><span class="rvts6">The AITF serves as the primary document for the transfer and must be referenced in all related correspondence and records.</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Material Planning Manager reviews the AITF, and if approved, creates moving transaction in SM2ARTA. The transaction is assigned a unique number, which becomes the official AITF Number.</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">The approved AITF, with the assigned number, is returned to the requesting venue as formal approval to proceed.</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">No inter-venue movement may begin without written approval and a valid AITF.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h6 class="rvps10"><span class="rvts0"><span class="rvts23">Example of AITF</span></span></h6>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="width : 1022px; height : 966px; padding : 1px;" src="lib/Asset%20Inter-Venue%20Transfer%20Form%20AITF.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h6 class="rvps10"><span class="rvts0"><span class="rvts23">Preparation at Origin Venue</span></span></h6>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">The Venue Logistics Manager (VLM) or sender at the origin venue coordinates preparation of assets listed on the AITF.</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Verify that all items are available, in good condition, and correspond to the AITF.</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Ensure proper packing, labeling, and wrapping to prevent damage during transport.</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Take photos of:</span></li>
+ <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: circle;">
+  <li class="rvps2 noindent"><span class="rvts6">Prepared pallets or assets before loading;</span></li>
+  <li class="rvps2 noindent"><span class="rvts6">Labels showing Nomenclature Codes and quantities;</span></li>
+  <li class="rvps2 noindent"><span class="rvts6">Overall view of staged cargo.</span></li>
+ </ul>
+ <li class="rvps2 noindent"><span class="rvts6">Prepare Delivery Documents (DD): BOL to be provided by the Logistics Provider, AITF serves as Truck Manifest for this shipment.</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Before loading:</span></li>
+ <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: circle;">
+  <li class="rvps2 noindent"><span class="rvts6">Record vehicle arrival time and verify vehicle and driver details.</span></li>
+ </ul>
+ <li class="rvps2 noindent"><span class="rvts6">Take photos of:</span></li>
+ <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: circle;">
+  <li class="rvps2 noindent"><span class="rvts6">Vehicle license plates;</span></li>
+  <li class="rvps2 noindent"><span class="rvts6">Empty vehicle interior.</span></li>
+ </ul>
+ <li class="rvps2 noindent"><span class="rvts6">During loading:</span></li>
+ <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: circle;">
+  <li class="rvps2 noindent"><span class="rvts6">Handle all items carefully and follow loading plan and safety requirements;</span></li>
+  <li class="rvps2 noindent"><span class="rvts6">Record seal number on the DD.</span></li>
+ </ul>
+ <li class="rvps2 noindent"><span class="rvts6">Take photos of&nbsp;</span></li>
+ <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: circle;">
+  <li class="rvps2 noindent"><span class="rvts6">The loading process;</span></li>
+  <li class="rvps2 noindent"><span class="rvts6">Sealed vehicle (if applicable).</span></li>
+ </ul>
+ <li class="rvps2 noindent"><span class="rvts6">If there is no VLM at the origin venue, the sender must email the signed AITF, other DD, and photos to the registered distribution list immediately after dispatch.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h6 class="rvps10"><span class="rvts0"><span class="rvts23">Receiving at Destination Venue</span></span></h6>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Receiving and discrepancy handling follows </span><a class="rvts12" href="ReceivingAssetsatVenues.html">Receiving Assets at Venues</a><span class="rvts6"> procedure.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h6 class="rvps10"><span class="rvts0"><span class="rvts23">SM2ARTA Confirmation</span></span></h6>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">After both origin and destination venues have signed the AITF:</span></li>
+ <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: circle;">
+  <li class="rvps2 noindent"><span class="rvts6">Each venue must retain one signed copy for their records;</span></li>
+  <li class="rvps2 noindent"><span class="rvts6">The full set of documents and photos must be submitted by email to the registered distribution list.</span></li>
+ </ul>
+ <li class="rvps2 noindent"><span class="rvts6"> The Material Planning Manager must then review all documents and update SM2ARTA to reflect the transfer:</span></li>
+ <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: circle;">
+  <li class="rvps2 noindent"><span class="rvts6">Note any discrepancies if identifies;</span></li>
+  <li class="rvps2 noindent"><span class="rvts18">Upload all relevant documentation into SM2ARTA;</span></li>
+  <li class="rvps2 noindent"><span class="rvts6">Confirm transaction in SM2ARTA.</span></li>
+ </ul>
+ <li class="rvps2 noindent"><span class="rvts6">Once confirmed, SM2ARTA must show the updated asset inventories in both venues.</span><span class="rvts6"></span></li>
+</ul>
+
+            </div>
+            
+            
+        </div>  <!-- /#topic-content -->
+    </article>
+
+    <footer></footer>
+
+  </div>  <!-- /#main -->
+
+  <div class="mask" data-bs-toggle="sm-nav-expanded"></div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="hndModal" tabindex="-1" role="dialog" aria-labelledby="hndModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="hndModalLabel"></h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary modal-btn-close" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Splitter -->
+  <div id="hnd-splitter" style="left: 350px"></div>  
+
+  <!-- Scripts -->
+  <script src="vendors/jquery-3.7.1/jquery.min.js"></script>
+  <script src="vendors/bootstrap-5.3.7/bootstrap.bundle.min.js"></script>
+  <script src="vendors/markjs-8.11.1/jquery.mark.min.js"></script>
+  <script src="vendors/uri-1.19.11/uri.min.js"></script>
+  <script src="vendors/imageMapResizer-1.0.10/imageMapResizer.min.js"></script>
+  <script src="vendors/headroom-0.11.0/headroom.min.js"></script>
+  <script src="vendors/jstree-3.3.10/jstree.min.js"></script>  
+  <script src="vendors/interactjs-1.9.22/interact.min.js"></script>  
+
+  <!-- HelpNDoc scripts -->
+  <script src="_translations.js"></script>
+  <script src="js/hndsd.min.js"></script>
+  <script src="js/hndse.min.js"></script>
+  <script src="js/app.min.js"></script>
+
+  <!-- >>> ADDED: Simple click-to-zoom via existing Bootstrap modal.
+       Usage: add data-zoom to any <img>. Optional data-full="bigger-file.png". -->
+  <script>
+  (function () {
+    document.addEventListener('click', function (ev) {
+      var img = ev.target.closest('.main-content img[data-zoom]');
+      if (!img) return;
+
+      ev.preventDefault();
+
+      var fullSrc = img.getAttribute('data-full') || img.currentSrc || img.src;
+      var alt = img.getAttribute('alt') || 'Image';
+      var modalEl = document.getElementById('hndModal');
+
+      // fill modal
+      modalEl.querySelector('#hndModalLabel').textContent = alt;
+      modalEl.querySelector('.modal-body').innerHTML =
+        '<img src="' + fullSrc.replace(/"/g, '&quot;') + '" alt="' + alt.replace(/"/g, '&quot;') + '">';
+
+      // show modal (Bootstrap 5)
+      var bsModal = bootstrap.Modal.getOrCreateInstance(modalEl);
+      bsModal.show();
+    });
+  })();
+  </script>
+  <!-- <<< ADDED -->
+
+  <!-- Init script -->
+  <script src="_topic_init.js"></script>
+
+
+
+</body>
+
+</html>
+
