@@ -200,13 +200,9 @@ p,ul,ol /* Paragraph Style */
 }
 .rvps5
 {
- margin: 0px 0px 8px 24px;
-}
-.rvps6
-{
  line-height: 1.80;
 }
-.rvps7 /* Paragraph Style */
+.rvps6 /* Paragraph Style */
 {
  text-align: center;
  border-color: #c0c0c0;
@@ -216,6 +212,14 @@ p,ul,ol /* Paragraph Style */
  border-left: none;
  padding: 2px 0px 2px 0px;
  margin: 7px 0px 7px 0px;
+}
+.rvps7
+{
+ text-align: left;
+ text-indent: 0px;
+ break-after: avoid;
+ padding: 0px 0px 0px 0px;
+ margin: 16px 0px 4px 0px;
 }
 .rvps8
 {
@@ -237,27 +241,19 @@ p,ul,ol /* Paragraph Style */
 {
  text-align: left;
  text-indent: 0px;
+ line-height: 1.80;
  break-after: avoid;
  padding: 0px 0px 0px 0px;
  margin: 16px 0px 4px 0px;
 }
 .rvps11
 {
- text-align: left;
- text-indent: 0px;
- line-height: 1.80;
- break-after: avoid;
- padding: 0px 0px 0px 0px;
- margin: 16px 0px 4px 0px;
-}
-.rvps12
-{
  text-align: justify;
  text-justify: inter-word;
  text-align-last: auto;
  line-height: 1.80;
 }
-.rvps13
+.rvps12
 {
  margin: 0px 0px 0px 24px;
 }
