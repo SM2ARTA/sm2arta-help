@@ -49,7 +49,7 @@
   <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
 
   <!-- Content style (cache-busted so your changes always apply) -->
-  <link href="css/hnd.content.css?v=20251018153538" rel="stylesheet" />
+  <link href="css/hnd.content.css?v=20251018213308" rel="stylesheet" />
 
 
 
@@ -262,10 +262,10 @@
  <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: circle;">
   <li class="rvps2 noindent"><span class="rvts6">SM2ARTA Transaction Number;</span></li>
   <li class="rvps2 noindent"><span class="rvts6">Shipment Reference and Expected Delivery Date/Time;</span></li>
-  <li class="rvps2 noindent"><span class="rvts6">Origin;</span></li>
+  <li class="rvps2 noindent"><span class="rvts6">Origin / Supplier;</span></li>
   <li class="rvps2 noindent"><span class="rvts6">Full item list with Nomenclatures and quantities;</span></li>
-  <li class="rvps2 noindent"><span class="rvts6">Transport details (carrier, vehicle number, seal number if applicable);</span></li>
-  <li class="rvps2 noindent"><span class="rvts6">Attached Delivery Documents (BOL, PL, TM).</span></li>
+  <li class="rvps2 noindent"><span class="rvts6">Transport details (carrier, vehicle number, seal number if available);</span></li>
+  <li class="rvps2 noindent"><span class="rvts6">Delivery Documents (BOL, PL, TM) if available.</span></li>
  </ul>
  <li class="rvps2 noindent"><span class="rvts6">Based on the ASN, Warehouse Personnel create a Receiving Order in WMS using the SM2ARTA ASN Number for cross-reference.</span></li>
  <li class="rvps2 noindent"><span class="rvts6">Any shipment arriving without a receiving order must be held pending verification by the Material Planning Manager.</span></li>
@@ -276,9 +276,11 @@
 <p class="rvps2"><img alt="" style="width : 1079px; height : 209px; padding : 1px;" src="lib/Inbound%20ASN.png"></p>
 <h6 class="rvps10"><span class="rvts0"><span class="rvts23">Vehicle Arrival</span></span></h6>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Warehouse Personnel perform following activities:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
  <li class="rvps2 noindent"><span class="rvts6">Confirm vehicle arrival time against the planned delivery schedule.</span></li>
- <li class="rvps2 noindent"><span class="rvts6">Request Delivery Documents (DD) from the driver — Bill of Lading (BOL), Truck Manifest (TM), Delivery Note (DN), or Packing List (PL).</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Request Delivery Documents (DD) from the driver.</span></li>
  <li class="rvps2 noindent"><span class="rvts6">If documents are missing, locate the receiving order in WMS and print for verification.</span></li>
  <li class="rvps2 noindent"><span class="rvts6">Verify that the truck seal (if any) matches the seal number indicated on the DD.</span></li>
  <li class="rvps2 noindent"><span class="rvts6">Take photos of:</span></li>
@@ -290,6 +292,8 @@
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <h6 class="rvps10"><span class="rvts0"><span class="rvts23">Unloading the Vehicle</span></span></h6>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Warehouse Personnel perform following activities:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
  <li class="rvps2 noindent"><span class="rvts6">Ensure the unloading area is clear, safe, and suitable for the cargo type.</span></li>
  <li class="rvps2 noindent"><span class="rvts6">Verify Material Handling Equipment (MHE) availability (e.g., pallet jacks, forklifts).</span></li>
@@ -298,7 +302,7 @@
  <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: circle;">
   <li class="rvps2 noindent"><span class="rvts6">Handle materials carefully, using two-person verification for heavy or fragile items;</span></li>
   <li class="rvps2 noindent"><span class="rvts6">Inspect visible packaging for damage before moving;</span></li>
-  <li class="rvps2 noindent"><span class="rvts6">Separate any damaged or incorrectly labeled pallets;</span></li>
+  <li class="rvps2 noindent"><span class="rvts6">Separate any damaged pallets;</span></li>
   <li class="rvps2 noindent"><span class="rvts6">Record any irregularities immediately in the DD.</span></li>
  </ul>
  <li class="rvps2 noindent"><span class="rvts6">Take photos of:</span></li>
@@ -309,14 +313,15 @@
  <li class="rvps2 noindent"><span class="rvts6">If damage occurs during unloading:</span></li>
  <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: circle;">
   <li class="rvps2 noindent"><span class="rvts6">Take detailed photos of the affected items and surrounding area;</span></li>
-  <li class="rvps2 noindent"><span class="rvts6">Complete a Damage Report;</span></li>
-  <li class="rvps2 noindent"><span class="rvts6">Record all relevant circumstances — involved personnel, MHE used, packaging condition, and damage type;</span></li>
+  <li class="rvps2 noindent"><span class="rvts6">Complete the Damage Report to record all circumstances (involved personnel, MHE used, packaging condition, damage type);</span></li>
   <li class="rvps2 noindent"><span class="rvts6">Notify the Material Planning Manager and move damaged goods to the Quarantine Zone for further inspection;</span></li>
  </ul>
  <li class="rvps2 noindent"><span class="rvts6">Once unloading is complete, move all received pallets to the receiving inspection area for further verification. </span><span class="rvts21">Do not move items into storage until verified.</span></li>
 </ul>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <h6 class="rvps10"><span class="rvts0"><span class="rvts23">Verification Process</span></span></h6>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Warehouse Personnel perform following activities:</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
  <li class="rvps2 noindent"><span class="rvts6">Once pallets are staged in the Receiving Inspection Area, perform full verification against the Delivery Documents or WMS Receiving Order.</span></li>
@@ -347,10 +352,12 @@
   <li class="rvps2 noindent"><span class="rvts6">Any NCR or Damage Report references;</span></li>
  </ul>
  <li class="rvps2 noindent"><span class="rvts6">Once all details are complete, the receiving order can be confirmed in WMS.</span></li>
- <li class="rvps2 noindent"><span class="rvts6">Upon confirmation, WMS automatically sends a confirmation email to the registered distribution list.</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Upon confirmation, WMS automatically sends a confirmation email.</span></li>
 </ul>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <h6 class="rvps10"><span class="rvts0"><span class="rvts23">SM2ARTA Confirmation</span></span></h6>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Material Planning Manager should:</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
  <li class="rvps2 noindent"><span class="rvts6">Once the receiving operation is finalized and the WMS confirmation email is received, locate the corresponding transaction in SM2ARTA.</span></li>
