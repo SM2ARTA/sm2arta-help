@@ -182,6 +182,11 @@ a.rvts34, span.rvts34
  color: #0000ff;
  text-decoration: underline;
 }
+span.rvts35
+{
+ font-style: italic;
+ font-weight: bold;
+}
 /* ========== Para Styles ========== */
 p,ul,ol /* Paragraph Style */
 {
