@@ -156,55 +156,59 @@ a.rvts30, span.rvts30
  color: #0000ff;
  text-decoration: underline;
 }
-span.rvts31
+a.rvts31, span.rvts31
 {
- font-style: italic;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
 }
 span.rvts32
 {
+ font-style: italic;
+}
+span.rvts33
+{
  font-weight: bold;
  background-color: #ffff00;
 }
-a.rvts33, span.rvts33
-{
- font-weight: bold;
- color: #0000ff;
- text-decoration: underline;
-}
 span.rvts34
+{
+ background-color: #ff0000;
+}
+span.rvts35
 {
  font-style: italic;
  background-color: #ffff00;
 }
-a.rvts35, span.rvts35
+a.rvts36, span.rvts36
 {
  font-weight: bold;
  color: #0000ff;
  background-color: #ffff00;
  text-decoration: underline;
 }
-span.rvts36
+span.rvts37
 {
  font-size: 13pt;
  font-weight: bold;
 }
-span.rvts37
+span.rvts38
 {
  font-size: 7pt;
  vertical-align: super;
 }
-a.rvts38, span.rvts38
+a.rvts39, span.rvts39
 {
  font-style: italic;
  color: #0000ff;
  text-decoration: underline;
 }
-span.rvts39
+span.rvts40
 {
  font-style: italic;
  font-weight: bold;
 }
-span.rvts40
+span.rvts41
 {
  font-weight: bold;
 }
@@ -297,4 +301,5 @@ p,ul,ol /* Paragraph Style */
 .list3 {text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: disc;}
 .list4 {text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside;}
 .list5 {text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside;}
+.list6 {text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: '❑ ';}
 li.noindent { margin-left: 0; padding-left: 0; }
