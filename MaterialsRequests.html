@@ -49,7 +49,7 @@
   <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
 
   <!-- Content style (cache-busted so your changes always apply) -->
-  <link href="css/hnd.content.css?v=20251105085433" rel="stylesheet" />
+  <link href="css/hnd.content.css?v=20251105204536" rel="stylesheet" />
 
 
 
@@ -260,11 +260,12 @@
 <p class="rvps2"><span class="rvts6">SM2ARTA allows:</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
- <li class="rvps2 noindent"><span class="rvts14">View</span><span class="rvts6"> existing </span><span class="rvts14">Material</span><span class="rvts6"> </span><span class="rvts14">Requests</span><span class="rvts6">;</span></li>
- <li class="rvps2 noindent"><span class="rvts14">Add</span><span class="rvts6"> new </span><span class="rvts14">Material</span><span class="rvts6"> </span><span class="rvts14">Requests</span><span class="rvts6">;</span></li>
- <li class="rvps2 noindent"><span class="rvts14">Edit</span><span class="rvts6"> existing entries to adjust </span><span class="rvts14">Requested</span><span class="rvts6"> and </span><span class="rvts14">Existing</span><span class="rvts6"> quantities;</span></li>
- <li class="rvps2 noindent"><span class="rvts14">Duplicate</span><span class="rvts6"> </span><span class="rvts14">Material</span><span class="rvts6"> </span><span class="rvts14">Requests</span><span class="rvts6"> across similar spaces or venues to save time and ensure consistency;</span></li>
- <li class="rvps2 noindent"><span class="rvts14">Remove</span><span class="rvts6"> </span><span class="rvts14">Materials</span><span class="rvts6"> </span><span class="rvts14">Requests</span><span class="rvts6">.</span></li>
+ <li class="rvps2 noindent"><a class="rvts31" href="ViewMaterialsRequest.html">View</a><span class="rvts6"> existing </span><span class="rvts14">Material</span><span class="rvts6"> </span><span class="rvts14">Requests</span><span class="rvts6">;</span></li>
+ <li class="rvps2 noindent"><a class="rvts31" href="AddMaterialsRequest.html">Add</a><span class="rvts6"> new </span><span class="rvts14">Material</span><span class="rvts6"> </span><span class="rvts14">Requests</span><span class="rvts6">;</span></li>
+ <li class="rvps2 noindent"><a class="rvts31" href="EditMaterialsRequest.html">Edit</a><span class="rvts6"> existing entries to adjust </span><span class="rvts14">Requested</span><span class="rvts6"> and </span><span class="rvts14">Existing</span><span class="rvts6"> quantities;</span></li>
+ <li class="rvps2 noindent"><a class="rvts31" href="DuplicateMaterialsRequest.html">Duplicate</a><span class="rvts6"> </span><span class="rvts14">Material</span><span class="rvts6"> </span><span class="rvts14">Requests</span><span class="rvts6"> across similar spaces or venues to save time and ensure consistency;</span></li>
+ <li class="rvps2 noindent"><a class="rvts31" href="ImportMaterialsRequest.html">Import</a><span class="rvts14"> Materials Request</span><span class="rvts6"> from other </span><span class="rvts14">Events</span><span class="rvts6">;</span></li>
+ <li class="rvps2 noindent"><a class="rvts31" href="RemoveMaterialsRequest.html">Remove</a><span class="rvts6"> </span><span class="rvts14">Materials</span><span class="rvts6"> </span><span class="rvts14">Requests</span><span class="rvts6">.</span></li>
 </ul>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts14">Material</span><span class="rvts6"> </span><span class="rvts14">Planning</span><span class="rvts6"> </span><span class="rvts14">Managers</span><span class="rvts6"> have unrestricted access, while </span><span class="rvts14">Functional</span><span class="rvts6"> </span><span class="rvts14">Material</span><span class="rvts6"> </span><span class="rvts14">Planners</span><span class="rvts6"> can view and edit requests placed by their </span><span class="rvts14">Project</span><span class="rvts6"> and inline with access permissions they have been granted.</span></p>
@@ -303,6 +304,7 @@
     <li class="rvps2 noindent"><span class="rvts6">Add;</span></li>
     <li class="rvps2 noindent"><span class="rvts6">Edit;</span></li>
     <li class="rvps2 noindent"><span class="rvts6">Duplicate;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Import</span></li>
     <li class="rvps2 noindent"><span class="rvts6">Remove.</span></li>
    </ul>
   </td>
@@ -346,6 +348,7 @@
     <li class="rvps2 noindent"><span class="rvts34">Add;</span></li>
     <li class="rvps2 noindent"><span class="rvts34">Edit;</span></li>
     <li class="rvps2 noindent"><span class="rvts34">Duplicate;</span></li>
+    <li class="rvps2 noindent"><span class="rvts34">Import;</span></li>
     <li class="rvps2 noindent"><span class="rvts34">Remove.</span></li>
    </ul>
   </td>
@@ -389,6 +392,7 @@
     <li class="rvps2 noindent"><span class="rvts6">Add (Limited by </span><a class="rvts12" href="Projects.html">User Project</a><span class="rvts6">; </span><a class="rvts12" href="ManageUserAccess1.html">Event User Access</a><span class="rvts6">; </span><a class="rvts12" href="ManageUserAccess3.html">Venue User Access; </a><a class="rvts12" href="ManageUserAccess7.html">Logical Space User Access</a><span class="rvts6"> and </span><a class="rvts12" href="ManageUserAccess4.html">Catalogue Access</a><span class="rvts6">);</span></li>
     <li class="rvps2 noindent"><span class="rvts6">Edit (Limited by </span><a class="rvts12" href="Projects.html">User Project</a><span class="rvts6">);</span></li>
     <li class="rvps2 noindent"><span class="rvts6">Duplicate (Limited by </span><a class="rvts12" href="Projects.html">User Project</a><span class="rvts6">; </span><a class="rvts12" href="ManageUserAccess1.html">Event User Access</a><span class="rvts6">; </span><a class="rvts12" href="ManageUserAccess3.html">Venue User Access</a><span class="rvts6"> and </span><a class="rvts12" href="ManageUserAccess7.html">Logical Space User Access</a><span class="rvts6">;</span></li>
+    <li class="rvps2 noindent"><span class="rvts34">Import;</span></li>
     <li class="rvps2 noindent"><span class="rvts6">Remove (Limited by </span><a class="rvts12" href="Projects.html">User Project)</a><span class="rvts6">.</span></li>
    </ul>
    <p class="rvps2"><span class="rvts6"><br/></span></p>
