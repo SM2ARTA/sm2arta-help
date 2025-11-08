@@ -49,7 +49,7 @@
   <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
 
   <!-- Content style (cache-busted so your changes always apply) -->
-  <link href="css/hnd.content.css?v=20251108120523" rel="stylesheet" />
+  <link href="css/hnd.content.css?v=20251108180430" rel="stylesheet" />
 
 
 
@@ -257,6 +257,18 @@
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts6">Each </span><span class="rvts14">Material</span><span class="rvts6"> </span><span class="rvts14">Request</span><span class="rvts6"> represents a line in the </span><span class="rvts14">Material</span><span class="rvts6"> </span><span class="rvts14">Plan</span><span class="rvts6"> with it's own </span><span class="rvts14">ID</span><span class="rvts6"> for quick reference.</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Adding Material Request is structured around three core steps:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside;">
+ <li style="list-style-image: url('lib/242.bmp')" class="rvps2 noindent"><span class="rvts6">Add Venue – Select the venue where materials will be used</span></li>
+ <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside;">
+  <li style="list-style-image: url('lib/243.bmp')" class="rvps2 noindent"><span class="rvts6">Add Logical Spaces – Define the spaces within each venue (e.g., Media Center, Volunteer Lounge, Team Dressing Room)</span></li>
+  <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside;">
+   <li style="list-style-image: url('lib/244.bmp')" class="rvps2 noindent"><span class="rvts6">Add Materials from Catalogue – Populate each logical space with materials from the materials catalogue</span></li>
+  </ul>
+ </ul>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts6">SM2ARTA allows:</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
@@ -308,27 +320,39 @@
   </td>
   <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
    <p class="rvps2"><span class="rvts6">ALL:</span></p>
+   <p class="rvps2"><span class="rvts6">Material Planning - Overview:</span></p>
    <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: '❑ ';">
-    <li class="rvps2 noindent"><span class="rvts6">ID;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Event code;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Event name;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Location;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Comments.</span></li>
+   </ul>
+   <p class="rvps2"><span class="rvts6"><br/></span></p>
+   <p class="rvps2"><span class="rvts6">Material Planning - Event - Overview:</span></p>
+   <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: '❑ ';">
     <li class="rvps2 noindent"><span class="rvts6">Venue code;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Venue;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Venue cluster;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Project code;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Project;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Venue name;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Venue category;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Venue type;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Venue description.</span></li>
+   </ul>
+   <p class="rvps2"><span class="rvts6"><br/></span></p>
+   <p class="rvps2"><span class="rvts6">Material Planning - Event - Venue - Overview:</span></p>
+   <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: '❑ ';">
+    <li class="rvps2 noindent"><span class="rvts6">#;</span></li>
     <li class="rvps2 noindent"><span class="rvts6">Logical space code;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Logical space;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Logical space note;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Overlay;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Physical space;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">SKU;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Item;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Source;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Estimated bump-in date;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Estimated bump-out date;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Logical space name.</span></li>
+   </ul>
+   <p class="rvps2"><span class="rvts6"><br/></span></p>
+   <p class="rvps2"><span class="rvts6">Material Planning - Event - Venue - Logical Space - &nbsp;Overview:</span></p>
+   <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: '❑ ';">
+    <li class="rvps2 noindent"><span class="rvts6">#;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Project;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">SKU code;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Item name;</span></li>
     <li class="rvps2 noindent"><span class="rvts6">Requested;</span></li>
     <li class="rvps2 noindent"><span class="rvts6">Existing;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Required;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Note.</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Required.</span></li>
    </ul>
   </td>
  </tr>
@@ -352,28 +376,40 @@
    </ul>
   </td>
   <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
-   <p class="rvps2"><span class="rvts6">LIMITED (</span><span class="rvts34">not available</span><span class="rvts6">):</span></p>
+   <p class="rvps2"><span class="rvts6">ALL:</span></p>
+   <p class="rvps2"><span class="rvts6">Material Planning - Overview:</span></p>
    <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: '❑ ';">
-    <li class="rvps2 noindent"><span class="rvts6">ID;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Event code;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Event name;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Location;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Comments.</span></li>
+   </ul>
+   <p class="rvps2"><span class="rvts6"><br/></span></p>
+   <p class="rvps2"><span class="rvts6">Material Planning - Event - Overview:</span></p>
+   <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: '❑ ';">
     <li class="rvps2 noindent"><span class="rvts6">Venue code;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Venue;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Venue cluster;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Project code;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Project;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Venue name;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Venue category;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Venue type;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Venue description.</span></li>
+   </ul>
+   <p class="rvps2"><span class="rvts6"><br/></span></p>
+   <p class="rvps2"><span class="rvts6">Material Planning - Event - Venue - Overview:</span></p>
+   <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: '❑ ';">
+    <li class="rvps2 noindent"><span class="rvts6">#;</span></li>
     <li class="rvps2 noindent"><span class="rvts6">Logical space code;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Logical space;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Logical space note;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Overlay;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Physical space;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">SKU;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Item;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Source;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Estimated bump-in date;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Estimated bump-out date;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Logical space name.</span></li>
+   </ul>
+   <p class="rvps2"><span class="rvts6"><br/></span></p>
+   <p class="rvps2"><span class="rvts6">Material Planning - Event - Venue - Logical Space - &nbsp;Overview:</span></p>
+   <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: '❑ ';">
+    <li class="rvps2 noindent"><span class="rvts6">#;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Project;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">SKU code;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Item name;</span></li>
     <li class="rvps2 noindent"><span class="rvts6">Requested;</span></li>
     <li class="rvps2 noindent"><span class="rvts6">Existing;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Required;</span></li>
-    <li class="rvps2 noindent"><span class="rvts34">Note.</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Required.</span></li>
    </ul>
   </td>
  </tr>
@@ -403,28 +439,40 @@
    <p class="rvps2"><span class="rvts6">Functional Material Planners may Edit, Remove, and Duplicate only the Material Requests that belong to their assigned Project and fall within their access permissions.</span></p>
   </td>
   <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
-   <p class="rvps2"><span class="rvts6">LIMITED (</span><span class="rvts34">not available</span><span class="rvts6">):</span></p>
+   <p class="rvps2"><span class="rvts6">ALL:</span></p>
+   <p class="rvps2"><span class="rvts6">Material Planning - Overview:</span></p>
    <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: '❑ ';">
-    <li class="rvps2 noindent"><span class="rvts6">ID;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Event code;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Event name;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Location;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Comments.</span></li>
+   </ul>
+   <p class="rvps2"><span class="rvts6"><br/></span></p>
+   <p class="rvps2"><span class="rvts6">Material Planning - Event - Overview:</span></p>
+   <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: '❑ ';">
     <li class="rvps2 noindent"><span class="rvts6">Venue code;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Venue;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Venue cluster;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Project code;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Project;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Venue name;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Venue category;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Venue type;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Venue description.</span></li>
+   </ul>
+   <p class="rvps2"><span class="rvts6"><br/></span></p>
+   <p class="rvps2"><span class="rvts6">Material Planning - Event - Venue - Overview:</span></p>
+   <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: '❑ ';">
+    <li class="rvps2 noindent"><span class="rvts6">#;</span></li>
     <li class="rvps2 noindent"><span class="rvts6">Logical space code;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Logical space;</span></li>
-    <li class="rvps2 noindent"><span class="rvts34">Logical space note;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Overlay;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Physical space;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">SKU;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Item;</span></li>
-    <li class="rvps2 noindent"><span class="rvts34">Source;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Estimated bump-in date;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Estimated bump-out date;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Logical space name.</span></li>
+   </ul>
+   <p class="rvps2"><span class="rvts6"><br/></span></p>
+   <p class="rvps2"><span class="rvts6">Material Planning - Event - Venue - Logical Space - &nbsp;Overview:</span></p>
+   <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: '❑ ';">
+    <li class="rvps2 noindent"><span class="rvts6">#;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Project;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">SKU code;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Item name;</span></li>
     <li class="rvps2 noindent"><span class="rvts6">Requested;</span></li>
     <li class="rvps2 noindent"><span class="rvts6">Existing;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Required;</span></li>
-    <li class="rvps2 noindent"><span class="rvts34">Note.</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Required.</span></li>
    </ul>
   </td>
  </tr>

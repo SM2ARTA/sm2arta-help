@@ -49,7 +49,7 @@
   <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
 
   <!-- Content style (cache-busted so your changes always apply) -->
-  <link href="css/hnd.content.css?v=20251108120521" rel="stylesheet" />
+  <link href="css/hnd.content.css?v=20251108180428" rel="stylesheet" />
 
 
 
@@ -377,7 +377,7 @@
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
  <li class="rvps2 noindent"><span class="rvts14">In Transit</span><span class="rvts6">: All data transmitted between clients and servers is protected by TLS 1.2 or higher with AES-256 encryption, HSTS enforcement, and secure cookies;</span></li>
  <li class="rvps2 noindent"><span class="rvts14">At Rest (Field-Level Encryption)</span><span class="rvts6">: Sensitive fields such as names, emails, and phone numbers are encrypted using CipherSweet;</span></li>
- <li class="rvps2 noindent"><span class="rvts14">Encryption Key Management</span><span class="rvts6">: Keys are automatically managed by HashiCorp Vault OSS, with annual key rotation executed via cron job. No human access is permitted. Vault operates entirely within the VPS and is not connected to external KMS services.</span></li>
+ <li class="rvps2 noindent"><span class="rvts14">Encryption Key Management</span><span class="rvts6">: Encryption keys are automatically managed by HashiCorp Vault OSS, with annual key rotation executed via a scheduled cron job. Vault operates entirely within the VPS environment and uses AWS Key Management Service (KMS) for auto-unseal, ensuring secure and unattended startup.</span></li>
 </ul>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <h6 class="rvps9"><span class="rvts0"><span class="rvts21">Web Application Firewall (WAF)</span></span></h6>

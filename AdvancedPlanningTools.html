@@ -1,0 +1,448 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="generator" content="HelpNDoc Professional Edition 10.1.0.147">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <title>Advanced Planning Tools</title>
+  <meta name="description" content="" /> 
+  <meta name="keywords" content="Material Planning">
+
+
+
+  
+  
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Advanced Planning Tools">
+  <meta name="twitter:description" content="">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Advanced Planning Tools" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="SM2ARTA&trade; Material Planning Manager Guide" /> 
+
+  <!-- Bootstrap CSS -->
+  <link href="vendors/bootstrap-5.3.7/bootstrap.min.css" rel="stylesheet"/>
+  <link href="vendors/bootstrap-icons-1.13.1/bootstrap-icons.min.css" rel="stylesheet"/>
+
+  <!-- JsTree styles -->
+  <link href="vendors/jstree-3.3.10/themes/default/style.min.css" rel="stylesheet"/>
+
+  
+  
+    <!-- Hnd styles (no cache-buster here, to keep nav working) -->
+  <link href="css/layout.min.css" rel="stylesheet" />
+  <link href="css/effects.min.css" rel="stylesheet" />
+  <link href="css/theme-light-blue.min.css" rel="stylesheet" />
+  <link href="css/print.min.css" rel="stylesheet" media="print" />
+  <style type="text/css">nav { width: 350px} @media screen and (min-width:769px) { body.md-nav-expanded div#main { margin-left: 350px} body.md-nav-expanded header { padding-left: 364px} }</style>
+  <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
+
+  <!-- Content style (cache-busted so your changes always apply) -->
+  <link href="css/hnd.content.css?v=20251108180430" rel="stylesheet" />
+
+
+
+
+<!-- >>> ADDED: Responsive images + modal image styling -->
+<style>
+  /* Responsive only; preserves HND alignment/floats */
+.main-content img,
+.main-content figure img {
+  max-width: 100% !important;
+  height: auto !important;
+  width: auto !important;
+  /* do not set display or margin here */
+}
+
+/* zoom cursor if you use it */
+.main-content img[data-zoom]{ cursor: zoom-in; }
+
+/* images inside modal */
+#hndModal .modal-body img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+</style>
+
+
+
+  <!-- <<< ADDED -->
+
+  
+
+
+
+<script src="/guard.js"></script>
+
+
+<script>
+(function () {
+  const params = new URLSearchParams(location.search);
+  if (params.get('nav') === '0') {
+    const style = `
+      /* hide navigation pane */
+      .hnd-toc, #toc, .sidebar, .splitter { display:none !important; }
+
+      /* hide header, breadcrumbs, and footer */
+      .hnd-header, .hnd-breadcrumb, .breadcrumb, header, nav, .hnd-footer { display:none !important; }
+
+      /* hide topic navigation buttons (up/prev/next) */
+      .hnd-topicnavigation, .topicnavigation, .hnd-navbuttons, .navigation, .next-topic, .prev-topic {
+        display:none !important;
+      }
+
+      /* stretch content full width */
+      .hnd-content, #content, .topic-container, main {
+        width:100% !important; margin:0 !important; padding:2rem !important;
+      }
+    `;
+    const s = document.createElement('style');
+    s.textContent = style;
+    document.head.appendChild(s);
+  }
+})();
+</script>
+
+
+
+
+
+</head>
+
+<body class="md-nav-expanded">
+
+
+
+  
+
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible">Skip to main content</a>
+  </div>
+
+  <header class="headroom">
+    <button class="hnd-toggle btn btn-default">
+      <span class="visually-hidden">Toggle navigation</span>
+      <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>        
+    </button>
+    <h1>SM2ARTA&trade; Material Planning Manager Guide</h1>
+    
+  </header>
+
+  <nav id="panel-left" class="md-nav-expanded">
+    <!-- Nav tabs -->
+    <ul class="tab-tabs nav nav-tabs" role="tablist">
+      <li id="nav-close" role="presentation"> 
+        <button class="hnd-toggle btn btn-default" aria-label="close">
+          <span class="bi bi-x" aria-hidden="true"></span>
+        </button>
+      </li>
+      
+	  
+        <li role="presentation" class="nav-item tab">
+            <a href="#contents" id="tab-contents" class="nav-link active" role="tab" data-bs-toggle="tab" data-bs-target="#contents" aria-controls="contents" aria-selected="true">
+                <i class="bi bi-list-ul"></i>
+                Contents
+            </a>
+        </li>
+      
+        <li role="presentation" class="nav-item tab">
+            <a href="#index" id="tab-index" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#index" aria-controls="index" aria-selected="false">
+                <i class="bi bi-asterisk"></i>
+                Index
+            </a>
+        </li>
+      
+        <li role="presentation" class="nav-item tab">
+            <a href="#search" id="tab-search" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#search" aria-controls="search" aria-selected="false">
+                <i class="bi bi-search"></i>
+                Search
+            </a>
+        </li>
+      
+    </ul>  <!-- /Nav tabs -->
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+	  
+      <div role="tabpanel" class="tab-pane active" id="contents">
+        <div id="toc" class="tree-container unselectable"
+            data-url="_toc.json"
+            data-openlvl="2"
+        >
+            
+        </div>
+      </div>  <!-- /contents-->
+      
+      <div role="tabpanel" class="tab-pane" id="index">
+        <div id="keywords" class="tree-container unselectable"
+            data-url="_keywords.json"
+            data-openlvl="1"
+        >
+            
+        </div>
+      </div>  <!-- /index-->
+      
+      <div role="tabpanel" class="tab-pane" id="search">
+        <div class="search-content">
+          <div class="search-input">
+            <form id="search-form">
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="input-search" name="input-search" placeholder="Search..." aria-label="Search..." />
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit" aria-label="Search...">
+                      <span class="bi bi-search" aria-hidden="true"></span>
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </form>
+          </div>  <!-- /search-input -->
+          <div class="search-result">
+            <div id="search-info"></div>
+            <div class="tree-container unselectable" id="search-tree"></div>
+          </div>  <!-- /search-result -->
+        </div>  <!-- /search-content -->
+      </div>  <!-- /search-->
+      
+    </div>  <!-- /Tab panes -->
+
+  </nav>
+
+  <div id="main">
+
+    <article>
+        <div id="topic-content" class="container-fluid" 
+		  data-hnd-id="AdvancedPlanningTools"
+		  data-hnd-context="160"
+		  data-hnd-title="Advanced Planning Tools"
+		>
+            
+                <div class="navigation">
+                    <ol class="breadcrumb">
+                        <li><a href="MaterialPlanning.html">Material Planning</a></li>
+                    </ol>
+                    <div class="nav-arrows">
+                        <div class="btn-group btn-group" role="group"><a class="btn btn-default" href="MaterialPlanning.html" title="Material Planning" role="button"><span class="bi bi-chevron-up" aria-hidden="true"></span></a><a class="btn btn-default" href="ManageExistingMaterials.html" title="Manage Existing Materials" role="button"><span class="bi bi-chevron-left" aria-hidden="true"></span></a><a class="btn btn-default" href="LogicalSpaceDrawer.html" title="Logical Space Drawer" role="button"><span class="bi bi-chevron-right" aria-hidden="true"></span></a></div>
+                    </div>
+                </div> 
+            
+
+            <a id="main-content"></a>
+
+            
+
+            <div class="main-content">
+                
+<h1 class="rvps7"><span class="rvts0"><span class="rvts24">Advanced Planning Tools</span></span></h1>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Once Material Requests are submitted, SM2ARTA provides several advanced planning tools designed to help Material Planning Managers review, refine, and finalize requirements in preparation for the delivery phase.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">These features are managed through two main interfaces in SM2ARTA:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><a class="rvts31" href="LogicalSpaceDrawer.html">Logical Space Drawer</a><span class="rvts6"> – used for managing space-level features such as Logical Space Notes, Space Images, and Estimated Bump-In/Bump-Out dates;</span></li>
+ <li class="rvps2 noindent"><a class="rvts31" href="MaterialsRequestDrawer.html">Materials Request Drawer</a><span class="rvts6"> – used for managing item-level details such as Comments, Material Notes, and Planning History.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps8"><span class="rvts0"><a class="rvts29" href="MaterialsRequestDrawer.html#Comments">Comments</a></span></h3>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">The Comments feature enables collaboration and feedback on specific Material Requests. Ideal for internal discussions, clarifications, and progress tracking during the review phase.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">It allows users to leave short notes, questions, or clarifications directly within a request, making it easier to coordinate decisions or request updates without using external communication channels.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Key Principles:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">Comments are visible to all users with access to the same Material Requests;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Unread comments are shown in the counters next to Event - Venue - Logical Space. This is available for two roles - Functional Material Planner and Material Planning Managers.</span><span class="rvts19"> For Venue Logistics Manager, all comments are shown as read;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Clicking on counter leads directly to comment Logical Spaces with comments;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Each comment includes the author’s name and date stamp;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Comments can be added, or deleted by the comment creator or a Material Planning Manager;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Users can mark comments as Unread;</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps8"><span class="rvts0"><a class="rvts29" href="MaterialsRequestDrawer.html#Materials_Request_Note">Materials Request Note</a></span></h3>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Material Notes allow Material Planning Managers to add detailed clarifications, usage instructions, or specific conditions related to a Material Request.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Unlike Comments, Material Notes are intended for long-term reference. They form part of each Material Request entry, are displayed in the Material Plan, and are included in all relevant data exports.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">This feature is available exclusively to Material Planning Managers.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Examples of use:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">Indicating preferred models, colors, or placement details.</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Recording supplier-specific or handling instructions.</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Documenting special use cases or limitations.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps8"><span class="rvts0"><a class="rvts29" href="MaterialsRequestDrawer.html#History">Planning History</a></span></h3>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">The Planning History provides a complete log of all changes made to each Material Request. It helps maintain traceability and accountability throughout the planning process.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Recorded details include:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">User who made the change;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Type of action (e.g., add, quantity update);</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Date and time of action;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Previous and new values (for quantity-related changes).</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps8"><span class="rvts0"><a class="rvts29" href="LogicalSpaceDrawer.html#Physical_Space">Link Physical Space</a></span></h3>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">The Link Physical Space function allows Material Planning Managers to associate each Logical Space in SM2ARTA with a real physical location within the venue.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">This connection helps during the logistics and delivery planning phase by aligning logical planning data with on-site locations.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">In addition, each Logical Space can be flagged as an </span><a class="rvts31" href="LogicalSpaceDrawer.html#Overlay">Overlay Space</a><span class="rvts6">, allowing easily distinguish areas that are newly created or temporary and therefore have no Existing Materials assigned.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Benefits:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">Improves accuracy of delivery schedules and routing;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Enables mapping of materials to actual rooms, compounds, or zones;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Supports coordination for Venue Logistics Teams on the ground.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps8"><span class="rvts0"><a class="rvts29" href="LogicalSpaceDrawer.html#Space_Note">Logical Space Note</a></span></h3>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Logical Space Notes provide a centralized location to record general notes, remarks, or constraints related to the entire Logical Space rather than individual items. They are displayed in the Material Plan, and are included in all relevant data exports.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">This feature is available to Material Planning Managers and Venue Logistics Managers.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Typical uses:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">Indicating room functions or setup constraints;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Recording venue-specific rules or shared utilities (e.g., power, internet);</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Adding comments relevant to multiple Material Requests within the same space;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Tracking the Materials delivery status to this space.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps8"><span class="rvts0"><a class="rvts29" href="LogicalSpaceDrawer.html#Images">Space Images</a></span></h3>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">The Space Images feature allows to attach or view reference images of the venue or specific Logical Spaces.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">These images support visual planning and verification of setup feasibility. Images can be updated as the space evolves during the event preparation phase.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Typical uses:</span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">Documenting space layout and available furniture;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Sharing visual references with setup or installation teams;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Providing context for reviewing or approving Material Requests.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps8"><span class="rvts0"><a class="rvts29" href="LogicalSpaceDrawer.html#Dates">Estimated Bump-In and Bump-Out Dates</a></span></h3>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">These fields record the expected setup (bump-in) and tear-down (bump-out) dates for each Logical Space.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">They help synchronize Material Planning with event operations and logistics.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Key uses:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">Define delivery windows for materials and equipment;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Coordinate with transport and warehouse schedules;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Support overall project timeline and milestone tracking.</span><span class="rvts6"></span></li>
+</ul>
+
+            </div>
+            
+            <div id="topic_footer"><div id="topic_footer_content">&copy; 2025 Vladislav Abramov | SM&sup2;ARTA&trade; &copy; 2025 SM2ARTA LLC | v2025.11 | All rights reserved.</div></div>
+        </div>  <!-- /#topic-content -->
+    </article>
+
+    <footer></footer>
+
+  </div>  <!-- /#main -->
+
+  <div class="mask" data-bs-toggle="sm-nav-expanded"></div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="hndModal" tabindex="-1" role="dialog" aria-labelledby="hndModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="hndModalLabel"></h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary modal-btn-close" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Splitter -->
+  <div id="hnd-splitter" style="left: 350px"></div>  
+
+  <!-- Scripts -->
+  <script src="vendors/jquery-3.7.1/jquery.min.js"></script>
+  <script src="vendors/bootstrap-5.3.7/bootstrap.bundle.min.js"></script>
+  <script src="vendors/markjs-8.11.1/jquery.mark.min.js"></script>
+  <script src="vendors/uri-1.19.11/uri.min.js"></script>
+  <script src="vendors/imageMapResizer-1.0.10/imageMapResizer.min.js"></script>
+  <script src="vendors/headroom-0.11.0/headroom.min.js"></script>
+  <script src="vendors/jstree-3.3.10/jstree.min.js"></script>  
+  <script src="vendors/interactjs-1.9.22/interact.min.js"></script>  
+
+  <!-- HelpNDoc scripts -->
+  <script src="_translations.js"></script>
+  <script src="js/hndsd.min.js"></script>
+  <script src="js/hndse.min.js"></script>
+  <script src="js/app.min.js"></script>
+
+  <!-- >>> ADDED: Simple click-to-zoom via existing Bootstrap modal.
+       Usage: add data-zoom to any <img>. Optional data-full="bigger-file.png". -->
+  <script>
+  (function () {
+    document.addEventListener('click', function (ev) {
+      var img = ev.target.closest('.main-content img[data-zoom]');
+      if (!img) return;
+
+      ev.preventDefault();
+
+      var fullSrc = img.getAttribute('data-full') || img.currentSrc || img.src;
+      var alt = img.getAttribute('alt') || 'Image';
+      var modalEl = document.getElementById('hndModal');
+
+      // fill modal
+      modalEl.querySelector('#hndModalLabel').textContent = alt;
+      modalEl.querySelector('.modal-body').innerHTML =
+        '<img src="' + fullSrc.replace(/"/g, '&quot;') + '" alt="' + alt.replace(/"/g, '&quot;') + '">';
+
+      // show modal (Bootstrap 5)
+      var bsModal = bootstrap.Modal.getOrCreateInstance(modalEl);
+      bsModal.show();
+    });
+  })();
+  </script>
+  <!-- <<< ADDED -->
+
+  <!-- Init script -->
+  <script src="_topic_init.js"></script>
+
+
+
+</body>
+
+</html>
+
