@@ -13,7 +13,7 @@
 
   <title>Change Management</title>
   <meta name="description" content="" /> 
-  <meta name="keywords" content="">
+  <meta name="keywords" content="Change Management">
 
 
 
@@ -49,7 +49,7 @@
   <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
 
   <!-- Content style (cache-busted so your changes always apply) -->
-  <link href="css/hnd.content.css?v=20251101140911" rel="stylesheet" />
+  <link href="css/hnd.content.css?v=20251110205319" rel="stylesheet" />
 
 
 
@@ -227,16 +227,16 @@
     <article>
         <div id="topic-content" class="container-fluid" 
 		  data-hnd-id="ChangeManagement"
-		  data-hnd-context="144"
+		  data-hnd-context="169"
 		  data-hnd-title="Change Management"
 		>
             
                 <div class="navigation">
                     <ol class="breadcrumb">
-                        <li><a href="MaterialPlanning.html">Material Planning</a></li>
+                        <li><a href="MaterialPlanning.html">Material Planning</a></li><li><a href="ChangeManagementWorkflow.html">Change Management Workflow</a></li>
                     </ol>
                     <div class="nav-arrows">
-                        <div class="btn-group btn-group" role="group"><a class="btn btn-default" href="MaterialPlanning.html" title="Material Planning" role="button"><span class="bi bi-chevron-up" aria-hidden="true"></span></a><a class="btn btn-default" href="RemoveMaterialsRequest.html" title="Remove Materials Request" role="button"><span class="bi bi-chevron-left" aria-hidden="true"></span></a><a class="btn btn-default" href="AssetTracking.html" title="Asset Tracking" role="button"><span class="bi bi-chevron-right" aria-hidden="true"></span></a></div>
+                        <div class="btn-group btn-group" role="group"><a class="btn btn-default" href="ChangeManagementWorkflow.html" title="Change Management Workflow" role="button"><span class="bi bi-chevron-up" aria-hidden="true"></span></a><a class="btn btn-default" href="BlockPlanning.html" title="Block Planning" role="button"><span class="bi bi-chevron-left" aria-hidden="true"></span></a><a class="btn btn-default" href="AssetTracking.html" title="Asset Tracking" role="button"><span class="bi bi-chevron-right" aria-hidden="true"></span></a></div>
                     </div>
                 </div> 
             
@@ -247,10 +247,1055 @@
 
             <div class="main-content">
                 
+<h3 class="rvps8"><span class="rvts0"><span class="rvts20">Change Management</span></span></h3>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Change Management in SM2ARTA provides a controlled mechanism for managing updates to finalized Material Requests.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">It allows Functional Material Planners to submit Change Requests for revised Requested quantities, while Material Planning Managers maintain full control over reviewing, approving, or declining these changes.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">This process ensures that all modifications after the </span><a class="rvts31" href="BlockPlanning.html">Block Planning</a><span class="rvts6"> phase are tracked, auditable, and justified, preventing inconsistencies between planning and delivery stages.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h6 class="rvps9"><span class="rvts0"><span class="rvts21">Activation</span></span></h6>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Blocking an Event does not automatically enable Change Management. The feature must be manually activated to give Material Planning Managers flexibility — particularly for historical or completed events, where planning may remain blocked but further change control is unnecessary.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Once Change Management is enabled:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">A new column called Change request appears in the Material Planning, allowing Functional Material Planners to submit updated Requested quantities;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">The ability to add/remove new Material Requests to already existing Logical Spaces is also restored;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Any new quantities entered are stored in the Change Request column, while the original “Requested” quantity remains unchanged for reference until Change Request is approved.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">To support the process, the following columns are added to the Material Plan when Change Management is active to project the impact of changes and track the requests statuses:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<div class="rvps2">
+<table style="border-style: inset; border-width: 1px; border-spacing: 2px;">
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Column</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Description</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Change request</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">The new Requested quantity submitted by the Functional Material Planner.</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Projected delta</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">The difference between the originally Requested quantity and the Change Request quantity.</span></p>
+   <p class="rvps2"><span class="rvts6"><br/></span></p>
+   <p class="rvps2"><span class="rvts6">Positive means that Requested quantity will be reduced.</span></p>
+   <p class="rvps2"><span class="rvts6">Negative means that Requested quantity will be increased.</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Status</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Indicates the current state of each Change Request.</span></p>
+  </td>
+ </tr>
+</table>
+</div>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h6 class="rvps9"><span class="rvts0"><span class="rvts21">Change Request Statuses</span></span></h6>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">To manage the lifecycle of each request, SM2ARTA uses a defined set of statuses:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<div class="rvps2">
+<table style="border-style: inset; border-width: 1px; border-spacing: 2px;">
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Status</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Description</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Created</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Default status of all Material Requests in the Material Plan before any changes are submitted.</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Pending</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">The Change Request has been submitted by a Functional Material Planner.</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Declined</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">The Change Request was reviewed and rejected by the Material Planning Manager.</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Confirmed</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">The Change Request was confirmed and approved by the Material Planning Manager.</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Partially Confirmed</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Only part of the requested change was approved by the Material Planning Manager.</span></p>
+  </td>
+ </tr>
+</table>
+</div>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">These statuses help maintain full transparency throughout the approval process.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h6 class="rvps9"><span class="rvts0"><span class="rvts21">Change Request Principles</span></span></h6>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">The Change Management process in SM2ARTA is based on the principle of </span><span class="rvts14">redistributing</span><span class="rvts6"> materials within the same Venue or Venue Cluster to maintain balance and operational efficiency without unnecessary re-sourcing.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">A Venue Cluster represents a geographically grouped set of venues, typically connected through the same distribution center or logistics network. It is assumed, that within a cluster, assets can be easily </span><span class="rvts14">redistributed</span><span class="rvts6"> between venues until they are dispatched for delivery.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">There are two primary types of Change Requests:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts14">Increase</span><span class="rvts6"> – when a Functional Material Planner requests a higher quantity of a specific material than initially planned;</span></li>
+ <li class="rvps2 noindent"><span class="rvts14">Decrease</span><span class="rvts6"> – when a Functional Material Planner reduces the quantity previously requested, generating a positive delta that can potentially be used to fulfill increases from other projects within the same venue or cluster.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Example Scenario:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">Project A </span><span class="rvts14">decreases</span><span class="rvts6"> its requirement for plastic folding chairs from 100 to 50 units, creating a positive delta of 50;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Project B, in the same Venue or Cluster, submits a Change Request for 50 additional chairs;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">The positive delta from Project A offsets Project B’s </span><span class="rvts14">increase</span><span class="rvts6">, enabling the Material Planning Manager to redistribute materials efficiently without additional procurement.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h6 class="rvps9"><span class="rvts0"><span class="rvts21">Material Planning Manager Control</span></span></h6>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">The Material Planning Manager has full oversight of the process and can:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">Review each submitted Change Request in the Material Plan;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Approve, decline, or partially approve individual requests;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Use the Change Management Report to track all Accumulated deltas and Pending change requests in one consolidated view;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Perform bulk approvals through the Change Management Report.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h6 class="rvps9"><span class="rvts0"><span class="rvts21">Change Management Report</span></span></h6>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">While Material Plan provides information on current Change Requests, it does not give you information on the </span><span class="rvts14">Accumulated</span><span class="rvts6"> </span><span class="rvts14">deltas</span><span class="rvts6"> (All Materials available for </span><span class="rvts14">redistribution</span><span class="rvts6">). For this purposes, when Change Management is enabled, SM2ARTA activates a dedicated Change Management Report.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">This report provides Material Planning Managers with a centralized dashboard to:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">View positive </span><span class="rvts14">Accumulated materials</span><span class="rvts6"> quantity across Venues and Clusters;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">View all consolidated </span><span class="rvts14">Pending</span><span class="rvts6"> </span><span class="rvts14">change requests</span><span class="rvts6">;</span></li>
+ <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: circle;">
+  <li class="rvps2 noindent"><span class="rvts6">Positive value means the decreased Change Request - Materials will be released ;</span></li>
+  <li class="rvps2 noindent"><span class="rvts6">Negative values means the increased Change Request - Materials will be redistributed.</span></li>
+ </ul>
+ <li class="rvps2 noindent"><span class="rvts6">Identify where positive accumulated deltas can offset increases;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Execute bulk approvals when sufficient deltas are available to cover multiple requests.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h6 class="rvps9"><span class="rvts0"><span class="rvts21">Approval Process</span></span></h6>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">The Change Request approval process defines how Material Requests are updated based on the Material Planning Manager’s decision.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Each outcome — Declined, Approved, or Partially Approved — updates the corresponding Material Request line according to specific system rules to ensure accurate data tracking and auditability.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Below are the possible scenarios:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts14">Material Plan</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<div class="rvps2">
+<table style="border-style: inset; border-width: 1px; border-spacing: 2px;">
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">ID</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Item name</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Requested</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Change request</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Projected delta</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Status</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">001</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Material A</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">10</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">5</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">5</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Pending</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">002</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Material B</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">10</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">15</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">-5</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Pending</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">003</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Material C</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">10</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">20</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">-10</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Pending</span></p>
+  </td>
+ </tr>
+</table>
+</div>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts14">Change Management Report</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<div class="rvps2">
+<table style="border-style: inset; border-width: 1px; border-spacing: 2px;">
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Item name</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Accumulated materials</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Pending change requests</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Material A</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">0</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">5</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Material B</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">10</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">-5</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Material C</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">8</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">-10</span></p>
+  </td>
+ </tr>
+</table>
+</div>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts14">If Change Request is Declined</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">When a Change Request (line 001) is Declined by the Material Planning Manager:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">The Status of the Materials Request line changes to Declined;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">The Change request Quantity is reset to blank;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">The Requested quantity remains unchanged (no update is applied);</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">The Projected delta is reset to blank, as the new Requested quantity now matches the approved value;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">The Material Request line is removed from the Change Management Report if there are no remaining Change Requests associated with that Material.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts14">Material Plan</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<div class="rvps2">
+<table style="border-style: inset; border-width: 1px; border-spacing: 2px;">
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">ID</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Item name</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Requested</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Change request</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Projected delta</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Status</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">001</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Material A</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">10</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">(not set)</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">(not set)</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Declined</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">002</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Material B</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">10</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">15</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">-5</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Pending</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">003</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Material C</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">10</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">20</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">-10</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Pending</span></p>
+  </td>
+ </tr>
+</table>
+</div>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts14">Change Management Report</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<div class="rvps2">
+<table style="border-style: inset; border-width: 1px; border-spacing: 2px;">
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Item name</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Accumulated materials</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Pending change requests</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Material B</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">10</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">-5</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Material C</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">8</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">-10</span></p>
+  </td>
+ </tr>
+</table>
+</div>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts14">If Change Request is Approved</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">When a </span><span class="rvts14">decrease</span><span class="rvts6"> Change Request (line 001) is Approved:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">The Status of the Materials Request line changes to Confirmed;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">The Requested quantity is updated to match the Change request quantity;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">The Change request quantity is reset to blank after approval;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">The Projected delta is reset to blank, as the new Requested Quantity now matches the approved value;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">The Accumulated materials is calculated as the sum of the initial Accumulated materials and the initial Projected delta.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts14">Material Plan</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<div class="rvps2">
+<table style="border-style: inset; border-width: 1px; border-spacing: 2px;">
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">ID</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Item name</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Requested</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Change request</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Projected delta</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Status</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">001</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Material A</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">5</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">(not set)</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">(not set)</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Confirmed</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">002</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Material B</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">10</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">15</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">-5</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Pending</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">003</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Material C</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">10</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">20</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">-10</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Pending</span></p>
+  </td>
+ </tr>
+</table>
+</div>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts14">Change Management Report</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<div class="rvps2">
+<table style="border-style: inset; border-width: 1px; border-spacing: 2px;">
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Item name</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Accumulated materials</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Pending change requests</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Material A</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">5</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">(not set)</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Material B</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">10</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">-5</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Material C</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">8</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">-10</span></p>
+  </td>
+ </tr>
+</table>
+</div>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">When an </span><span class="rvts14">increase</span><span class="rvts6"> Change Request (line 002) is Approved:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">The Status of the Material Request line changes to Confirmed;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">The Requested quantity is updated to reflect the new increased quantity from the approved Change Request;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">The Change request quantity is reset to blank after approval;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">The Projected delta is reset to blank, as the new Requested quantity now matches the approved value;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">The Accumulated materials is calculated as the sum of the initial Accumulated materials and the initial Projected delta.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts14">Material Plan</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<div class="rvps2">
+<table style="border-style: inset; border-width: 1px; border-spacing: 2px;">
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">ID</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Item name</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Requested</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Change request</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Projected delta</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Status</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">001</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Material A</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">10</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">5</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">5</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Pending</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">002</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Material B</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">15</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">(not set)</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">(not set)</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Confirmed</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">003</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Material C</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">10</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">20</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">-10</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Pending</span></p>
+  </td>
+ </tr>
+</table>
+</div>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts14">Change Management Report</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<div class="rvps2">
+<table style="border-style: inset; border-width: 1px; border-spacing: 2px;">
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Item name</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Accumulated materials</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Pending change requests</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Material A</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">0</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">5</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Material B</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">5</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">(not set)</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Material C</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">8</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">-10</span></p>
+  </td>
+ </tr>
+</table>
+</div>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts14">If Change Request is Partially Approved</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Partial approval applies only to Change Requests that propose an </span><span class="rvts14">increase</span><span class="rvts6"> in quantity.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">When a Change Request is partially approved:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">The Status changes to Partially confirmed;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">The Change request quantity remains the same, as only a portion of the request was approved;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">The Requested quantity increases by the number of partially approved materials taken from the Accumulated delta;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">The Projected delta quantity remains as the difference between the new Requested quantity and the Change request quantity;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">The Accumulated materials decreases by the number of approved materials. In this case, it should be reduced to 0, as all available materials were used to partially fulfill the request.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts14">Material Plan</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<div class="rvps2">
+<table style="border-style: inset; border-width: 1px; border-spacing: 2px;">
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">ID</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Item name</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Requested</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Change request</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Projected delta</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Status</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">001</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Material A</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">10</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">5</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">5</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Pending</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">002</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Material B</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">10</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">15</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">-5</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Pending</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">003</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Material C</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">18</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">20</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">-2</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Partially confirmed</span></p>
+  </td>
+ </tr>
+</table>
+</div>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts14">Change Management Report</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<div class="rvps2">
+<table style="border-style: inset; border-width: 1px; border-spacing: 2px;">
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Item name</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Accumulated materials</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Pending change requests</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Material A</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">0</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">5</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Material B</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">10</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">-5</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Material C</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">0</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">-2</span></p>
+  </td>
+ </tr>
+</table>
+</div>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h6 class="rvps9"><span class="rvts0"><span class="rvts21">Disabling Change Management</span></span></h6>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Disabling Change Management does not delete or alter any existing data. It simply hides the Change Management interfaces (columns and reports) while preserving all underlying information.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">All submitted and processed Change Requests remain in the system for reference and audit purposes.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps8"><span class="rvts0"><span class="rvts20">Role Based Access Control</span></span></h3>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<div class="rvps2">
+<table style="border-style: inset; border-width: 1px; border-spacing: 2px;">
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Role</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Access</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Actions</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Fields</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Material Planning Manager</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">YES</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">ALL:</span></p>
+   <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: '❑ ';">
+    <li class="rvps2 noindent"><span class="rvts6">Enable;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Disable;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Submit new Materials Request;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Change Request for existing Materials Request;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Approve;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Decline.</span></li>
+   </ul>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">MATERIAL PLAN:</span></p>
+   <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: '❑ ';">
+    <li class="rvps2 noindent"><span class="rvts6">Change request;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Projected delta;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Status.</span></li>
+   </ul>
+   <p class="rvps2"><span class="rvts6"><br/></span></p>
+   <p class="rvps2"><span class="rvts6">CHANGE MANAGEMENT REPORT:</span></p>
+   <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: '❑ ';">
+    <li class="rvps2 noindent"><span class="rvts6">Venue cluster;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Venue;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">SKU;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Item name;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Accumulated materials;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Pending change requests.</span></li>
+   </ul>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Venue Logistics Manager</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">YES</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">LIMITED (</span><span class="rvts34">not available</span><span class="rvts6">):</span></p>
+   <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: '❑ ';">
+    <li class="rvps2 noindent"><span class="rvts34">Enable;</span></li>
+    <li class="rvps2 noindent"><span class="rvts34">Disable;</span></li>
+    <li class="rvps2 noindent"><span class="rvts34">Submit new Materials Request;</span></li>
+    <li class="rvps2 noindent"><span class="rvts34">Change Request for existing Materials Request;</span></li>
+    <li class="rvps2 noindent"><span class="rvts34">Approve;</span></li>
+    <li class="rvps2 noindent"><span class="rvts34">Decline.</span></li>
+   </ul>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">MATERIAL PLAN (</span><span class="rvts34">not available</span><span class="rvts6">):</span></p>
+   <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: '❑ ';">
+    <li class="rvps2 noindent"><span class="rvts6">Change request;</span></li>
+    <li class="rvps2 noindent"><span class="rvts34">Projected delta;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Status.</span></li>
+   </ul>
+   <p class="rvps2"><span class="rvts6"><br/></span></p>
+   <p class="rvps2"><span class="rvts34">CHANGE MANAGEMENT REPORT (not available):</span></p>
+   <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: '❑ ';">
+    <li class="rvps2 noindent"><span class="rvts34">Venue cluster;</span></li>
+    <li class="rvps2 noindent"><span class="rvts34">Venue;</span></li>
+    <li class="rvps2 noindent"><span class="rvts34">SKU;</span></li>
+    <li class="rvps2 noindent"><span class="rvts34">Item name;</span></li>
+    <li class="rvps2 noindent"><span class="rvts34">Accumulated materials;</span></li>
+    <li class="rvps2 noindent"><span class="rvts34">Pending change requests.</span></li>
+   </ul>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Functional Material Planner</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">YES</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">LIMITED (</span><span class="rvts34">not available</span><span class="rvts6">):</span></p>
+   <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: '❑ ';">
+    <li class="rvps2 noindent"><span class="rvts34">Enable;</span></li>
+    <li class="rvps2 noindent"><span class="rvts34">Disable;</span></li>
+    <li class="rvps2 noindent"><span class="rvts43">Submit new Materials Request;</span></li>
+    <li class="rvps2 noindent"><span class="rvts43">Change Request for existing Materials Request;</span></li>
+    <li class="rvps2 noindent"><span class="rvts34">Approve;</span></li>
+    <li class="rvps2 noindent"><span class="rvts34">Decline.</span></li>
+   </ul>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">MATERIAL PLAN (</span><span class="rvts34">not available</span><span class="rvts6">):</span></p>
+   <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: '❑ ';">
+    <li class="rvps2 noindent"><span class="rvts6">Change request;</span></li>
+    <li class="rvps2 noindent"><span class="rvts43">Projected delta;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Status.</span></li>
+   </ul>
+   <p class="rvps2"><span class="rvts6"><br/></span></p>
+   <p class="rvps2"><span class="rvts34">CHANGE MANAGEMENT REPORT (not available):</span></p>
+   <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: '❑ ';">
+    <li class="rvps2 noindent"><span class="rvts34">Venue cluster;</span></li>
+    <li class="rvps2 noindent"><span class="rvts34">Venue;</span></li>
+    <li class="rvps2 noindent"><span class="rvts34">SKU;</span></li>
+    <li class="rvps2 noindent"><span class="rvts34">Item name;</span></li>
+    <li class="rvps2 noindent"><span class="rvts34">Accumulated materials;</span></li>
+    <li class="rvps2 noindent"><span class="rvts34">Pending change requests.</span></li>
+   </ul>
+  </td>
+ </tr>
+</table>
+</div>
+<p></p>
 
             </div>
             
-            <div id="topic_footer"><div id="topic_footer_content">&copy; 2025 Vladislav Abramov | SM&sup2;ARTA&trade; &copy; 2025 SM2ARTA LLC | v2025.10 | All rights reserved.</div></div>
+            <div id="topic_footer"><div id="topic_footer_content">&copy; 2025 Vladislav Abramov | SM&sup2;ARTA&trade; &copy; 2025 SM2ARTA LLC | v2025.11 | All rights reserved.</div></div>
         </div>  <!-- /#topic-content -->
     </article>
 
