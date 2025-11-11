@@ -49,7 +49,7 @@
   <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
 
   <!-- Content style (cache-busted so your changes always apply) -->
-  <link href="css/hnd.content.css?v=20251110205317" rel="stylesheet" />
+  <link href="css/hnd.content.css?v=20251110211102" rel="stylesheet" />
 
 
 
@@ -273,12 +273,12 @@
    <p class="rvps2"><span class="rvts6">Removal of SKUs</span></p>
   </td>
   <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
-   <p class="rvps2"><span class="rvts6">Removal of SKUs will trigger removal of associated nomenclatures.</span></p>
-   <p class="rvps2"><span class="rvts14"><br/></span></p>
-   <p class="rvps2"><span class="rvts14">Avoid removing SKUs or check Asset Tracking before.</span></p>
+   <p class="rvps2"><span class="rvts6">Removing an SKU will automatically trigger the removal of all associated nomenclatures.</span></p>
+   <p class="rvps2"><span class="rvts6"><br/></span></p>
+   <p class="rvps2"><span class="rvts14">Before deleting any SKU, ensure that you have reviewed its usage in Asset Tracking to avoid unintended data loss.</span></p>
   </td>
   <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
-   <p class="rvps2"><span class="rvts6">Included in release 6.9</span></p>
+   <p class="rvps2"><span class="rvts6">Release 6.9</span></p>
   </td>
  </tr>
  <tr style="vertical-align: top;">
@@ -289,12 +289,28 @@
    <p class="rvps2"><span class="rvts6">Unblocking of Logical Spaces</span></p>
   </td>
   <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
-   <p class="rvps2"><span class="rvts6">Unblocking a Logical Space does not allow its removal by the Material Planning Manager or Functional Material Planner.</span></p>
+   <p class="rvps2"><span class="rvts6">Unblocking a Logical Space does not allow its removal by either the Material Planning Manager or the Functional Material Planner.</span></p>
    <p class="rvps2"><span class="rvts6"><br/></span></p>
-   <p class="rvps2"><span class="rvts6">To remove a Logical Space, you must first unblock the corresponding Venue or Event.</span></p>
+   <p class="rvps2"><span class="rvts14">To remove a Logical Space, the corresponding Venue or Event must first be unblocked.</span></p>
   </td>
   <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
    <p class="rvps2"><span class="rvts6">Not planned</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: top;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">MP002</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Blocking of Logical Space or Venue</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Blocking a Logical Space or Venue does not restrict users from modifying Requested or Existing quantities.</span></p>
+   <p class="rvps2"><span class="rvts6"><br/></span></p>
+   <p class="rvps2"><span class="rvts14">To fully disable the ability for users to adjust these quantities, you must perform a full Event-level Block.</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Release 6.9</span></p>
   </td>
  </tr>
 </table>
