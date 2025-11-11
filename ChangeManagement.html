@@ -49,7 +49,7 @@
   <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
 
   <!-- Content style (cache-busted so your changes always apply) -->
-  <link href="css/hnd.content.css?v=20251110211104" rel="stylesheet" />
+  <link href="css/hnd.content.css?v=20251111101851" rel="stylesheet" />
 
 
 
@@ -236,7 +236,7 @@
                         <li><a href="MaterialPlanning.html">Material Planning</a></li><li><a href="ChangeManagementWorkflow.html">Change Management Workflow</a></li>
                     </ol>
                     <div class="nav-arrows">
-                        <div class="btn-group btn-group" role="group"><a class="btn btn-default" href="ChangeManagementWorkflow.html" title="Change Management Workflow" role="button"><span class="bi bi-chevron-up" aria-hidden="true"></span></a><a class="btn btn-default" href="BlockPlanning.html" title="Block Planning" role="button"><span class="bi bi-chevron-left" aria-hidden="true"></span></a><a class="btn btn-default" href="AssetTracking.html" title="Asset Tracking" role="button"><span class="bi bi-chevron-right" aria-hidden="true"></span></a></div>
+                        <div class="btn-group btn-group" role="group"><a class="btn btn-default" href="ChangeManagementWorkflow.html" title="Change Management Workflow" role="button"><span class="bi bi-chevron-up" aria-hidden="true"></span></a><a class="btn btn-default" href="BlockPlanning.html" title="Block Planning" role="button"><span class="bi bi-chevron-left" aria-hidden="true"></span></a><a class="btn btn-default" href="EnableChangeManagement.html" title="Enable Change Management" role="button"><span class="bi bi-chevron-right" aria-hidden="true"></span></a></div>
                     </div>
                 </div> 
             
@@ -289,7 +289,7 @@
  </tr>
  <tr style="vertical-align: middle;">
   <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
-   <p class="rvps2"><span class="rvts6">Projected delta</span></p>
+   <p class="rvps2"><span class="rvts6">Delta</span></p>
   </td>
   <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
    <p class="rvps2"><span class="rvts6">The difference between the originally Requested quantity and the Change Request quantity.</span></p>
@@ -402,18 +402,18 @@
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <h6 class="rvps9"><span class="rvts0"><span class="rvts21">Change Management Report</span></span></h6>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<p class="rvps2"><span class="rvts6">While Material Plan provides information on current Change Requests, it does not give you information on the </span><span class="rvts14">Accumulated</span><span class="rvts6"> </span><span class="rvts14">deltas</span><span class="rvts6"> (All Materials available for </span><span class="rvts14">redistribution</span><span class="rvts6">). For this purposes, when Change Management is enabled, SM2ARTA activates a dedicated Change Management Report.</span></p>
+<p class="rvps2"><span class="rvts6">While Material Plan provides information on current Change Requests, it does not give you information on the </span><span class="rvts14">Available</span><span class="rvts6"> </span><span class="rvts14">materials</span><span class="rvts6"> (All Materials available for </span><span class="rvts14">redistribution</span><span class="rvts6">). For this purposes, when Change Management is enabled, SM2ARTA activates a dedicated Change Management Report.</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts6">This report provides Material Planning Managers with a centralized dashboard to:</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
- <li class="rvps2 noindent"><span class="rvts6">View positive </span><span class="rvts14">Accumulated materials</span><span class="rvts6"> quantity across Venues and Clusters;</span></li>
- <li class="rvps2 noindent"><span class="rvts6">View all consolidated </span><span class="rvts14">Pending</span><span class="rvts6"> </span><span class="rvts14">change requests</span><span class="rvts6">;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">View </span><span class="rvts14">Available materials</span><span class="rvts6"> quantity across Venues and Clusters;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">View all consolidated </span><span class="rvts14">Delta</span><span class="rvts6">;</span></li>
  <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 48px; list-style-position: outside; list-style-type: circle;">
-  <li class="rvps2 noindent"><span class="rvts6">Positive value means the decreased Change Request - Materials will be released ;</span></li>
+  <li class="rvps2 noindent"><span class="rvts6">Positive value means the decreased Change Request - Materials will be released;</span></li>
   <li class="rvps2 noindent"><span class="rvts6">Negative values means the increased Change Request - Materials will be redistributed.</span></li>
  </ul>
- <li class="rvps2 noindent"><span class="rvts6">Identify where positive accumulated deltas can offset increases;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Identify where </span><span class="rvts14">Available</span><span class="rvts6"> </span><span class="rvts14">materials</span><span class="rvts6"> can offset increases;</span></li>
  <li class="rvps2 noindent"><span class="rvts6">Execute bulk approvals when sufficient deltas are available to cover multiple requests.</span></li>
 </ul>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
@@ -443,7 +443,7 @@
    <p class="rvps2"><span class="rvts14">Change request</span></p>
   </td>
   <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
-   <p class="rvps2"><span class="rvts14">Projected delta</span></p>
+   <p class="rvps2"><span class="rvts14">Delta</span></p>
   </td>
   <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
    <p class="rvps2"><span class="rvts14">Status</span></p>
@@ -521,10 +521,10 @@
    <p class="rvps2"><span class="rvts14">Item name</span></p>
   </td>
   <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
-   <p class="rvps2"><span class="rvts14">Accumulated materials</span></p>
+   <p class="rvps2"><span class="rvts14">Available materials</span></p>
   </td>
   <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
-   <p class="rvps2"><span class="rvts14">Pending change requests</span></p>
+   <p class="rvps2"><span class="rvts14">Delta</span></p>
   </td>
  </tr>
  <tr style="vertical-align: middle;">
@@ -571,7 +571,7 @@
  <li class="rvps2 noindent"><span class="rvts6">The Status of the Materials Request line changes to Declined;</span></li>
  <li class="rvps2 noindent"><span class="rvts6">The Change request Quantity is reset to blank;</span></li>
  <li class="rvps2 noindent"><span class="rvts6">The Requested quantity remains unchanged (no update is applied);</span></li>
- <li class="rvps2 noindent"><span class="rvts6">The Projected delta is reset to blank, as the new Requested quantity now matches the approved value;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">The Delta is reset to blank, as the new Requested quantity now matches the approved value;</span></li>
  <li class="rvps2 noindent"><span class="rvts6">The Material Request line is removed from the Change Management Report if there are no remaining Change Requests associated with that Material.</span></li>
 </ul>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
@@ -593,7 +593,7 @@
    <p class="rvps2"><span class="rvts14">Change request</span></p>
   </td>
   <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
-   <p class="rvps2"><span class="rvts14">Projected delta</span></p>
+   <p class="rvps2"><span class="rvts14">Delta</span></p>
   </td>
   <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
    <p class="rvps2"><span class="rvts14">Status</span></p>
@@ -671,10 +671,10 @@
    <p class="rvps2"><span class="rvts14">Item name</span></p>
   </td>
   <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
-   <p class="rvps2"><span class="rvts14">Accumulated materials</span></p>
+   <p class="rvps2"><span class="rvts14">Available materials</span></p>
   </td>
   <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
-   <p class="rvps2"><span class="rvts14">Pending change requests</span></p>
+   <p class="rvps2"><span class="rvts14">Delta</span></p>
   </td>
  </tr>
  <tr style="vertical-align: middle;">
@@ -710,8 +710,8 @@
  <li class="rvps2 noindent"><span class="rvts6">The Status of the Materials Request line changes to Confirmed;</span></li>
  <li class="rvps2 noindent"><span class="rvts6">The Requested quantity is updated to match the Change request quantity;</span></li>
  <li class="rvps2 noindent"><span class="rvts6">The Change request quantity is reset to blank after approval;</span></li>
- <li class="rvps2 noindent"><span class="rvts6">The Projected delta is reset to blank, as the new Requested Quantity now matches the approved value;</span></li>
- <li class="rvps2 noindent"><span class="rvts6">The Accumulated materials is calculated as the sum of the initial Accumulated materials and the initial Projected delta.</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">The Delta is reset to blank, as the new Requested Quantity now matches the approved value;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">The Available materials is calculated as the sum of the initial Available materials and the initial Delta.</span></li>
 </ul>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
@@ -733,7 +733,7 @@
    <p class="rvps2"><span class="rvts14">Change request</span></p>
   </td>
   <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
-   <p class="rvps2"><span class="rvts14">Projected delta</span></p>
+   <p class="rvps2"><span class="rvts14">Delta</span></p>
   </td>
   <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
    <p class="rvps2"><span class="rvts14">Status</span></p>
@@ -811,10 +811,10 @@
    <p class="rvps2"><span class="rvts14">Item name</span></p>
   </td>
   <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
-   <p class="rvps2"><span class="rvts14">Accumulated materials</span></p>
+   <p class="rvps2"><span class="rvts14">Available materials</span></p>
   </td>
   <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
-   <p class="rvps2"><span class="rvts14">Pending change requests</span></p>
+   <p class="rvps2"><span class="rvts14">Delta</span></p>
   </td>
  </tr>
  <tr style="vertical-align: middle;">
@@ -859,8 +859,8 @@
  <li class="rvps2 noindent"><span class="rvts6">The Status of the Material Request line changes to Confirmed;</span></li>
  <li class="rvps2 noindent"><span class="rvts6">The Requested quantity is updated to reflect the new increased quantity from the approved Change Request;</span></li>
  <li class="rvps2 noindent"><span class="rvts6">The Change request quantity is reset to blank after approval;</span></li>
- <li class="rvps2 noindent"><span class="rvts6">The Projected delta is reset to blank, as the new Requested quantity now matches the approved value;</span></li>
- <li class="rvps2 noindent"><span class="rvts6">The Accumulated materials is calculated as the sum of the initial Accumulated materials and the initial Projected delta.</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">The Delta is reset to blank, as the new Requested quantity now matches the approved value;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">The Available materials is calculated as the sum of the initial Available materials and the initial Delta.</span></li>
 </ul>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts14">Material Plan</span></p>
@@ -881,7 +881,7 @@
    <p class="rvps2"><span class="rvts14">Change request</span></p>
   </td>
   <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
-   <p class="rvps2"><span class="rvts14">Projected delta</span></p>
+   <p class="rvps2"><span class="rvts14">Delta</span></p>
   </td>
   <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
    <p class="rvps2"><span class="rvts14">Status</span></p>
@@ -959,10 +959,10 @@
    <p class="rvps2"><span class="rvts14">Item name</span></p>
   </td>
   <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
-   <p class="rvps2"><span class="rvts14">Accumulated materials</span></p>
+   <p class="rvps2"><span class="rvts14">Available materials</span></p>
   </td>
   <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
-   <p class="rvps2"><span class="rvts14">Pending change requests</span></p>
+   <p class="rvps2"><span class="rvts14">Delta</span></p>
   </td>
  </tr>
  <tr style="vertical-align: middle;">
@@ -1012,8 +1012,8 @@
  <li class="rvps2 noindent"><span class="rvts6">The Status changes to Partially confirmed;</span></li>
  <li class="rvps2 noindent"><span class="rvts6">The Change request quantity remains the same, as only a portion of the request was approved;</span></li>
  <li class="rvps2 noindent"><span class="rvts6">The Requested quantity increases by the number of partially approved materials taken from the Accumulated delta;</span></li>
- <li class="rvps2 noindent"><span class="rvts6">The Projected delta quantity remains as the difference between the new Requested quantity and the Change request quantity;</span></li>
- <li class="rvps2 noindent"><span class="rvts6">The Accumulated materials decreases by the number of approved materials. In this case, it should be reduced to 0, as all available materials were used to partially fulfill the request.</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">The Delta quantity remains as the difference between the new Requested quantity and the Change request quantity;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">The Available materials decreases by the number of approved materials. In this case, it should be reduced to 0, as all available materials were used to partially fulfill the request.</span></li>
 </ul>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts14">Material Plan</span></p>
@@ -1034,7 +1034,7 @@
    <p class="rvps2"><span class="rvts14">Change request</span></p>
   </td>
   <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
-   <p class="rvps2"><span class="rvts14">Projected delta</span></p>
+   <p class="rvps2"><span class="rvts14">Delta</span></p>
   </td>
   <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
    <p class="rvps2"><span class="rvts14">Status</span></p>
@@ -1112,10 +1112,10 @@
    <p class="rvps2"><span class="rvts14">Item name</span></p>
   </td>
   <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
-   <p class="rvps2"><span class="rvts14">Accumulated materials</span></p>
+   <p class="rvps2"><span class="rvts14">Available materials</span></p>
   </td>
   <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
-   <p class="rvps2"><span class="rvts14">Pending change requests</span></p>
+   <p class="rvps2"><span class="rvts14">Delta</span></p>
   </td>
  </tr>
  <tr style="vertical-align: middle;">
@@ -1200,7 +1200,7 @@
    <p class="rvps2"><span class="rvts6">MATERIAL PLAN:</span></p>
    <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: '❑ ';">
     <li class="rvps2 noindent"><span class="rvts6">Change request;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Projected delta;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Delta;</span></li>
     <li class="rvps2 noindent"><span class="rvts6">Status.</span></li>
    </ul>
    <p class="rvps2"><span class="rvts6"><br/></span></p>
@@ -1210,8 +1210,8 @@
     <li class="rvps2 noindent"><span class="rvts6">Venue;</span></li>
     <li class="rvps2 noindent"><span class="rvts6">SKU;</span></li>
     <li class="rvps2 noindent"><span class="rvts6">Item name;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Accumulated materials;</span></li>
-    <li class="rvps2 noindent"><span class="rvts6">Pending change requests.</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Available materials;</span></li>
+    <li class="rvps2 noindent"><span class="rvts6">Delta.</span></li>
    </ul>
   </td>
  </tr>
@@ -1237,7 +1237,7 @@
    <p class="rvps2"><span class="rvts6">MATERIAL PLAN (</span><span class="rvts34">not available</span><span class="rvts6">):</span></p>
    <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: '❑ ';">
     <li class="rvps2 noindent"><span class="rvts6">Change request;</span></li>
-    <li class="rvps2 noindent"><span class="rvts34">Projected delta;</span></li>
+    <li class="rvps2 noindent"><span class="rvts34">Delta;</span></li>
     <li class="rvps2 noindent"><span class="rvts6">Status.</span></li>
    </ul>
    <p class="rvps2"><span class="rvts6"><br/></span></p>
@@ -1247,8 +1247,8 @@
     <li class="rvps2 noindent"><span class="rvts34">Venue;</span></li>
     <li class="rvps2 noindent"><span class="rvts34">SKU;</span></li>
     <li class="rvps2 noindent"><span class="rvts34">Item name;</span></li>
-    <li class="rvps2 noindent"><span class="rvts34">Accumulated materials;</span></li>
-    <li class="rvps2 noindent"><span class="rvts34">Pending change requests.</span></li>
+    <li class="rvps2 noindent"><span class="rvts34">Available materials;</span></li>
+    <li class="rvps2 noindent"><span class="rvts34">Delta.</span></li>
    </ul>
   </td>
  </tr>
@@ -1274,7 +1274,7 @@
    <p class="rvps2"><span class="rvts6">MATERIAL PLAN (</span><span class="rvts34">not available</span><span class="rvts6">):</span></p>
    <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: '❑ ';">
     <li class="rvps2 noindent"><span class="rvts6">Change request;</span></li>
-    <li class="rvps2 noindent"><span class="rvts43">Projected delta;</span></li>
+    <li class="rvps2 noindent"><span class="rvts43">Delta;</span></li>
     <li class="rvps2 noindent"><span class="rvts6">Status.</span></li>
    </ul>
    <p class="rvps2"><span class="rvts6"><br/></span></p>
@@ -1284,8 +1284,8 @@
     <li class="rvps2 noindent"><span class="rvts34">Venue;</span></li>
     <li class="rvps2 noindent"><span class="rvts34">SKU;</span></li>
     <li class="rvps2 noindent"><span class="rvts34">Item name;</span></li>
-    <li class="rvps2 noindent"><span class="rvts34">Accumulated materials;</span></li>
-    <li class="rvps2 noindent"><span class="rvts34">Pending change requests.</span></li>
+    <li class="rvps2 noindent"><span class="rvts34">Available materials;</span></li>
+    <li class="rvps2 noindent"><span class="rvts34">Delta.</span></li>
    </ul>
   </td>
  </tr>
