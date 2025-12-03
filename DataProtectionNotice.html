@@ -49,7 +49,7 @@
   <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
 
   <!-- Content style (cache-busted so your changes always apply) -->
-  <link href="css/hnd.content.css?v=20251122094352" rel="stylesheet" />
+  <link href="css/hnd.content.css?v=20251202205847" rel="stylesheet" />
 
 
 
@@ -271,15 +271,74 @@
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <h3 class="rvps8"><span class="rvts0"><span class="rvts20">3. Data Security Measures</span></span></h3>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
- <li class="rvps2 noindent"><span class="rvts6">Encryption in Transit:</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">All web traffic uses HTTPS (TLS 1.2+) connections.</span></li>
- <li class="rvps2 noindent"><span class="rvts6">Encryption at Rest:</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">Sensitive data is encrypted using </span><span class="rvts19">AES-256</span><span class="rvts6"> where applicable.</span></li>
- <li class="rvps2 noindent"><span class="rvts6">Access Control:</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">Role-based access control (RBAC) with audit logging; no shared credentials.</span></li>
- <li class="rvps2 noindent"><span class="rvts6">Network Security:</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">Firewalls, network isolation, and continuous intrusion detection via Cloudflare tools.</span></li>
- <li class="rvps2 noindent"><span class="rvts6">Monitoring &amp; Logging:</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">Application and system logs are retained for limited periods for auditing and security.</span></li>
- <li class="rvps2 noindent"><span class="rvts19">Backups:&nbsp;</span><span class="rvts19"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts19">Encrypted automated backups stored separately outside OVH infrastructure.</span></li>
- <li class="rvps2 noindent"><span class="rvts6">Vulnerability Management:</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">Regular security updates and dependency patching within container environments.</span></li>
-</ul>
+<div class="rvps2">
+<table style="border-style: inset; border-width: 1px; border-spacing: 2px;">
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Category</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts14">Description</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Encryption in Transit</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">All web traffic uses HTTPS (TLS 1.2+) connections.</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Encryption at Rest</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Sensitive data is encrypted using AES-256 where applicable.</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Access Control</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Role-based access control (RBAC) with audit logging; no shared credentials.</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Network Security</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Firewalls, network isolation, and continuous intrusion detection via Cloudflare tools.</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Monitoring &amp; Logging</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Application and system logs are retained for limited periods for auditing and security.</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Backups</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Encrypted automated backups stored separately outside OVH infrastructure.</span></p>
+  </td>
+ </tr>
+ <tr style="vertical-align: middle;">
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Vulnerability Management</span></p>
+  </td>
+  <td style="border-width : 1px; border-color: #000000; border-style: solid; padding: 1px;">
+   <p class="rvps2"><span class="rvts6">Regular security updates and dependency patching within container environments.</span></p>
+  </td>
+ </tr>
+</table>
+</div>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <h3 class="rvps8"><span class="rvts0"><span class="rvts20">4. Data Handling &amp; Retention</span></span></h3>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
@@ -330,8 +389,8 @@
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
  <li class="rvps2 noindent"><span class="rvts6">OVH (Frankfurt, EU) — hosting and infrastructure services;</span></li>
- <li class="rvps2 noindent"><span class="rvts19">HostedScan</span></li>
- <li class="rvps2 noindent"><span class="rvts19">Cloudflare</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">HostedScan - monthly penetration tests;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Cloudflare - Web Application Firewall;</span></li>
  <li class="rvps2 noindent"><span class="rvts6">SendGrid (USA) — transactional email delivery.</span></li>
 </ul>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
@@ -359,7 +418,7 @@
 
             </div>
             
-            <div id="topic_footer"><div id="topic_footer_content">&copy; 2025 Vladislav Abramov | SM&sup2;ARTA&trade; &copy; 2025 SM2ARTA LLC | v2025.11 | All rights reserved.</div></div>
+            <div id="topic_footer"><div id="topic_footer_content">&copy; 2025 Vladislav Abramov | SM&sup2;ARTA&trade; &copy; 2025 SM2ARTA LLC | v2025.12 | All rights reserved.</div></div>
         </div>  <!-- /#topic-content -->
     </article>
 

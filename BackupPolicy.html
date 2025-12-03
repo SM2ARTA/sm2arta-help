@@ -49,7 +49,7 @@
   <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
 
   <!-- Content style (cache-busted so your changes always apply) -->
-  <link href="css/hnd.content.css?v=20251122094352" rel="stylesheet" />
+  <link href="css/hnd.content.css?v=20251202205847" rel="stylesheet" />
 
 
 
@@ -236,7 +236,7 @@
                         <li><a href="Introduction.html">Introduction</a></li><li><a href="AboutSM2ARTA.html">About SM2ARTA</a></li><li><a href="OperationalGovernanceProcedures.html">Operational Governance &amp; Procedures</a></li>
                     </ol>
                     <div class="nav-arrows">
-                        <div class="btn-group btn-group" role="group"><a class="btn btn-default" href="OperationalGovernanceProcedures.html" title="Operational Governance &amp; Procedures" role="button"><span class="bi bi-chevron-up" aria-hidden="true"></span></a></div>
+                        <div class="btn-group btn-group" role="group"><a class="btn btn-default" href="OperationalGovernanceProcedures.html" title="Operational Governance &amp; Procedures" role="button"><span class="bi bi-chevron-up" aria-hidden="true"></span></a><a class="btn btn-default" href="OperationalGovernanceProcedures.html" title="Operational Governance &amp; Procedures" role="button"><span class="bi bi-chevron-left" aria-hidden="true"></span></a><a class="btn btn-default" href="SM2ARTASetup.html" title="SM2ARTA Setup" role="button"><span class="bi bi-chevron-right" aria-hidden="true"></span></a></div>
                     </div>
                 </div> 
             
@@ -248,54 +248,82 @@
             <div class="main-content">
                 
 <h1 class="rvps7"><span class="rvts0"><span class="rvts24">Backup Policy</span></span></h1>
-<p class="rvps4"><span class="rvts6"><br/></span></p>
-<p class="rvps4"><span class="rvts6">The policy is part of the Business Resiliency Program and supports the company’s Disaster Recovery Plan (DRP).</span></p>
-<p class="rvps4"><span class="rvts6"><br/></span></p>
-<p class="rvps4"><span class="rvts6">1. Backup Policy Overview</span></p>
-<p class="rvps4"><span class="rvts6"><br/></span></p>
-<p class="rvps4"><span class="rvts6">Scope: All SM2ARTA production data (PostgreSQL databases, Vault encryption keys, and configuration files) hosted on the OVH VPS environment.</span></p>
-<p class="rvps4"><span class="rvts6"><br/></span></p>
-<p class="rvps4"><span class="rvts6">Frequency: Full daily encrypted backups are automatically executed at midnight (Frankfurt time).</span></p>
-<p class="rvps4"><span class="rvts6"><br/></span></p>
-<p class="rvps4"><span class="rvts6">Location: Backups are stored on a dedicated OVH backup node physically separate from the production VPS.</span></p>
-<p class="rvps4"><span class="rvts6"><br/></span></p>
-<p class="rvps4"><span class="rvts6">Encryption: All backup archives are encrypted using AES-256 and protected by access-controlled credentials stored in Vault OSS.</span></p>
-<p class="rvps4"><span class="rvts6"><br/></span></p>
-<p class="rvps4"><span class="rvts6">Retention: Backups are retained for 30 days on a rolling basis.</span></p>
-<p class="rvps4"><span class="rvts6"><br/></span></p>
-<p class="rvps4"><span class="rvts6">Access Control: Only the System Administrator (Managing Member) has authorization to initiate restores or access backup storage.</span></p>
-<p class="rvps4"><span class="rvts6"><br/></span></p>
-<p class="rvps4"><span class="rvts6">2. Backup Completion Verification (Requirement a)</span></p>
-<p class="rvps4"><span class="rvts6"><br/></span></p>
-<p class="rvps4"><span class="rvts6">The backup process generates an automatic completion log and checksum report after every run.</span></p>
-<p class="rvps4"><span class="rvts6"><br/></span></p>
-<p class="rvps4"><span class="rvts6">Logs are reviewed weekly to confirm successful execution and integrity validation.</span></p>
-<p class="rvps4"><span class="rvts6"><br/></span></p>
-<p class="rvps4"><span class="rvts6">Any failure automatically triggers an email alert to the System Administrator.</span></p>
-<p class="rvps4"><span class="rvts6"><br/></span></p>
-<p class="rvps4"><span class="rvts6">A monthly summary of successful backups is recorded in the Security &amp; Maintenance Log.</span></p>
-<p class="rvps4"><span class="rvts6"><br/></span></p>
-<p class="rvps4"><span class="rvts6">3. Backup Testing and Restoration Verification (Requirement b)</span></p>
-<p class="rvps4"><span class="rvts6"><br/></span></p>
-<p class="rvps4"><span class="rvts6">Test restorations are performed on the staging environment quarterly to verify backup integrity and measure restoration time.</span></p>
-<p class="rvps4"><span class="rvts6"><br/></span></p>
-<p class="rvps4"><span class="rvts6">During each test, databases and configurations are restored to a sandbox container to confirm completeness and consistency.</span></p>
-<p class="rvps4"><span class="rvts6"><br/></span></p>
-<p class="rvps4"><span class="rvts6">The most recent test (recorded in the DR log) confirmed that full restoration could be achieved in under 12 hours (RTO) with a maximum of 24 hours’ data loss (RPO).</span></p>
-<p class="rvps4"><span class="rvts6"><br/></span></p>
-<p class="rvps4"><span class="rvts6">Results of each test are documented in the Backup Verification Log.</span></p>
-<p class="rvps4"><span class="rvts6"><br/></span></p>
-<p class="rvps4"><span class="rvts6">4. Governance and Review</span></p>
-<p class="rvps4"><span class="rvts6"><br/></span></p>
-<p class="rvps4"><span class="rvts6">Policy Owner: System Administrator, SM2ARTA LLC.</span></p>
-<p class="rvps4"><span class="rvts6"><br/></span></p>
-<p class="rvps4"><span class="rvts6">Review Frequency: Annual review or upon major infrastructure change.</span></p>
-<p class="rvps4"><span class="rvts6"><br/></span></p>
-<p class="rvps4"><span class="rvts6">Backup automation scripts and logs are version-controlled in GitHub and reviewed quarterly for updates.</span><span class="rvts6"></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">This Backup Policy describes how SM2ARTA™ performs, stores, and safeguards system backups to support service continuity and minimize the risk of data loss.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps8"><span class="rvts0"><span class="rvts20">1. Overview</span></span></h3>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">SM2ARTA performs automated database backups to ensure the integrity and recoverability of core system data.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Backups are created at regular intervals, encrypted in transit and at rest, and stored both locally on the server and in an external cloud storage environment.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">This policy applies to the production environment of the SM2ARTA platform.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps8"><span class="rvts0"><span class="rvts20">2. Backup Frequency</span></span></h3>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">SM2ARTA automatically performs database backups at the following intervals:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">Every 30 minutes — incremental snapshots of the PostgreSQL database;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Daily retention — backups stored for 30 days;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Weekly retention — backups stored for 12 weeks;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Monthly retention — backups stored for 24 months.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Backup frequency and retention are managed by the SM2ARTA backup container and enforced automatically.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps8"><span class="rvts0"><span class="rvts20">3. Storage Locations</span></span></h3>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Backups are stored in two locations:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts14">Local Storage (Primary):</span></p>
+<p class="rvps2"><span class="rvts14"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Stored inside the server’s dedicated backup directory and used for fast recovery</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts14">Cloud Storage (Off-Site):</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Replicated to Cloudflare R2 Object Storage (Eastern Europe region) to provide geographic redundancy and protection against server loss.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">All cloud-stored backups benefit from R2’s built-in encryption and durability protections.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps8"><span class="rvts0"><span class="rvts20">4. Encryption &amp; Security</span></span></h3>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">SM2ARTA secures backups using the following safeguards:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">Encryption in transit: All backup uploads use TLS 1.2+;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Encryption at rest: Backups stored in R2 are encrypted using AES-256;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Access Restrictions: Backup files and R2 buckets are accessible only to authorized administrators;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Credential Isolation: Access keys are injected via environment variables and not stored in images.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">These measures ensure that backup data remains protected even in the event of unauthorized access to the server or storage environment.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps8"><span class="rvts0"><span class="rvts20">5. Monitoring &amp; Verification</span></span></h3>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">SM2ARTA performs internal container health checks to verify that scheduled backups run correctly.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Administrators may review:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">Backup logs in the backup container;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Local backup directory contents;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Cloudflare R2 bucket contents.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Periodic test restores are recommended to confirm backup integrity.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps8"><span class="rvts0"><span class="rvts20">6. Restoration</span></span></h3>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Backup restoration has been successfully tested using both local backup files and off-site backups stored in Cloudflare R2 to confirm full recoverability of the SM2ARTA platform.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">All restoration operations must be performed exclusively by authorized administrators with appropriate access to backup storage locations.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">The full, step-by-step Restoration Procedure is documented in the internal SM2ARTA Wiki and is available only to authorized personnel.</span><span class="rvts6"></span></p>
 
             </div>
             
-            <div id="topic_footer"><div id="topic_footer_content">&copy; 2025 Vladislav Abramov | SM&sup2;ARTA&trade; &copy; 2025 SM2ARTA LLC | v2025.11 | All rights reserved.</div></div>
+            <div id="topic_footer"><div id="topic_footer_content">&copy; 2025 Vladislav Abramov | SM&sup2;ARTA&trade; &copy; 2025 SM2ARTA LLC | v2025.12 | All rights reserved.</div></div>
         </div>  <!-- /#topic-content -->
     </article>
 
