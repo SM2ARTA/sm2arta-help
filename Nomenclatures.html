@@ -1,0 +1,448 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="generator" content="HelpNDoc Professional Edition 10.2.0.196">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <title>Nomenclatures</title>
+  <meta name="description" content="" /> 
+  <meta name="keywords" content="Nomenclatures">
+
+
+
+  
+  
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Nomenclatures">
+  <meta name="twitter:description" content="">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Nomenclatures" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="SM2ARTA&trade; Material Planning Manager Guide" /> 
+
+  <!-- Bootstrap CSS -->
+  <link href="vendors/bootstrap-5.3.7/bootstrap.min.css" rel="stylesheet"/>
+  <link href="vendors/bootstrap-icons-1.13.1/bootstrap-icons.min.css" rel="stylesheet"/>
+
+  <!-- JsTree styles -->
+  <link href="vendors/jstree-3.3.10/themes/default/style.min.css" rel="stylesheet"/>
+
+  
+  
+    <!-- Hnd styles (no cache-buster here, to keep nav working) -->
+  <link href="css/layout.min.css" rel="stylesheet" />
+  <link href="css/effects.min.css" rel="stylesheet" />
+  <link href="css/theme-light-blue.min.css" rel="stylesheet" />
+  <link href="css/print.min.css" rel="stylesheet" media="print" />
+  <style type="text/css">nav { width: 350px} @media screen and (min-width:769px) { body.md-nav-expanded div#main { margin-left: 350px} body.md-nav-expanded header { padding-left: 364px} }</style>
+  <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
+
+  <!-- Content style (cache-busted so your changes always apply) -->
+  <link href="css/hnd.content.css?v=20260105183153" rel="stylesheet" />
+
+
+
+
+<!-- >>> ADDED: Responsive images + modal image styling -->
+<style>
+  /* Responsive only; preserves HND alignment/floats */
+.main-content img,
+.main-content figure img {
+  max-width: 100% !important;
+  height: auto !important;
+  width: auto !important;
+  /* do not set display or margin here */
+}
+
+/* zoom cursor if you use it */
+.main-content img[data-zoom]{ cursor: zoom-in; }
+
+/* images inside modal */
+#hndModal .modal-body img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+</style>
+
+
+
+  <!-- <<< ADDED -->
+
+  
+
+
+
+<script src="/guard.js"></script>
+
+
+<script>
+(function () {
+  const params = new URLSearchParams(location.search);
+  if (params.get('nav') === '0') {
+    const style = `
+      /* hide navigation pane */
+      .hnd-toc, #toc, .sidebar, .splitter { display:none !important; }
+
+      /* hide header, breadcrumbs, and footer */
+      .hnd-header, .hnd-breadcrumb, .breadcrumb, header, nav, .hnd-footer { display:none !important; }
+
+      /* hide topic navigation buttons (up/prev/next) */
+      .hnd-topicnavigation, .topicnavigation, .hnd-navbuttons, .navigation, .next-topic, .prev-topic {
+        display:none !important;
+      }
+
+      /* stretch content full width */
+      .hnd-content, #content, .topic-container, main {
+        width:100% !important; margin:0 !important; padding:2rem !important;
+      }
+    `;
+    const s = document.createElement('style');
+    s.textContent = style;
+    document.head.appendChild(s);
+  }
+})();
+</script>
+
+
+
+
+
+</head>
+
+<body class="md-nav-expanded">
+
+
+
+  
+
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible">Skip to main content</a>
+  </div>
+
+  <header class="headroom">
+    <button class="hnd-toggle btn btn-default">
+      <span class="visually-hidden">Toggle navigation</span>
+      <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>        
+    </button>
+    <h1>SM2ARTA&trade; Material Planning Manager Guide</h1>
+    
+  </header>
+
+  <nav id="panel-left" class="md-nav-expanded">
+    <!-- Nav tabs -->
+    <ul class="tab-tabs nav nav-tabs" role="tablist">
+      <li id="nav-close" role="presentation"> 
+        <button class="hnd-toggle btn btn-default" aria-label="close">
+          <span class="bi bi-x" aria-hidden="true"></span>
+        </button>
+      </li>
+      
+	  
+        <li role="presentation" class="nav-item tab">
+            <a href="#contents" id="tab-contents" class="nav-link active" role="tab" data-bs-toggle="tab" data-bs-target="#contents" aria-controls="contents" aria-selected="true">
+                <i class="bi bi-list-ul"></i>
+                Contents
+            </a>
+        </li>
+      
+        <li role="presentation" class="nav-item tab">
+            <a href="#index" id="tab-index" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#index" aria-controls="index" aria-selected="false">
+                <i class="bi bi-asterisk"></i>
+                Index
+            </a>
+        </li>
+      
+        <li role="presentation" class="nav-item tab">
+            <a href="#search" id="tab-search" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#search" aria-controls="search" aria-selected="false">
+                <i class="bi bi-search"></i>
+                Search
+            </a>
+        </li>
+      
+    </ul>  <!-- /Nav tabs -->
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+	  
+      <div role="tabpanel" class="tab-pane active" id="contents">
+        <div id="toc" class="tree-container unselectable"
+            data-url="_toc.json"
+            data-openlvl="2"
+        >
+            
+        </div>
+      </div>  <!-- /contents-->
+      
+      <div role="tabpanel" class="tab-pane" id="index">
+        <div id="keywords" class="tree-container unselectable"
+            data-url="_keywords.json"
+            data-openlvl="1"
+        >
+            
+        </div>
+      </div>  <!-- /index-->
+      
+      <div role="tabpanel" class="tab-pane" id="search">
+        <div class="search-content">
+          <div class="search-input">
+            <form id="search-form">
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="input-search" name="input-search" placeholder="Search..." aria-label="Search..." />
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit" aria-label="Search...">
+                      <span class="bi bi-search" aria-hidden="true"></span>
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </form>
+          </div>  <!-- /search-input -->
+          <div class="search-result">
+            <div id="search-info"></div>
+            <div class="tree-container unselectable" id="search-tree"></div>
+          </div>  <!-- /search-result -->
+        </div>  <!-- /search-content -->
+      </div>  <!-- /search-->
+      
+    </div>  <!-- /Tab panes -->
+
+  </nav>
+
+  <div id="main">
+
+    <article>
+        <div id="topic-content" class="container-fluid" 
+		  data-hnd-id="Nomenclatures"
+		  data-hnd-context="149"
+		  data-hnd-title="Nomenclatures"
+		>
+            
+                <div class="navigation">
+                    <ol class="breadcrumb">
+                        <li><a href="AssetTracking.html">Asset Tracking</a></li><li><a href="AssetTrackingFunctionality.html">Asset Tracking Functionality</a></li>
+                    </ol>
+                    <div class="nav-arrows">
+                        <div class="btn-group btn-group" role="group"><a class="btn btn-default" href="AssetTrackingFunctionality.html" title="Asset Tracking Functionality" role="button"><span class="bi bi-chevron-up" aria-hidden="true"></span></a><a class="btn btn-default" href="AssetTrackingFunctionality.html" title="Asset Tracking Functionality" role="button"><span class="bi bi-chevron-left" aria-hidden="true"></span></a></div>
+                    </div>
+                </div> 
+            
+
+            <a id="main-content"></a>
+
+            
+
+            <div class="main-content">
+                
+<h1 class="rvps7"><span class="rvts0"><span class="rvts24">Nomenclatures</span></span></h1>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps8"><span class="rvts0"><span class="rvts20">Overview</span></span></h3>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Nomenclatures are the foundation of Asset Tracking in SM2ARTA.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">They represent the system definition of physical assets that are procured or rented based on approved Material Requests and that move through the event logistics supply chain.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Every item that is stored, transported, delivered, used, returned, or dissolved during the event must exist as a nomenclature in SM2ARTA.&nbsp;</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Nomenclatures provide a single, controlled reference that connects planning, warehouse operations, venue execution, and reporting within one system.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps8"><span class="rvts0"><span class="rvts20">Purpose of Nomenclatures</span></span></h3>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Nomenclatures ensure that all physical assets are:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">Defined once and referenced consistently;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Visible across warehouses, distribution legs, and venues;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Traceable throughout their full operational lifecycle;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Governed from planning through final dissolution.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">They act as the linking layer between Material Planning, Warehouse Management Systems (WMS), venue-level operations, and Asset Tracking reports.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps8"><span class="rvts0"><span class="rvts20">What a Nomenclature Represents</span></span></h3>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">A nomenclature represents a real-world item or group of identical items that:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">Is physically procured, rented, or supplied;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Moves through one or more logistics locations;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Requires operational control and reconciliation;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Has a defined lifecycle during the event.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Depending on the asset type, a nomenclature may represent:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">A single, high-value or critical asset, or</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">A bulk quantity of identical items tracked collectively.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps8"><span class="rvts0"><span class="rvts20">Nomenclature Types</span></span></h3>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">SM2ARTA supports two nomenclature types, reflecting sourcing and ownership responsibilities while maintaining a single logistics supply chain.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h6 class="rvps9"><span class="rvts0"><span class="rvts21">LOG Goods (Event Logistics Goods)</span></span></h6>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">LOG Goods are assets that are:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">Scoped by the Event Logistics Department;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Sourced (procured or rented) by Event Logistics;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Operationally controlled by Event Logistics throughout their lifecycle.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">These assets follow the full Material Planning, Asset Tracking, and Dissolution process under Logistics governance.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Typical examples include Furniture, Fixtures &amp; Equipment (FF&amp;E).</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h6 class="rvps9"><span class="rvts0"><span class="rvts21">Functional Goods</span></span></h6>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Functional Goods are assets that are:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">Scoped and specified by non-logistics departments;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Sourced and budgeted by those departments;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Operationally owned by the requesting function.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">However, because these items are transported, stored, and distributed through the same Event Logistics supply chain as LOG Goods, they must also be represented as nomenclatures in SM2ARTA and are subject to the same tracking rules.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Examples include functional IT equipment, broadcast equipment, medical equipment, or security-related items.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps8"><span class="rvts0"><span class="rvts20">Nomenclatures in the Supply Chain</span></span></h3>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Nomenclatures are the objects that move through the following lifecycle:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Supplier → Warehouse (MLC / WHS) → Distribution → Venue → Functional Area Operations → Return / Dissolution</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">At each stage:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">The nomenclature itself remains unchanged;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Only its location, quantity, status, and condition change;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">All changes are recorded exclusively through SM2ARTA transactions.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps8"><span class="rvts0"><span class="rvts20">Governance and Control</span></span></h3>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Nomenclatures are:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">Created and maintained centrally;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Governed by the Material Planning function;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Derived from approved Material Requests.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Once active:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;">
+ <li class="rvps2 noindent"><span class="rvts6">Nomenclatures become available for Asset Tracking transactions;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Quantities and condition are controlled only through transactions;</span></li>
+ <li class="rvps2 noindent"><span class="rvts6">Manual or offline adjustments are not permitted.</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">This governance ensures consistency, accuracy, and auditability across the event footprint.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<h3 class="rvps8"><span class="rvts0"><span class="rvts20">Core Principle</span></span></h3>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">If an item does not exist as a nomenclature in SM2ARTA, it cannot be received, moved, tracked, reported, or dissolved.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">This principle ensures that all physical assets moving through the Event Logistics supply chain are fully visible, controlled, and accountable.</span><span class="rvts6"></span></p>
+
+            </div>
+            
+            <div id="topic_footer"><div id="topic_footer_content">&copy; 2026 Vladislav Abramov | SM&sup2;ARTA&trade; &copy; 2026 SM2ARTA LLC | v2026.01 | All rights reserved.</div></div>
+        </div>  <!-- /#topic-content -->
+    </article>
+
+    <footer></footer>
+
+  </div>  <!-- /#main -->
+
+  <div class="mask" data-bs-toggle="sm-nav-expanded"></div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="hndModal" tabindex="-1" role="dialog" aria-labelledby="hndModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="hndModalLabel"></h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary modal-btn-close" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Splitter -->
+  <div id="hnd-splitter" style="left: 350px"></div>  
+
+  <!-- Scripts -->
+  <script src="vendors/jquery-3.7.1/jquery.min.js"></script>
+  <script src="vendors/bootstrap-5.3.7/bootstrap.bundle.min.js"></script>
+  <script src="vendors/markjs-8.11.1/jquery.mark.min.js"></script>
+  <script src="vendors/uri-1.19.11/uri.min.js"></script>
+  <script src="vendors/imageMapResizer-1.0.10/imageMapResizer.min.js"></script>
+  <script src="vendors/headroom-0.11.0/headroom.min.js"></script>
+  <script src="vendors/jstree-3.3.10/jstree.min.js"></script>  
+  <script src="vendors/interactjs-1.9.22/interact.min.js"></script>  
+
+  <!-- HelpNDoc scripts -->
+  <script src="_translations.js"></script>
+  <script src="js/hndsd.min.js"></script>
+  <script src="js/hndse.min.js"></script>
+  <script src="js/app.min.js"></script>
+
+  <!-- >>> ADDED: Simple click-to-zoom via existing Bootstrap modal.
+       Usage: add data-zoom to any <img>. Optional data-full="bigger-file.png". -->
+  <script>
+  (function () {
+    document.addEventListener('click', function (ev) {
+      var img = ev.target.closest('.main-content img[data-zoom]');
+      if (!img) return;
+
+      ev.preventDefault();
+
+      var fullSrc = img.getAttribute('data-full') || img.currentSrc || img.src;
+      var alt = img.getAttribute('alt') || 'Image';
+      var modalEl = document.getElementById('hndModal');
+
+      // fill modal
+      modalEl.querySelector('#hndModalLabel').textContent = alt;
+      modalEl.querySelector('.modal-body').innerHTML =
+        '<img src="' + fullSrc.replace(/"/g, '&quot;') + '" alt="' + alt.replace(/"/g, '&quot;') + '">';
+
+      // show modal (Bootstrap 5)
+      var bsModal = bootstrap.Modal.getOrCreateInstance(modalEl);
+      bsModal.show();
+    });
+  })();
+  </script>
+  <!-- <<< ADDED -->
+
+  <!-- Init script -->
+  <script src="_topic_init.js"></script>
+
+
+
+</body>
+
+</html>
+
