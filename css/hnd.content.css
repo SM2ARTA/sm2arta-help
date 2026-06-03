@@ -235,6 +235,20 @@ span.rvts46
 {
  background-color: #ffffff;
 }
+a.rvts47, span.rvts47
+{
+ color: #0000ff;
+ text-decoration: none;
+}
+a.rvts47:hover
+{
+ text-decoration: underline;
+}
+a.rvts48, span.rvts48
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
 /* ========== Para Styles ========== */
 p,ul,ol /* Paragraph Style */
 {
@@ -316,6 +330,22 @@ p,ul,ol /* Paragraph Style */
  text-justify: inter-word;
  text-align-last: auto;
  line-height: 1.80;
+}
+.rvps13
+{
+ margin: 0px 0px 10px 0px;
+}
+.rvps14
+{
+ margin: 5px 0px 5px 0px;
+}
+.rvps15
+{
+ margin: 5px 0px 15px 0px;
+}
+.rvps16
+{
+ margin: 0px 0px 10px 48px;
 }
 /* ========== Lists ========== */
 .list0 {text-indent: 0px; padding: 0; margin: 0 0 0 24px; list-style-position: outside; list-style-type: disc;}
