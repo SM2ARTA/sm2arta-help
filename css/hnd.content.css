@@ -69,40 +69,40 @@ a.rvts12, span.rvts12
 span.rvts13
 {
 }
-span.rvts14
-{
- font-weight: bold;
-}
-span.rvts15 /* Font Style */
+span.rvts14 /* Font Style */
 {
  font-family: 'Tahoma', 'Geneva', sans-serif;
  font-style: italic;
  color: #c0c0c0;
 }
-a.rvts16, span.rvts16 /* Font Style */
+a.rvts15, span.rvts15 /* Font Style */
 {
  font-family: 'Tahoma', 'Geneva', sans-serif;
  font-style: italic;
  color: #6666ff;
  text-decoration: underline;
 }
-span.rvts17
+span.rvts16
 {
  font-size: 16pt;
  font-weight: bold;
 }
-span.rvts18
+span.rvts17
 {
  font-size: 13pt;
  font-weight: bold;
 }
-span.rvts19
+span.rvts18
 {
  background-color: #ffff00;
 }
-span.rvts20
+span.rvts19
 {
  font-size: 13pt;
+ font-weight: bold;
+}
+span.rvts20
+{
  font-weight: bold;
 }
 span.rvts21

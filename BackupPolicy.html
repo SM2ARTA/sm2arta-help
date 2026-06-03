@@ -29,7 +29,7 @@
   <meta property="og:title" content="Backup Policy" />
   <meta property="og:type" content="article" />
   <meta property="og:description" content="" />
-  <meta property="og:site_name" content="SM2ARTA&trade; Material Planning Manager Guide" /> 
+  <meta property="og:site_name" content="SM2ARTA&reg; Material Planning Manager Guide" /> 
 
   <!-- Bootstrap CSS -->
   <link href="vendors/bootstrap-5.3.7/bootstrap.min.css" rel="stylesheet"/>
@@ -49,7 +49,7 @@
   <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
 
   <!-- Content style (cache-busted so your changes always apply) -->
-  <link href="css/hnd.content.css?v=20260602172519" rel="stylesheet" />
+  <link href="css/hnd.content.css?v=20260602203120" rel="stylesheet" />
 
 
 
@@ -137,7 +137,7 @@
       <span class="visually-hidden">Toggle navigation</span>
       <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>        
     </button>
-    <h1>SM2ARTA&trade; Material Planning Manager Guide</h1>
+    <h1>SM2ARTA&reg; Material Planning Manager Guide</h1>
     
   </header>
 
@@ -251,7 +251,7 @@
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts6">This Backup Policy describes how SM2ARTA™ performs, stores, and safeguards system backups to support service continuity and minimize the risk of data loss.</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<h3 class="rvps8"><span class="rvts0"><span class="rvts20">1. Overview</span></span></h3>
+<h3 class="rvps8"><span class="rvts0"><span class="rvts19">1. Overview</span></span></h3>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts6">SM2ARTA performs automated database backups to ensure the integrity and recoverability of core system data.</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
@@ -259,7 +259,7 @@
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts6">This policy applies to the production environment of the SM2ARTA platform.</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<h3 class="rvps8"><span class="rvts0"><span class="rvts20">2. Backup Frequency</span></span></h3>
+<h3 class="rvps8"><span class="rvts0"><span class="rvts19">2. Backup Frequency</span></span></h3>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts6">SM2ARTA automatically performs database backups at the following intervals:</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
@@ -272,21 +272,21 @@
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts6">Backup frequency and retention are managed by the SM2ARTA backup container and enforced automatically.</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<h3 class="rvps8"><span class="rvts0"><span class="rvts20">3. Storage Locations</span></span></h3>
+<h3 class="rvps8"><span class="rvts0"><span class="rvts19">3. Storage Locations</span></span></h3>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts6">Backups are stored in two locations:</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<p class="rvps2"><span class="rvts14">Local Storage (Primary):</span></p>
-<p class="rvps2"><span class="rvts14"><br/></span></p>
+<p class="rvps2"><span class="rvts20">Local Storage (Primary):</span></p>
+<p class="rvps2"><span class="rvts20"><br/></span></p>
 <p class="rvps2"><span class="rvts6">Stored inside the server’s dedicated backup directory and used for fast recovery</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<p class="rvps2"><span class="rvts14">Cloud Storage (Off-Site):</span></p>
+<p class="rvps2"><span class="rvts20">Cloud Storage (Off-Site):</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts6">Replicated to Cloudflare R2 Object Storage (Eastern Europe region) to provide geographic redundancy and protection against server loss.</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts6">All cloud-stored backups benefit from R2’s built-in encryption and durability protections.</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<h3 class="rvps8"><span class="rvts0"><span class="rvts20">4. Encryption &amp; Security</span></span></h3>
+<h3 class="rvps8"><span class="rvts0"><span class="rvts19">4. Encryption &amp; Security</span></span></h3>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts6">SM2ARTA secures backups using the following safeguards:</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
@@ -299,7 +299,7 @@
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts6">These measures ensure that backup data remains protected even in the event of unauthorized access to the server or storage environment.</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<h3 class="rvps8"><span class="rvts0"><span class="rvts20">5. Monitoring &amp; Verification</span></span></h3>
+<h3 class="rvps8"><span class="rvts0"><span class="rvts19">5. Monitoring &amp; Verification</span></span></h3>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts6">SM2ARTA performs internal container health checks to verify that scheduled backups run correctly.</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
@@ -313,7 +313,7 @@
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts6">Periodic test restores are recommended to confirm backup integrity.</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
-<h3 class="rvps8"><span class="rvts0"><span class="rvts20">6. Restoration</span></span></h3>
+<h3 class="rvps8"><span class="rvts0"><span class="rvts19">6. Restoration</span></span></h3>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
 <p class="rvps2"><span class="rvts6">Backup restoration has been successfully tested using both local backup files and off-site backups stored in Cloudflare R2 to confirm full recoverability of the SM2ARTA platform.</span></p>
 <p class="rvps2"><span class="rvts6"><br/></span></p>
