@@ -117,26 +117,27 @@ span.rvts22
 }
 span.rvts23
 {
- color: #000000;
+ font-size: 11pt;
+ font-weight: bold;
+ vertical-align: super;
 }
 span.rvts24
+{
+ color: #000000;
+}
+span.rvts25
 {
  font-size: 16pt;
  font-weight: bold;
 }
-span.rvts25
-{
- font-weight: bold;
- color: #000000;
-}
 span.rvts26
 {
+ font-weight: bold;
  color: #000000;
 }
 span.rvts27
 {
  color: #000000;
- background-color: #ffff00;
 }
 span.rvts28
 {
@@ -145,87 +146,92 @@ span.rvts28
 }
 span.rvts29
 {
- background-color: #92d050;
+ color: #000000;
+ background-color: #ffff00;
 }
 span.rvts30
 {
+ background-color: #92d050;
+}
+span.rvts31
+{
  font-weight: bold;
  background-color: #92d050;
 }
-a.rvts31, span.rvts31
+a.rvts32, span.rvts32
 {
  font-size: 13pt;
  font-weight: bold;
- color: #0000ff;
- text-decoration: underline;
-}
-a.rvts32, span.rvts32
-{
- font-size: 12pt;
  color: #0000ff;
  text-decoration: underline;
 }
 a.rvts33, span.rvts33
 {
- font-weight: bold;
+ font-size: 12pt;
  color: #0000ff;
  text-decoration: underline;
 }
-span.rvts34
+a.rvts34, span.rvts34
 {
- font-style: italic;
+ font-weight: bold;
+ color: #0000ff;
+ text-decoration: underline;
 }
 span.rvts35
 {
  font-style: italic;
- background-color: #ffff00;
 }
 span.rvts36
 {
- background-color: #ff0000;
+ font-style: italic;
+ background-color: #ffff00;
 }
 span.rvts37
+{
+ background-color: #ff0000;
+}
+span.rvts38
 {
  font-weight: bold;
  background-color: #ffff00;
 }
-a.rvts38, span.rvts38
+a.rvts39, span.rvts39
 {
  font-weight: bold;
  color: #0000ff;
  background-color: #ffff00;
  text-decoration: underline;
 }
-span.rvts39
+span.rvts40
 {
  font-size: 13pt;
  font-weight: bold;
 }
-span.rvts40
+span.rvts41
 {
  font-size: 7pt;
  vertical-align: super;
 }
-a.rvts41, span.rvts41
+a.rvts42, span.rvts42
 {
  font-style: italic;
  color: #0000ff;
  text-decoration: underline;
 }
-span.rvts42
+span.rvts43
 {
  font-style: italic;
  font-weight: bold;
 }
-span.rvts43
+span.rvts44
 {
  background-color: #ffc000;
 }
-span.rvts44
+span.rvts45
 {
  font-weight: bold;
 }
-span.rvts45
+span.rvts46
 {
  background-color: #ffffff;
 }
